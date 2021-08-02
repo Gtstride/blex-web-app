@@ -2,6 +2,7 @@ import React from "react"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 import Header from "./components/Header/Header"
+import AboutUs from "./pages/aboutUs/AboutUs"
 import ContactUs from "./pages/contact-us/ContactUs"
 import Home from "./pages/Home/Home"
 
@@ -15,8 +16,9 @@ const Routes = () => {
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/work" component={PopularCourse} />
+          <Route exact path="/about-us" component={AboutUs} />
           <Route exact path="/contact-us" component={ContactUs} />
+          <Route exact path="/work" component={PopularCourse} />
         </Switch>
       </Router>
 
