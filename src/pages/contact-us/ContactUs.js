@@ -12,7 +12,7 @@ const ContactUs = () => {
               <p className="text-white link-nav">
                 <a href="/">Home </a>{" "}
                 <span className="lnr lnr-arrow-right" />{" "}
-                <a href="/contact-us\"> Contact Us</a>
+                <a href="/contact-us"> Contact Us</a>
               </p>
             </div>
           </div>

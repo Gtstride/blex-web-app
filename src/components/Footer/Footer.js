@@ -73,8 +73,6 @@ const Footer = () => {
             <div className="col-lg-6 col-sm-12 footer-social">
               <a href onClick={(e) => e.preventDefault()}><i className="fa fa-facebook" /></a>
               <a href onClick={(e) => e.preventDefault()}><i className="fa fa-twitter" /></a>
-              <a href onClick={(e) => e.preventDefault()}><i className="fa fa-dribbble" /></a>
-              <a href onClick={(e) => e.preventDefault()}><i className="fa fa-behance" /></a>
             </div>
           </div>
         </div>

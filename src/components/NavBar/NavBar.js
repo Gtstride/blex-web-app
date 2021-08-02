@@ -13,7 +13,7 @@ const NavBar = () => {
           <nav id="nav-menu-container">
             <ul className="nav-menu">
               <li><a href="/">Home</a></li>
-              <li><a href onClick={(e) => { e.preventDefault() }}>About</a></li>
+              <li><a href="/about-us">About</a></li>
 
               <li className="menu-has-children">
                 <a href onClick={(e) => { e.preventDefault() }}>Education</a>
