@@ -12,3 +12,38 @@ code {
     monospace;
 }
 
+.germany-blog-home-banner {
+  background:url("./assets/img/germany.jpg") bottom;
+  background-size:cover;
+  padding:130px 0;
+}
+
+.lithanuia-blog-home-banner {
+  background:url("./assets/img/lit.jpg") bottom;
+  background-size:cover;
+  padding:130px 0;
+}
+
+.study-australia-home-banner {
+  background:url("./assets/img/Austr.jfif") bottom;
+  background-size:cover;
+  padding:130px 0;
+}
+
+.study-canada-home-banner {
+  background:url("./assets/img/Canada.jpg") bottom;
+  background-size:cover;
+  padding:130px 0;
+}
+
+.study-uk-home-banner {
+  background:url("./assets/img/uk.jpg") bottom;
+  background-size:cover;
+  padding:130px 0;
+}
+
+.study-us-home-banner {
+  background:url("./assets/img/America.jpg") bottom;
+  background-size:cover;
+  padding:130px 0;
+}

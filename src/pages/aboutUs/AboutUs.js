@@ -52,7 +52,7 @@ const AboutUs = () => {
             <div className="col-lg-4">
               <div className="single-feature">
                 <div className="title">
-                  <h4>Work / Study / Relocation Package</h4>
+                  <h4>Relocation Package</h4>
                 </div>
                 <div className="desc-wrap">
                   <p>

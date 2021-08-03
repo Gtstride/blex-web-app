@@ -1,4 +1,5 @@
 import React from 'react'
+// import axios from "axios"
 
 const ContactUs = () => {
   return (
@@ -41,7 +42,7 @@ const ContactUs = () => {
                   <span className="lnr lnr-phone-handset" />
                 </div>
                 <div className="contact-details">
-                  <h5>+234 (705) 7568 835</h5>
+                  <h5>+234 802 104 6058. </h5>
                   <p>Mon to Fri 9am to 6 pm</p>
                 </div>
               </div>
@@ -52,11 +53,11 @@ const ContactUs = () => {
                 <div className="contact-details">
                   <h5>
                     <a
-                      href="https://preview.colorlib.com/cdn-cgi/l/email-protection"
+                      href="https://gmail.com/send-mail"
                       className="__cf_email__"
-                      data-cfemail="b6c5c3c6c6d9c4c2f6d5d9dad9c4dadfd498d5d9db"
+
                     >
-                      g.t.devguy@gmail.com
+                      Info@flyboxconsult.com
                     </a>
                   </h5>
                   <p>Send us your query anytime!</p>
