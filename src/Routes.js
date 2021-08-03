@@ -2,13 +2,11 @@ import React from "react"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 import Header from "./components/Header/Header"
-import Home from "./pages/home/Home"
 import AboutUs from "./pages/aboutUs/AboutUs"
 import ContactUs from "./pages/contact-us/ContactUs"
+import Home from "./pages/home/Home"
 
-
-// import Work from "./pages/Work/Work"
-import PopularCourse from "./views/popular-course/PopularCourse"
+// import PopularCourse from "./views/popular-course/PopularCourse"
 
 // Study Routes
 import StudyInUk from "./pages/education/StudyInUk"
@@ -35,7 +33,7 @@ const Routes = () => {
           <Route exact path="/work_in_lithuania" component={WorkInLithuania} />
           <Route exact path="/work_in_germany" component={WorkInGermany} />
           <Route exact path="/contact-us" component={ContactUs} />
-          <Route exact path="/work" component={PopularCourse} />
+          {/* <Route exact path="/work" component={PopularCourse} /> */}
         </Switch>
       </Router>
 
