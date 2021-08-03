@@ -32,8 +32,8 @@ export default class Work extends Component {
             <div className="row justify-content-between align-items-center">
               <div className="col-lg-6 col-md-6 search-course-left">
                 <h1 className="text-white">
-                  Get reduced fee <br />
-                  during this Summer!
+                  Get quick response <br />
+                  to help you make a decision !
                 </h1>
                 <p>
                   inappropriate behavior is often laughed off as “boys will be boys,”

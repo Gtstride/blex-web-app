@@ -1,4 +1,5 @@
 import React from 'react'
+import * as Icon from 'react-bootstrap-icons';
 
 const Footer = () => {
   return (
@@ -6,37 +7,25 @@ const Footer = () => {
       <footer className="footer-area section-gap">
         <div className="container">
           <div className="row">
-            <div className="col-lg-3 col-md-6 col-sm-6">
-              <div className="single-footer-widget">
-                <h4>Top Schools</h4>
-                <ul>
-                  <li><a href onClick={(e) => e.preventDefault()}>Top Ranking School</a></li>
-                  <li><a href onClick={(e) => e.preventDefault()}>Top Reputable School</a></li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-lg-3 col-md-6 col-sm-6">
+            <div className="col-lg-4 col-md-6 col-sm-6">
               <div className="single-footer-widget">
                 <h4>Quick links</h4>
                 <ul>
-                  <li><a href onClick={(e) => e.preventDefault()}>Jobs</a></li>
-                  <li><a href onClick={(e) => e.preventDefault()}>Schools</a></li>
+                  <li><a href="https://wa.link/x17s0b" target="_blank" rel="noreferrer"><Icon.Whatsapp size={36} color="green" /></a></li>
                 </ul>
               </div>
             </div>
-            <div className="col-lg-3 col-md-6 col-sm-6">
+            <div className="col-lg-4 col-md-6 col-sm-6 footer-social">
               <div className="single-footer-widget">
-                <h4>Get Our Resources</h4>
-                <ul>
-                  <li><a href onClick={(e) => e.preventDefault()}>Guides</a></li>
-                  <li><a href onClick={(e) => e.preventDefault()}>Research</a></li>
-                </ul>
+                <h4>Visit Our Social Media</h4>
+                <a href="https://www.facebook.com/TravelwithFlyBox" target="_blank" rel="noreferrer"><Icon.Facebook className="" size={36} style={{ marginRight: "1.5em" }} /></a>
+                <a href="https://www.instagram.com/fly.boxconsult/" target="_blank" rel="noreferrer"><Icon.Instagram className="" size={36} /></a>
               </div>
             </div>
-            <div className="col-lg-3  col-md-6 col-sm-6">
+            <div className="col-lg-4  col-md-6 col-sm-6">
               <div className="single-footer-widget">
                 <h4>Newsletter</h4>
-                <p>Stay up-to-date with our latest</p>
+                <p className="text-white">Stay up-to-date with our latest</p>
                 <div className id="mc_embed_signup">
                   <form
                     target="_blank"
@@ -63,16 +52,16 @@ const Footer = () => {
             </div>
           </div>
           <div className="footer-bottom row align-items-center justify-content-between">
-            <p className="footer-text m-0 col-lg-6 col-md-12">
-              {/* Copyright © All rights reserved | Created By{" "}
-              <i className="fa fa-heart-o" aria-hidden="true" /> by{" "}
-              <a href="https://colorlib.com/" target="_blank">
-                Ushriya-Tech
-              </a> */}
+            <p className="footer-text m-0 col-lg-4 col-md-12">
             </p>
-            <div className="col-lg-6 col-sm-12 footer-social">
-              <a href onClick={(e) => e.preventDefault()}><i className="fa fa-facebook" /></a>
-              <a href onClick={(e) => e.preventDefault()}><i className="fa fa-twitter" /></a>
+            <div className="col-lg-8 col-md-12 text-white footer-social">
+              <h3 className="text-white">Legal</h3>
+              <ul>
+                <li>Privacy &amp; Cookie Policy</li>
+                <li>Terms and Conditions</li>
+                <li>Terms of Use</li>
+                <li>Fly Box Fees</li>
+              </ul>
             </div>
           </div>
         </div>
