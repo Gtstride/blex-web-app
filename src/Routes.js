@@ -1,10 +1,11 @@
 import React from "react"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
+import Home from "./pages/home/Home"
 import Header from "./components/Header/Header"
 import AboutUs from "./pages/aboutUs/AboutUs"
 import ContactUs from "./pages/contact-us/ContactUs"
-import Home from "./pages/home/Home"
+
 
 // import PopularCourse from "./views/popular-course/PopularCourse"
 
