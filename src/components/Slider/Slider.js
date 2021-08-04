@@ -13,7 +13,7 @@ const Slider = () => {
               </h1>
               <p className="pt-10 pb-10 text-white">
                 <b className="text-white">
-                  There have never being any time better than now, to take the decision to give your family that very dream life you <br />have always dreamt of.  Let us help you achieve those dreams and make them a reality.
+                  There have never being any time better than now, to take the decision to give your family that very dream life you have always dreamt of.  Let us help you achieve those dreams and make them a reality.
                 </b>
               </p>
               <a href="/contact-us" className="primary-btn text-uppercase">
