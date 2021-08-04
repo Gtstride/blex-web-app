@@ -15,9 +15,9 @@ const WorkInGermany = () => {
               <h1 className="text-white">Work In Germany</h1>
               <p className="text-white">
                 Experienced job  For highly qualified  candidates, successful <br />individual will be verified and interviewed by the company.              </p>
-              <a href="/germany-details-form" onClick={(e) => e.preventDefault(e)} className="primary-btn">
-                Talk to Us
-              </a>
+              <button onClick={(e) => e.preventDefault(e)} className="primary-btn">
+              TALK TO US ABOUT YOUR TRAVEL TO GERMANY
+              </button>
             </div>
           </div>
         </div>
