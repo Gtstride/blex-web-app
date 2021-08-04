@@ -6,6 +6,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.h4, h4 {
+  font-size: 1rem;
+}
+
+.a {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

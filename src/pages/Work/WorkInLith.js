@@ -22,9 +22,9 @@ const WorkInLith = () => {
                   <li>Construction: With/without experience &amp; Driving jobs (driver license required)</li>
                 </ul> <br />
               </p>
-              <a href="/litha-details-form" onClick={(e) => e.preventDefault(e)} className="primary-btn">
-                Talk to Us
-              </a>
+              <button onClick={(e) => e.preventDefault(e)} className="primary-btn ">
+                TALK TO US ABOUT YOUR TRAVEL
+              </button>
             </div>
           </div>
         </div>

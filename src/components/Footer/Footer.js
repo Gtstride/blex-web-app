@@ -18,8 +18,8 @@ const Footer = () => {
             <div className="col-lg-4 col-md-6 col-sm-6 footer-social">
               <div className="single-footer-widget">
                 <h4>Visit Our Social Media</h4>
-                <a href="https://www.facebook.com/TravelwithFlyBox" target="_blank" rel="noreferrer"><Icon.Facebook className="" size={36} style={{ marginRight: "1.5em" }} /></a>
-                <a href="https://www.instagram.com/fly.boxconsult/" target="_blank" rel="noreferrer"><Icon.Instagram className="" size={36} /></a>
+                <a href="https://www.facebook.com/TravelwithFlyBox" target="_blank" rel="noreferrer"><Icon.Facebook className="" size={33} style={{ marginRight: "1.5em", }} /></a>
+                <a href="https://www.instagram.com/fly.boxconsult/" target="_blank" rel="noreferrer"><Icon.Instagram className="" size={30} style={{ marginRight: "1.5em", }} /></a>
               </div>
             </div>
             <div className="col-lg-4  col-md-6 col-sm-6">

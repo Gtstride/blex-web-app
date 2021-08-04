@@ -2,7 +2,7 @@ import React from 'react'
 import cat1 from "../../assets/img/blog/cat-widget1.jpg"
 import cat2 from "../../assets/img/blog/cat-widget2.jpg"
 import cat from "../../assets/img/blog/cat-widget3.jpg"
-
+import USEnquiryForm from "./forms/USEnquiryForm"
 
 const StudyInUs = () => {
   return (
@@ -15,9 +15,7 @@ const StudyInUs = () => {
               <h1 className="text-white">Study In US</h1>
               <p className="text-white">
                 Experienced job  For highly qualified  candidates, successful <br />individual will be verified and interviewed by the company.              </p>
-              <a href="/germany-details-form" onClick={(e) => e.preventDefault(e)} className="primary-btn">
-                Talk to Us
-              </a>
+              <USEnquiryForm height="3em" />
             </div>
           </div>
         </div>

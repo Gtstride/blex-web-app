@@ -4,7 +4,6 @@ import Slider from '../../components/Slider/Slider'
 import AvailableCourseView from '../../views/availableCourse/AvailableCourseView'
 import PopularCourse from '../../views/popular-course/PopularCourse'
 
-
 const Home = () => {
   return (
     <div>
