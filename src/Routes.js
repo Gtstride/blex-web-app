@@ -14,8 +14,8 @@ import StudyInAustralia from "./pages/education/StudyInAustralia"
 import StudyInCanada from "./pages/education/StudyInCanada"
 
 // Work Route
-import WorkInLithuania from "./pages/work/WorkInLith"
-import WorkInGermany from "./pages/work/WorkInGermany"
+import WorkInLithuania from "./pages/Work/WorkInLith"
+import WorkInGermany from "./pages/Work/WorkInGermany"
 
 const Routes = () => {
   return (
