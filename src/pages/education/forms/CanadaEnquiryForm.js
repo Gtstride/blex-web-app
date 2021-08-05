@@ -268,7 +268,7 @@ const CanadaEnquiryForm = (props) => {
                     className="form-control"
                   />
                   <label className="form-label" htmlFor="form3Example1">
-                    Visa Denial, Letter, If any?
+                    Visa Denial Letter, If any?
                   </label>
                 </div>
               </div>
@@ -282,6 +282,7 @@ const CanadaEnquiryForm = (props) => {
                   // value={inputValues.truckType} 
                   // onChange={handleChange}
                   >
+                    <option value=""></option>
                     <option value="" disabled>Please select your gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
