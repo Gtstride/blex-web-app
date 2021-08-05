@@ -10,12 +10,6 @@ body {
   font-size: 1rem;
 }
 
-.a {
-  color: #007bff;
-  text-decoration: none;
-  background-color: transparent;
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

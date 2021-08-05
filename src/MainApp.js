@@ -4,8 +4,7 @@ import history from './services/history'
 import Routes from './Routes'
 
 import Footer from "./components/Footer/Footer"
-
-// import './App.css';
+import './App.css';
 
 
 const MainApp = () => {

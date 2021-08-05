@@ -52,11 +52,7 @@ const ContactUs = () => {
                 </div>
                 <div className="contact-details">
                   <h5>
-                    <a
-                      href="https://gmail.com/send-mail"
-                      className="__cf_email__"
-
-                    >
+                    <a href="https://mail.google.com/mail/Info@flyboxconsult.com" target="_blank" rel="noreferrer">
                       Info@flyboxconsult.com
                     </a>
                   </h5>
@@ -77,7 +73,7 @@ const ContactUs = () => {
                       name="name"
                       placeholder="Enter your name"
                       onfocus="this.placeholder = ''"
-                      onblur="this.placeholder = 'Enter your name'"
+                      onBlur="this.placeholder = 'Enter your name'"
                       className="common-input mb-20 form-control"
                       required
                       type="text"
@@ -87,7 +83,7 @@ const ContactUs = () => {
                       placeholder="Enter email address"
                       pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
                       onfocus="this.placeholder = ''"
-                      onblur="this.placeholder = 'Enter email address'"
+                      onBlur="this.placeholder = 'Enter email address'"
                       className="common-input mb-20 form-control"
                       required
                       type="email"
@@ -96,7 +92,7 @@ const ContactUs = () => {
                       name="subject"
                       placeholder="Enter subject"
                       onfocus="this.placeholder = ''"
-                      onblur="this.placeholder = 'Enter subject'"
+                      onBlur="this.placeholder = 'Enter subject'"
                       className="common-input mb-20 form-control"
                       required
                       type="text"
@@ -106,9 +102,9 @@ const ContactUs = () => {
                     <textarea
                       className="common-textarea form-control"
                       name="message"
-                      placeholder="Enter Messege"
+                      placeholder="Enter Message"
                       onfocus="this.placeholder = ''"
-                      onblur="this.placeholder = 'Enter Messege'"
+                      onBlur="this.placeholder = 'Enter Message'"
                       required
                       defaultValue={""}
                     />

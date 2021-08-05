@@ -2,11 +2,9 @@ import React from "react"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 import Header from "./components/Header/Header"
-import Home from "./pages/home/Home"
+import Home from "./pages/Home/Home"
 import AboutUs from "./pages/aboutUs/AboutUs"
 import ContactUs from "./pages/contact-us/ContactUs"
-
-
 // import PopularCourse from "./views/popular-course/PopularCourse"
 
 // Study Routes
