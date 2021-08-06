@@ -73,21 +73,19 @@ const AboutUs = () => {
             </div>
             <div className="col-lg-6 info-area-right">
               <h1>Who we are</h1>
-              <p>
-                Inappropriate behavior is often laughed off as “boys will be boys,”
-                women face higher conduct standards especially in the workplace.
-                That’s why it’s crucial that, as women, our behavior on the job is
-                beyond reproach.
+              <p className="about-us-para">
+                Flybox was created to give various options to
+                individuals who wishes to further there education or
+                career abroad, with the most appropriate means and resources.
               </p>
               <br />
-              <p>
-                inappropriate behavior is often laughed off as “boys will be boys,”
-                women face higher conduct standards especially in the workplace.
-                That’s why it’s crucial that, as women, our behavior on the job is
-                beyond reproach. inappropriate behavior is often laughed off as
-                “boys will be boys,” women face higher conduct standards especially
-                in the workplace. That’s why it’s crucial that, as women, our
-                behavior on the job is beyond reproach.
+              <p className="about-us-para">
+                We currently serve as an international recruitment partner with affiliation with more than 50 schools in the UK, USA,
+                CANADA and Australia, although with no direct affiliation we have options of cyprus and norway for interested candidates.
+              </p> <br />
+              <p className="about-us-para">
+                FlyBox also ensures individual who wishes to work abroad could do so by serving as a recruitment partners
+                for companies in Lithuania and Germany. The job category is in 2 phase, skilled and unskilled.
               </p>
             </div>
           </div>
@@ -98,8 +96,8 @@ const AboutUs = () => {
           <div className="row d-flex justify-content-center">
             <div className="menu-content pb-70 col-lg-8">
               <div className="title text-center">
-                <h1 className="mb-10">What we are out to help you achieve</h1>
-                <p>Who are in extremely love with eco friendly system.</p>
+                <h2 className="mb-10">What we are out to help you achieve</h2>
+                <p>We are extremely driven by the thought of helping<br /> you achieve your dream of studying abroad</p>
               </div>
             </div>
           </div>

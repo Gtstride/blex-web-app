@@ -23,9 +23,11 @@ code {
 
 .lithanuia-blog-home-banner {
   background:url("./assets/img/lit.jpg") bottom;
+  /* background: rgba(7, 4, 6, 0.8); */
   background-size:cover;
   padding:130px 0;
 }
+
 
 .study-australia-home-banner {
   background:url("./assets/img/Austr.jfif") bottom;
@@ -49,4 +51,8 @@ code {
   background:url("./assets/img/America.jpg") bottom;
   background-size:cover;
   padding:130px 0;
+}
+
+.about-us-para {
+  text-align: justify;
 }
