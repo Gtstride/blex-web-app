@@ -18,9 +18,9 @@ const Header = () => {
               </div>
 
               <div className="col-lg-6 col-sm-6 col-4 header-top-right no-padding">
-                <a href="tel:+234 705 7586 835">
+                <a href="tel:+234 802 104 6058">
                   <span className="lnr lnr-phone-handset" />{" "}
-                  <span className="text">+234 705 7586 835</span>
+                  <span className="text">+234 802 104 6058</span>
                 </a>
               </div>
             </div>
