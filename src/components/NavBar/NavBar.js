@@ -8,7 +8,7 @@ const NavBar = () => {
       <div className="container main-menu">
         <div className="row align-items-center justify-content-between d-flex">
           <div id="logo">
-            <a href="/"><img src={logo} alt="" title height="40px" /></a>
+            <a href="/"><img src={logo} alt="" height="40px" /></a>
           </div>
           <nav id="nav-menu-container">
             <ul className="nav-menu">
@@ -16,17 +16,17 @@ const NavBar = () => {
               <li><a href="/about-us">About</a></li>
 
               <li className="menu-has-children text-white">
-                <a href onClick={(e) => { e.preventDefault() }} >Education</a>
+                <a href="#/" className="disabled">Education</a>
                 <ul>
                   <li><a href="/study_in_uk">Study in UK</a></li>
                   <li><a href="/study_in_us">Study in US</a></li>
-                  <li> <a href="/study_in_canada">Study in Canada</a></li>
+                  <li><a href="/study_in_canada">Study in Canada</a></li>
                   <li><a href="/study_in_australia">Study in Australia</a></li>
                 </ul>
               </li>
 
               <li className="menu-has-children text-white">
-                <a href onClick={(e) => { e.preventDefault() }}>Work</a>
+                <a href="#/" className="disabled">Work</a>
                 <ul>
                   <li><a href="/work_in_lithuania">Work in Lithuania</a></li>
                   <li><a href="/work_in_germany"> Work in Germany</a></li>

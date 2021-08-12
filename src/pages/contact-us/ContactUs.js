@@ -1,7 +1,64 @@
-import React from 'react'
-// import axios from "axios"
+import React, { useState } from 'react'
+import Swal from 'sweetalert2'
+import { httpPostContactUsFormWithNoToken } from '../../helpers/api'
 
 const ContactUs = () => {
+  const [submitting, setSubmitting] = useState(false);
+  const [inputValues, setInputValues] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const clearForm = () => {
+    setInputValues({
+      ...inputValues,
+      name: "",
+      subject: "",
+      message: "",
+      email: "",
+    });
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setInputValues({ ...inputValues, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      setSubmitting(true);
+      const data = {
+        ...inputValues,
+        name: inputValues.name,
+        email: inputValues.email,
+        subject: inputValues.subject,
+        message: inputValues.message,
+      };
+      const res = await httpPostContactUsFormWithNoToken("api/contacts", data);
+      console.log(data)
+      Swal.fire({
+        title: "Successful 😀",
+        text: "Your details have been submitted Successfully, We will get in touch shortly",
+        // type: "success",
+      });
+      console.log(res);
+      setSubmitting(false);
+      clearForm();
+    } catch (error) {
+      console.log(error)
+      Swal.fire({
+        title: "Sorry 😞, we couldn't process your details",
+        text: error.message,
+        // type: "error",
+      });
+      clearForm();
+    }
+  };
+
+
   return (
     <div>
       <section className="banner-area relative about-banner" id="home">
@@ -33,8 +90,8 @@ const ContactUs = () => {
                   <span className="lnr lnr-home" />
                 </div>
                 <div className="contact-details">
-                  <h5>Cardinal House, Nigeria</h5>
-                  <p>3, Jones Avenue Ogba Lagos</p>
+                  <h5>Cardinal House, Ogba</h5>
+                  <p>3, Ijaiye Road, Ogba Lagos</p>
                 </div>
               </div>
               <div className="single-contact-address d-flex flex-row">
@@ -63,39 +120,38 @@ const ContactUs = () => {
             <div className="col-lg-8">
               <form
                 className="form-area contact-form text-right"
-                id="myForm"
-                action="https://preview.colorlib.com/theme/education/mail.php"
-                method="post"
-              >
+                // id="myForm"
+                onSubmit={handleSubmit}>
                 <div className="row">
                   <div className="col-lg-6 form-group">
                     <input
+                      type="text"
                       name="name"
                       placeholder="Enter your name"
-                      onfocus="this.placeholder = ''"
-                      onBlur="this.placeholder = 'Enter your name'"
                       className="common-input mb-20 form-control"
-                      required
-                      type="text"
+                      // required
+                      value={inputValues.name}
+                      onChange={handleChange}
+
                     />
                     <input
+                      type="email"
                       name="email"
                       placeholder="Enter email address"
                       pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
-                      onfocus="this.placeholder = ''"
-                      onBlur="this.placeholder = 'Enter email address'"
                       className="common-input mb-20 form-control"
-                      required
-                      type="email"
+                      // required
+                      value={inputValues.email}
+                      onChange={handleChange}
                     />
                     <input
+                      type="text"
                       name="subject"
                       placeholder="Enter subject"
-                      onfocus="this.placeholder = ''"
-                      onBlur="this.placeholder = 'Enter subject'"
                       className="common-input mb-20 form-control"
-                      required
-                      type="text"
+                      // required
+                      onChange={handleChange}
+                      value={inputValues.subject}
                     />
                   </div>
                   <div className="col-lg-6 form-group">
@@ -103,15 +159,15 @@ const ContactUs = () => {
                       className="common-textarea form-control"
                       name="message"
                       placeholder="Enter Message"
-                      onfocus="this.placeholder = ''"
-                      onBlur="this.placeholder = 'Enter Message'"
-                      required
-                      defaultValue={""}
+                      // required
+                      value={inputValues.message}
+                      onChange={handleChange}
+                    // defaultValue={""}
                     />
                   </div>
                   <div className="col-lg-12">
                     <div className="alert-msg" style={{ textAlign: "left" }} />
-                    <button
+                    <button value={submitting}
                       className="genric-btn primary"
                       style={{ float: "right" }}
                     >

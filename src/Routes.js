@@ -5,7 +5,7 @@ import Header from "./components/Header/Header"
 import Home from "./pages/Home/Home"
 import AboutUs from "./pages/aboutUs/AboutUs"
 import ContactUs from "./pages/contact-us/ContactUs"
-// import PopularCourse from "./views/popular-course/PopularCourse"
+// import sample from "./pages/admin/sample"
 
 // Study Routes
 import StudyInUk from "./pages/education/StudyInUk"
@@ -16,6 +16,9 @@ import StudyInCanada from "./pages/education/StudyInCanada"
 // Work Route
 import WorkInLithuania from "./pages/Work/WorkInLith"
 import WorkInGermany from "./pages/Work/WorkInGermany"
+
+import AdminPage from "./pages/admin/AdminPage"
+import Unauthorized from "./not-found/NotFound"
 
 const Routes = () => {
   return (
@@ -32,7 +35,11 @@ const Routes = () => {
           <Route exact path="/work_in_lithuania" component={WorkInLithuania} />
           <Route exact path="/work_in_germany" component={WorkInGermany} />
           <Route exact path="/contact-us" component={ContactUs} />
-          {/* <Route exact path="/work" component={PopularCourse} /> */}
+
+          {/* This is the login routes for the admin */}
+          <Route exact path="/admin" component={AdminPage} />
+          {/* <Route exact path="/sample" component={sample} /> */}
+          <Route exact path="*" component={Unauthorized} />
         </Switch>
       </Router>
 
