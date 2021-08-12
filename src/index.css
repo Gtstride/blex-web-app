@@ -15,6 +15,14 @@ code {
     monospace;
 }
 
+.admin-login-form-banner {
+  flex: 0 0 75%;
+  max-width: 75%;
+  background-color: cadetblue;
+  border-radius: 4px;
+  padding: 50px;
+}
+
 .germany-blog-home-banner {
   background:url("./assets/img/germany.jpg") bottom;
   background-size:cover;
@@ -25,7 +33,7 @@ code {
   background:url("./assets/img/lit.jpg") bottom;
   /* background: rgba(7, 4, 6, 0.8); */
   background-size:cover;
-  padding:130px 0;
+  padding:50px 0;
 }
 
 
@@ -55,4 +63,14 @@ code {
 
 .about-us-para {
   text-align: justify;
+}
+
+.admin-login-banner {
+  background:url("./assets/img/admin1.png") bottom;
+  background-size:cover;
+  /* padding:20px 0; */
+}
+
+.admin-overlay-bg {
+  background-color: rgba(4,9,30,.8);
 }

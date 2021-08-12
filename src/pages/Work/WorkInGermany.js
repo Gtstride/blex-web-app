@@ -2,6 +2,7 @@ import React from 'react'
 import cat1 from "../../assets/img/blog/cat-widget1.jpg"
 import cat2 from "../../assets/img/blog/cat-widget2.jpg"
 import cat from "../../assets/img/blog/cat-widget3.jpg"
+import EnquiryAboutGermanyForm from './forms/EnquiryAboutGermany'
 
 
 const WorkInGermany = () => {
@@ -16,8 +17,9 @@ const WorkInGermany = () => {
               <p className="text-white">
                 Experienced job  For highly qualified  candidates, successful <br />individual will be verified and interviewed by the company.              </p>
               <button onClick={(e) => e.preventDefault(e)} className="primary-btn">
-              TALK TO US ABOUT YOUR TRAVEL TO GERMANY
-              </button>
+                Fill the Form below to know more
+              </button> <br />
+              <p><EnquiryAboutGermanyForm /></p>
             </div>
           </div>
         </div>

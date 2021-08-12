@@ -37,8 +37,8 @@ const Footer = () => {
                         className="form-control"
                         name="EMAIL"
                         placeholder="Enter Email Address"
-                        onfocus="this.placeholder = ''"
-                        onblur="this.placeholder = 'Enter Email Address '"
+                        // onFocus="this.placeholder = ''"
+                        onBlur="this.placeholder = 'Enter Email Address '"
                         required
                       />
                       <div className="input-group-btn">

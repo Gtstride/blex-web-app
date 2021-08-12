@@ -2,107 +2,109 @@ import React, { useState, useEffect } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
-// import { httpPostWithToken, httpGetWithNoToken } from "../../components/helpers/api";
-// import { Spinner } from "react-bootstrap";
-// import Swal from "sweetalert2";
+// import CountrySelect from 'react-bootstrap-country-select';
+import { httpPostWithNoToken } from '../../../helpers/api'
+import Swal from 'sweetalert2'
 
-const UKEnquiryForm = (props) => {
+
+
+const UkEnquiryForm = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   });
 
   const [show, setShow] = useState(false);
   const [submitting, setSubmitting] = useState(false);
-  // const [truck, setTruck] = useState([]);
-  // const [loading, setLoading] = useState(false);
-  // const [inputValues, setInputValues] = useState({
-  //   truckName: "",
-  //   cargoTonnes: "",
-  //   truckType: "",
-  //   pricePerKM: ""
-  // })
+  let [phone, setPhone] = useState("");
+  const [inputValues, setInputValues] = useState({
+    email: "",
+    firstName: "",
+    middleName: "",
+    familyName: "",
+    birthDate: "",
+    countryOfCitizenship: "",
+    immigrationHistory: "",
+    houseAddress: "",
+    programLevel: "",
+    gender: "",
+    visaDenial: "",
+    phone: "",
+  })
+
+  const clearForm = () => {
+    setInputValues({
+      ...inputValues,
+      email: "",
+      firstName: "",
+      middleName: "",
+      familyName: "",
+      birthDate: "",
+      countryOfCitizenship: "",
+      immigrationHistory: "",
+      houseAddress: "",
+      programLevel: "",
+      gender: "",
+      visaDenial: "",
+      phone: "",
+    })
+  }
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setInputValues({ ...inputValues, [name]: value })
-  // }
-
-  // get truck function
-  // const getTruckTypes = async () => {
-  //   try {
-  //     setLoading(true);
-  //     let res = await httpGetWithNoToken("get_truck_types");
-  //     console.log(res);
-  //     props.setTruck([...res.data]);
-  //     setLoading(false);
-  //   } catch (error) {
-  //     Swal.fire({
-  //       title: "Sorry 😞",
-  //       text: error.message,
-  //       type: "error",
-  //     });
-  //   }
-  // };
-
-  // const register = async (e) => {
-  //   try {
-  //     e.preventDefault();
-  //     setSubmitting(true);
-  //     setLoading(true);
-  //     const payload = {
-  //       name: inputValues.truckName,
-  //       cargo_tonnes: inputValues.cargoTonnes,
-  //       type: inputValues.truckType,
-  //       price_per_km: inputValues.pricePerKM,
-  //     }
-
-  //     const response = await httpPostWithToken("create_truck_type", payload);
-  //     console.log(response);
-  //     await getTruckTypes();
-  //     console.log(payload);
-  //     setTruck(response);
-  //     setLoading(true);
-  //     setSubmitting(false);
-  //     clearForm();
-  //     setShow(false);
-
-  //   } catch (error) {
-  //     Swal.fire({
-  //       title: "Sorry 😞",
-  //       text: error.message,
-  //       type: "error",
-  //     });
-  //   }
-  // }
-
-  // const clearForm = () => {
-  //   setInputValues({
-  //     ...inputValues,
-  //     truckName: "",
-  //     cargoTonnes: "",
-  //     truckType: "",
-  //     pricePerKM: "",
-  //   })
-  // }
-
-  // useEffect(() => {
-  //   getTruckTypes();
-  //   deleteTruck();
-  // }, [setTruck]);
-
-  // useCallback(
-  //   () => {
-  //     getTruckTypes();
-  //     // eslint-disable-next-line react-hooks/exhaustive-deps
-  //   }, [truck, getTruckTypes],
-  // )
-  const register = () => {
-    console.log("Got this")
-    setSubmitting(true)
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setInputValues({ ...inputValues, [name]: value })
   }
+
+  const handlePhoneChange = (value) => {
+    setPhone(value);
+  };
+
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      setSubmitting(true);
+      const data = {
+        ...inputValues,
+        email: inputValues.email,
+        givenName: inputValues.firstName,
+        middleName: inputValues.middleName,
+        familyName: inputValues.familyName,
+        birthDate: inputValues.birthDate,
+        countryOfCitizenship: inputValues.countryOfCitizenship,
+        immigrationHistory: inputValues.immigrationHistory,
+        houseAddress: inputValues.houseAddress,
+        programLevel: inputValues.programLevel,
+        gender: inputValues.gender,
+        visaDenialLetter: inputValues.visaDenial,
+        phoneNumber:
+          inputValues.phone.charAt(4) === "0"
+            ? (phone = phone.replace(phone.charAt(4), ""))
+            : phone,
+        referred_by: inputValues.referral,
+      }
+
+      const response = await httpPostWithNoToken("australia_form", data);
+      console.log(data);
+      Swal.fire({
+        title: "Successful 😀",
+        text: "Your details have been submitted Successfully, We would get in touch shortly",
+      });
+      console.log(data);
+      setSubmitting(false);
+      clearForm();
+      setShow(false);
+      console.log(response);
+    } catch (error) {
+      Swal.fire({
+        title: "Sorry 😞",
+        text: error.message,
+      });
+      clearForm();
+    }
+  }
+
 
   return (
     <>
@@ -117,7 +119,7 @@ const UKEnquiryForm = (props) => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form onSubmit={register}>
+          <Form onSubmit={handleSubmit}>
             {/* <!-- 2 column grid layout with text inputs for the first and last names --> */}
             <div className="row mb-4">
               <div className="col">
@@ -125,8 +127,8 @@ const UKEnquiryForm = (props) => {
                   <input
                     type="email"
                     name="email"
-                    // value={inputValues.truckName}
-                    // onChange={handleChange}
+                    value={inputValues.email}
+                    onChange={handleChange}
                     className="form-control"
                   />
                   <label className="form-label" htmlFor="form3Example1">
@@ -135,35 +137,33 @@ const UKEnquiryForm = (props) => {
                 </div>
               </div>
 
-              {/* Type of Truck */}
+              {/* Phone Number*/}
               <div className="col">
                 <div className="form-outline">
-                  {/* <input
-                    type="number"
-                    
-                    className="form-control"
-                  /> */}
                   <PhoneInput
-                    country={'us'}
-                    // name="telephone"
-                    // value={inputValues.truckName}
-                    // onChange={handleChange}
-                    // value={this.state.phone}
-                    // onChange={phone => this.setState({ phone })}
+                    dropdownClass=""
+                    inputClass=""
+                    value={inputValues.phone}
+
+                    country="ng"
+                    name="phoneNumber"
+                    onChange={handlePhoneChange}
                   />
                   <label className="form-label">
                     Telephone</label>
                 </div>
               </div>
             </div>
+
+            {/* First Name */}
             <div className="row mb-4">
               <div className="col">
                 <div className="form-outline">
                   <input
                     type="text"
-                    name="truckName"
-                    // value={inputValues.truckName}
-                    // onChange={handleChange}
+                    name="firstName"
+                    value={inputValues.firstName}
+                    onChange={handleChange}
                     className="form-control"
                   />
                   <label className="form-label" htmlFor="form3Example1">
@@ -171,13 +171,15 @@ const UKEnquiryForm = (props) => {
                   </label>
                 </div>
               </div>
+
+              {/* Middle Name */}
               <div className="col">
                 <div className="form-outline">
                   <input
                     type="text"
-                    name="truckName"
-                    // value={inputValues.truckName}
-                    // onChange={handleChange}
+                    name="middleName"
+                    value={inputValues.middleName}
+                    onChange={handleChange}
                     className="form-control"
                   />
                   <label className="form-label" htmlFor="form3Example1">
@@ -186,7 +188,7 @@ const UKEnquiryForm = (props) => {
                 </div>
               </div>
 
-              {/* Type of Truck */}
+              {/* Family Name */}
               <div className="col">
                 <div className="form-outline">
                   <input
@@ -194,8 +196,8 @@ const UKEnquiryForm = (props) => {
                     min="3"
                     max="100"
                     name="familyName"
-                    // value={inputValues.cargoTonnes}
-                    // onChange={handleChange}
+                    value={inputValues.familyName}
+                    onChange={handleChange}
                     className="form-control"
                   />
                   <label className="form-label">
@@ -204,15 +206,17 @@ const UKEnquiryForm = (props) => {
               </div>
             </div>
 
+            {/* Birth Name */}
             <div className="row mb-4">
               <div className="col">
                 <div className="form-outline">
                   <input
                     type="text"
                     name="birthDate"
-                    // value={inputValues.truckName}
-                    // onChange={handleChange}
+                    value={inputValues.birthDate}
+                    onChange={handleChange}
                     className="form-control"
+                    placeholder="Jan 14"
                   />
                   <label className="form-label" htmlFor="form3Example1">
                     Birth Date
@@ -226,8 +230,8 @@ const UKEnquiryForm = (props) => {
                   <input
                     type="text"
                     name="countryOfCitizenship"
-                    // value={inputValues.truckName}
-                    // onChange={handleChange}
+                    value={inputValues.countryOfCitizenship}
+                    onChange={handleChange}
                     className="form-control"
                   />
                   <label className="form-label">
@@ -236,14 +240,15 @@ const UKEnquiryForm = (props) => {
               </div>
             </div>
 
+            {/* House Address */}
             <div className="form-outline mb-4">
               <input
                 type="text"
                 min="3"
                 max="100"
-                name="cargoTonnes"
-                // value={inputValues.cargoTonnes}
-                // onChange={handleChange}
+                name="houseAddress"
+                value={inputValues.houseAddress}
+                onChange={handleChange}
                 className="form-control"
               />
               <label className="form-label" htmlFor="form3Example3">
@@ -251,49 +256,54 @@ const UKEnquiryForm = (props) => {
               </label>
             </div>
 
+            {/* Program Level */}
             <div className="row mb-4">
               <div className="col">
                 <div className="form-outline">
                   <select
                     className="form-control"
-                    name="school"
-                  // value={inputValues.truckType} 
-                  // onChange={handleChange}
+                    name="programLevel"
+                    value={inputValues.programLevel}
+                    onChange={handleChange}
                   >
                     <option value=""></option>
                     <option value="" disabled>Please select your program</option>
-                    <option value="bsc">BSc</option>
+                    <option value="Bsc">BSc</option>
                     <option value="masters">Masters</option>
                   </select>
                   <label className="form-label">
                     Program Level</label>
                 </div>
               </div>
+
+              {/* Immigration History */}
               <div className="col">
                 <div className="form-outline">
                   <input
                     type="text"
                     name="immigrationHistory"
-                    // value={inputValues.truckName}
-                    // onChange={handleChange}
+                    value={inputValues.immigrationHistory}
+                    onChange={handleChange}
                     className="form-control"
+                    placeholder="Immigration History"
                   />
                   <label className="form-label" htmlFor="form3Example1">
-                    Immigration History: (Countries visited )
+                    Countries visited separated with a comma
                   </label>
                 </div>
               </div>
             </div>
 
-
+            {/* Visa Denial */}
             <div className="row mb-4">
               <div className="col">
                 <div className="form-outline">
                   <input
+                    // type="file"
                     type="text"
-                    name="visa-denial"
-                    // value={inputValues.truckName}
-                    // onChange={handleChange}
+                    name="visaDenial"
+                    value={inputValues.visaDenial}
+                    onChange={handleChange}
                     className="form-control"
                   />
                   <label className="form-label" htmlFor="form3Example1">
@@ -302,34 +312,30 @@ const UKEnquiryForm = (props) => {
                 </div>
               </div>
 
-              {/* Type of Truck */}
+              {/* Gender */}
               <div className="col">
                 <div className="form-outline">
                   <select
                     className="form-control"
                     name="gender"
-                  // value={inputValues.truckType} 
-                  // onChange={handleChange}
+                    value={inputValues.gender}
+                    onChange={handleChange}
                   >
                     <option value=""></option>
                     <option value="" disabled>Please select your gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
-                    <option value="prefer_not_say">Prefer not to say</option>
+                    {/* <option value="prefer_not_say">Prefer not to say</option> */}
                   </select>
                   <label className="form-label">
                     Gender</label>
                 </div>
               </div>
             </div>
-            <Modal.Footer>
-              <Button value="cancel" variant="outline-danger" onClick={handleClose}>
-                Cancel
-              </Button>
-              <Button value={submitting} variant="outline-warning">
-                Send Message
-              </Button>
-            </Modal.Footer>
+            <div className="col-md-12">
+              <Button onClick={handleClose} className="genric-btn warning" style={{ float: "left" }}>Cancel</Button>
+              <button value={submitting} className="genric-btn success" style={{ float: "right" }}>Send Message</button>
+            </div>
           </Form>
         </Modal.Body>
       </Modal>
@@ -337,4 +343,4 @@ const UKEnquiryForm = (props) => {
   );
 };
 
-export default UKEnquiryForm;
+export default UkEnquiryForm;

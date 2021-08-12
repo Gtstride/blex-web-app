@@ -8,7 +8,7 @@ import Swal from 'sweetalert2'
 
 
 
-const AustraliaEnquiryForm = () => {
+const EnquiryAboutGermanyForm = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   });
@@ -108,7 +108,7 @@ const AustraliaEnquiryForm = () => {
 
   return (
     <>
-      <Button variant="outline-light" onClick={handleShow}>
+      <Button variant="light" onClick={handleShow}>
         CLICK TO TALK TO US
       </Button>
 
@@ -343,4 +343,4 @@ const AustraliaEnquiryForm = () => {
   );
 };
 
-export default AustraliaEnquiryForm;
+export default EnquiryAboutGermanyForm;

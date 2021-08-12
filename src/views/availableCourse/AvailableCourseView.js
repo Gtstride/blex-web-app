@@ -49,24 +49,24 @@ export default function AvailableCourseView() {
                   className="form-control"
                   name="name"
                   placeholder="Your Name"
-                  onfocus="this.placeholder = ''"
-                  onblur="this.placeholder = 'Your Name'"
+                  onFocus="this.placeholder = ''"
+                  onBlur="this.placeholder = 'Your Name'"
                 />
                 <input
                   type="phone"
                   className="form-control"
                   name="phone"
                   placeholder="Your Phone Number"
-                  onfocus="this.placeholder = ''"
-                  onblur="this.placeholder = 'Your Phone Number'"
+                  onFocus="this.placeholder = ''"
+                  onBlur="this.placeholder = 'Your Phone Number'"
                 />
                 <input
                   type="email"
                   className="form-control"
                   name="email"
                   placeholder="Your Email Address"
-                  onfocus="this.placeholder = ''"
-                  onblur="this.placeholder = 'Your Email Address'"
+                  onFocus="this.placeholder = ''"
+                  onBlur="this.placeholder = 'Your Email Address'"
                 />
                 <div className="form-select" id="service-select">
                   <select>
