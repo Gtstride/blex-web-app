@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Modal, Button, Form } from "react-bootstrap";
-import PhoneInput from 'react-phone-input-2'
+import ReactPhoneInput from "react-phone-input-2";
 import 'react-phone-input-2/lib/style.css'
+import { Modal, Button, Form } from "react-bootstrap";
+import Swal from "sweetalert2";
 // import CountrySelect from 'react-bootstrap-country-select';
+
 import { httpPostWithNoToken } from '../../../helpers/api'
-import Swal from 'sweetalert2'
 
 
 
-const EnquiryAboutLithanuaForm = () => {
+const LithanuaEnquiryForm = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   });
@@ -18,7 +19,7 @@ const EnquiryAboutLithanuaForm = () => {
   let [phone, setPhone] = useState("");
   const [inputValues, setInputValues] = useState({
     email: "",
-    firstName: "",
+    givenName: "",
     middleName: "",
     familyName: "",
     birthDate: "",
@@ -27,15 +28,15 @@ const EnquiryAboutLithanuaForm = () => {
     houseAddress: "",
     programLevel: "",
     gender: "",
-    visaDenial: "",
-    phone: "",
+    visaDenialLetter: "",
+    //phone: "",
   })
 
   const clearForm = () => {
     setInputValues({
       ...inputValues,
       email: "",
-      firstName: "",
+      givenName: "",
       middleName: "",
       familyName: "",
       birthDate: "",
@@ -44,8 +45,8 @@ const EnquiryAboutLithanuaForm = () => {
       houseAddress: "",
       programLevel: "",
       gender: "",
-      visaDenial: "",
-      phone: "",
+      visaDenialLetter: "",
+      //   phone: "",
     })
   }
 
@@ -54,11 +55,7 @@ const EnquiryAboutLithanuaForm = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setInputValues({ ...inputValues, [name]: value })
-  }
-
-  const handlePhoneChange = (value) => {
-    setPhone(value);
+    setInputValues({ ...inputValues, [name]: value });
   };
 
   const handleSubmit = async (e) => {
@@ -68,7 +65,7 @@ const EnquiryAboutLithanuaForm = () => {
       const data = {
         ...inputValues,
         email: inputValues.email,
-        givenName: inputValues.firstName,
+        givenName: inputValues.givenName,
         middleName: inputValues.middleName,
         familyName: inputValues.familyName,
         birthDate: inputValues.birthDate,
@@ -77,15 +74,15 @@ const EnquiryAboutLithanuaForm = () => {
         houseAddress: inputValues.houseAddress,
         programLevel: inputValues.programLevel,
         gender: inputValues.gender,
-        visaDenialLetter: inputValues.visaDenial,
-        phoneNumber:
-          inputValues.phone.charAt(4) === "0"
-            ? (phone = phone.replace(phone.charAt(4), ""))
-            : phone,
+        visaDenialLetter: inputValues.visaDenialLetter,
+        // phone: inputValues.phone.charAt(4) === "0"
+        //   ? (phone = phone.replace(phone.charAt(4), ""))
+        //   : phone,
+        phoneNumber: phone,
         referred_by: inputValues.referral,
       }
 
-      const response = await httpPostWithNoToken("australia_form", data);
+      const response = await httpPostWithNoToken("us_form", data);
       console.log(data);
       Swal.fire({
         title: "Successful 😀",
@@ -93,6 +90,21 @@ const EnquiryAboutLithanuaForm = () => {
       });
       console.log(data);
       setSubmitting(false);
+      setInputValues({
+        ...inputValues,
+        email: "",
+        givenName: "",
+        middleName: "",
+        familyName: "",
+        birthDate: "",
+        countryOfCitizenship: "",
+        immigrationHistory: "",
+        houseAddress: "",
+        programLevel: "",
+        gender: "",
+        visaDenialLetter: "",
+        phone: "",
+      })
       clearForm();
       setShow(false);
       console.log(response);
@@ -101,9 +113,16 @@ const EnquiryAboutLithanuaForm = () => {
         title: "Sorry 😞",
         text: error.message,
       });
-      clearForm();
+      // clearForm();
+      // closeModal()
     }
   }
+
+  const handleOnChange = (value) => {
+    setPhone(value);
+    // setSubmitting(false);
+    // setPhone("");
+  };
 
 
   return (
@@ -140,15 +159,14 @@ const EnquiryAboutLithanuaForm = () => {
               {/* Phone Number*/}
               <div className="col">
                 <div className="form-outline">
-                  <PhoneInput
+                  <ReactPhoneInput
                     dropdownClass=""
                     inputClass=""
-                    value={inputValues.phone}
-
+                    value={phone}
                     country="ng"
-                    name="phoneNumber"
-                    onChange={handlePhoneChange}
+                    onChange={handleOnChange}
                   />
+
                   <label className="form-label">
                     Telephone</label>
                 </div>
@@ -161,8 +179,8 @@ const EnquiryAboutLithanuaForm = () => {
                 <div className="form-outline">
                   <input
                     type="text"
-                    name="firstName"
-                    value={inputValues.firstName}
+                    name="givenName"
+                    value={inputValues.givenName}
                     onChange={handleChange}
                     className="form-control"
                   />
@@ -268,7 +286,7 @@ const EnquiryAboutLithanuaForm = () => {
                   >
                     <option value=""></option>
                     <option value="" disabled>Please select your program</option>
-                    <option value="Bsc">BSc</option>
+                    <option value="bsc">BSc</option>
                     <option value="masters">Masters</option>
                   </select>
                   <label className="form-label">
@@ -301,8 +319,8 @@ const EnquiryAboutLithanuaForm = () => {
                   <input
                     // type="file"
                     type="text"
-                    name="visaDenial"
-                    value={inputValues.visaDenial}
+                    name="visaDenialLetter"
+                    value={inputValues.visaDenialLetter}
                     onChange={handleChange}
                     className="form-control"
                   />
@@ -343,4 +361,8 @@ const EnquiryAboutLithanuaForm = () => {
   );
 };
 
-export default EnquiryAboutLithanuaForm;
+export default LithanuaEnquiryForm;
+
+
+
+

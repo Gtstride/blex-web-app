@@ -1,8 +1,19 @@
-import React from "react";
+import React from 'react'
+// import { useHistory } from "react-router-dom";
 import { LoginFormStyle } from "../../styles/AdminLoginFormStyle"
+// import { withRouter } from "react-router";
+
 // import logo from "../../assets/img/logo-b.png"
 
 const AdminLoginPage = () => {
+  // let history = useHistory();
+
+  // const [loading, setLoading] = useState(false);
+  // const [submitting, setSubmitting] = useState(false);
+  // const [inputValues, setInputValues] = useState({
+  //   email: "",
+  //   password: "",
+  // })
 
   return (
     <>

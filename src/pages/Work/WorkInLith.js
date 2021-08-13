@@ -2,7 +2,7 @@ import React from 'react'
 import cat1 from "../../assets/img/blog/cat-widget1.jpg"
 import cat2 from "../../assets/img/blog/cat-widget2.jpg"
 import cat from "../../assets/img/blog/cat-widget3.jpg"
-import EnquiryAboutLithanuaForm from "./forms/EnquiryAboutLithanua"
+import LithanuaEnquiryForm from "./forms/EnquiryAboutLithanua"
 
 
 const WorkInLith = () => {
@@ -34,7 +34,7 @@ const WorkInLith = () => {
             <button onClick={(e) => e.preventDefault(e)} className="primary-btn">
               Fill the Form below to know more
             </button> <br />
-            <p><EnquiryAboutLithanuaForm /></p>
+            <p><LithanuaEnquiryForm /></p>
           </div>
           {/* </div> */}
         </div>
