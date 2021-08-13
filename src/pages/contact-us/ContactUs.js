@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Swal from 'sweetalert2'
-import { httpPostContactUsFormWithNoToken } from '../../helpers/api'
+import { httpPostWithNoToken } from '../../helpers/api'
 
 const ContactUs = () => {
   const [submitting, setSubmitting] = useState(false);
@@ -37,7 +37,7 @@ const ContactUs = () => {
         subject: inputValues.subject,
         message: inputValues.message,
       };
-      const res = await httpPostContactUsFormWithNoToken("api/contacts", data);
+      const res = await httpPostWithNoToken("contacts", data);
       console.log(data)
       Swal.fire({
         title: "Successful 😀",
