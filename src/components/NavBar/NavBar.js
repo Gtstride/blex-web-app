@@ -29,7 +29,7 @@ const NavBar = () => {
                 <a href="#/" className="disabled">Work</a>
                 <ul>
                   <li><a href="/work_in_lithuania">Work in Lithuania</a></li>
-                  <li><a href="/work_in_germany"> Work in Germany</a></li>
+                  {/* <li><a href="/work_in_germany"> Work in Germany</a></li> */}
                 </ul>
               </li>
               <li><a href="/contact-us">Contact</a></li>

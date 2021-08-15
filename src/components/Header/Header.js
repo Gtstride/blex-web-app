@@ -22,6 +22,7 @@ const Header = () => {
                   <span className="lnr lnr-phone-handset" />{" "}
                   <span className="text">+234 802 104 6058</span>
                 </a>
+                <a href="/admin" alt="" style={{ textDecoration: "none" }}>LOGIN</a>
               </div>
             </div>
           </div>
