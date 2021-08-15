@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
+
+import { Modal, Button, Form } from "react-bootstrap";
 import ReactPhoneInput from "react-phone-input-2";
 import 'react-phone-input-2/lib/style.css'
-import { httpPostWithNoToken } from '../../../helpers/api'
-import { Modal, Button, Form } from "react-bootstrap";
+
 import Swal from "sweetalert2";
+
+import { httpPostWithNoToken } from '../../../helpers/api'
 // import CountrySelect from 'react-bootstrap-country-select';
-
-
 
 
 const AustraliaEnquiryForm = () => {
@@ -17,6 +18,7 @@ const AustraliaEnquiryForm = () => {
   const [show, setShow] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   let [phone, setPhone] = useState("");
+  const [fileState, setFileState] = useState([]);
   const [inputValues, setInputValues] = useState({
     email: "",
     givenName: "",
@@ -31,6 +33,15 @@ const AustraliaEnquiryForm = () => {
     visaDenialLetter: "",
     //phone: "",
   })
+
+  const handleFileUpload = e => {
+    const reader = new FileReader();
+    const file = e.target.files[0];
+    reader.onloadend = () => {
+      setFileState(reader.result);
+    };
+    reader.readAsDataURL(file);
+  };
 
   const clearForm = () => {
     setInputValues({
@@ -74,10 +85,8 @@ const AustraliaEnquiryForm = () => {
         houseAddress: inputValues.houseAddress,
         programLevel: inputValues.programLevel,
         gender: inputValues.gender,
-        visaDenialLetter: inputValues.visaDenialLetter,
-        // phone: inputValues.phone.charAt(4) === "0"
-        //   ? (phone = phone.replace(phone.charAt(4), ""))
-        //   : phone,
+        // visaDenialLetter: inputValues.visaDenialLetter,
+        visaDenialLetter: fileState,
         phoneNumber: phone,
         referred_by: inputValues.referral,
       }
@@ -317,11 +326,12 @@ const AustraliaEnquiryForm = () => {
               <div className="col">
                 <div className="form-outline">
                   <input
-                    // type="file"
-                    type="text"
+                    type="file"
+                    accept="application/pdf"
                     name="visaDenialLetter"
                     value={inputValues.visaDenialLetter}
-                    onChange={handleChange}
+                    // onChange={handleChange}
+                    onChange={handleFileUpload}
                     className="form-control"
                   />
                   <label className="form-label" htmlFor="form3Example1">

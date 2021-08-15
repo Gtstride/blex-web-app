@@ -1,19 +1,76 @@
-import React from 'react'
-// import { useHistory } from "react-router-dom";
-import { LoginFormStyle } from "../../styles/AdminLoginFormStyle"
-// import { withRouter } from "react-router";
+import React, { useState } from 'react'
+import { useHistory } from "react-router-dom";
+import { LoginFormStyle } from "../../../styles/AdminLoginFormStyle"
+import { withRouter } from "react-router";
+import Swal from 'sweetalert2'
 
+import { httpPostWithNoToken } from '../../../helpers/api'
+// import AdminLogOut from "./AdminLogOut"
 // import logo from "../../assets/img/logo-b.png"
 
 const AdminLoginPage = () => {
-  // let history = useHistory();
+  const history = useHistory();
 
-  // const [loading, setLoading] = useState(false);
-  // const [submitting, setSubmitting] = useState(false);
-  // const [inputValues, setInputValues] = useState({
-  //   email: "",
-  //   password: "",
-  // })
+  const [submitting, setSubmitting] = useState(false);
+  const [inputValues, setInputValues] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setInputValues({ ...inputValues, [name]: value });
+  };
+
+  const clearForm = () => {
+    setInputValues({
+      ...inputValues,
+      password: "",
+      email: "",
+    });
+  };
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      setSubmitting(true);
+      // setLoading(true);
+
+      const data = {
+        email: inputValues.email,
+        password: inputValues.password,
+      };
+      const response = await httpPostWithNoToken("login", data);
+      console.log(response);
+      console.log(data);
+      Swal.fire({
+        title: "Successful 😀",
+        text: `${"You have successfully logged in as"} ${data.email} ${"& as a super admin"}`,
+        // type: "success",
+      });
+      // localStorage.setItem("token", data.response)
+      // localStorage.setItem("user", JSON.stringify(response.user));
+
+      history.push('/admin-dash_board');
+
+      // console.log(response);
+      // console.log(data.response)
+      setSubmitting(false);
+      clearForm();
+      // setLoading(false);
+    } catch (error) {
+
+      console.log(error)
+      Swal.fire({
+        title: "Sorry 😞",
+        text: error.message,
+      });
+      // setLoading(false);
+      setSubmitting(false);
+      // clearForm();
+    }
+  };
 
   return (
     <>
@@ -50,23 +107,28 @@ const AdminLoginPage = () => {
                   <h2>Admin Login</h2>
                 </div>
                 <div className="row">
-                  <form control className="form-group">
+                  <form onSubmit={handleSubmit} className="form-group">
                     <div className="row">
                       <input
                         type="email"
                         name="email"
-                        id="username"
+                        // id="username"
                         className="form__input"
                         placeholder="Enter Email"
+                        value={inputValues.email}
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="row">
                       <input
                         type="password"
+                        // type={passwordShown ? "text" : "password"}
                         name="password"
-                        id="password"
+                        // id="password"
                         className="form__input"
                         placeholder="Enter Password"
+                        value={inputValues.password}
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="row">
@@ -79,7 +141,7 @@ const AdminLoginPage = () => {
                       <label htmlFor="remember_me">Remember Me!</label>
                     </div>
                     <div className="row">
-                      <input type="submit" defaultValue="Submit" className="btn" />
+                      <button type={submitting} defaultValue="Submit" className="btn">SIGN IN</button>
                     </div>
                   </form>
                 </div>
@@ -92,4 +154,4 @@ const AdminLoginPage = () => {
   );
 };
 
-export default AdminLoginPage;
+export default withRouter(AdminLoginPage);
