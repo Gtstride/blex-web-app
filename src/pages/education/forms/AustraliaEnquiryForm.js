@@ -353,8 +353,6 @@ const AustraliaEnquiryForm = () => {
                 <label className="input-group-text" htmlFor="inputGroupFile02">Upload</label>
               </div>
 
-
-
               {/* Gender */}
               <div className="col">
                 <div className="form-outline">
