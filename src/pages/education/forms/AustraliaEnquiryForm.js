@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 
 import { Modal, Button, Form } from "react-bootstrap";
 import ReactPhoneInput from "react-phone-input-2";
@@ -18,7 +18,7 @@ const AustraliaEnquiryForm = () => {
   const [show, setShow] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   let [phone, setPhone] = useState("");
-  const [fileState, setFileState] = useState([]);
+  const [fileState, setFileState] = useState("");
   const [inputValues, setInputValues] = useState({
     email: "",
     givenName: "",
@@ -135,7 +135,7 @@ const AustraliaEnquiryForm = () => {
 
 
   return (
-    <>
+    <Fragment>
       <Button variant="outline-light" onClick={handleShow}>
         CLICK TO TALK TO US
       </Button>
@@ -323,7 +323,8 @@ const AustraliaEnquiryForm = () => {
 
             {/* Visa Denial */}
             <div className="row mb-4">
-              <div className="col">
+
+              {/* <div className="col">
                 <div className="form-outline">
                   <input
                     type="file"
@@ -338,7 +339,21 @@ const AustraliaEnquiryForm = () => {
                     Visa Denial Letter, If any?
                   </label>
                 </div>
+              </div> */}
+              <div className="input-group mb-3">
+                <input
+                  type="file"
+                  accept="application/pdf"
+                  className="form-control"
+                  name="visaDenialLetter"
+                  id="inputGroupFile02"
+                  onChange={handleFileUpload}
+                // value={inputValues.visaDenialLetter} 
+                />
+                <label className="input-group-text" htmlFor="inputGroupFile02">Upload</label>
               </div>
+
+
 
               {/* Gender */}
               <div className="col">
@@ -367,7 +382,7 @@ const AustraliaEnquiryForm = () => {
           </Form>
         </Modal.Body>
       </Modal>
-    </>
+    </Fragment>
   );
 };
 
