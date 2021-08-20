@@ -30,7 +30,7 @@ const AboutUs = () => {
                 </div>
                 <div className="desc-wrap">
                   <p>
-                    All the information you need about studying abroad, be it UK, USA, Canada, &amp; Austrialia, all in one place.
+                    Your dreams are valid and there is something here for everyone.
                   </p>
                   <a href onClick={(e) => e.preventDefault(e)}>Call Us Now</a>
                 </div>
@@ -108,41 +108,38 @@ const AboutUs = () => {
                   <a href onClick={(e) => e.preventDefault(e)}>Our Vision</a>
                 </dt>
                 <dd>
-                  Nunc placerat mi id nisi interdum mollis. Praesent pharetra, justo
-                  ut scelerisque mattis, leo quam aliquet diam, congue laoreet elit
-                  metus eget diam. Proin ac metus diam.
+                  The vision of Flybox is to enable Africans to tell her story by herself and around the
+                  world by supporting individuals that want to travel through our products and services.
                 </dd>
-                <dt>
+                {/* <dt>
                   <a href onClick={(e) => e.preventDefault(e)}>Our Achievements</a>
                 </dt>
                 <dd>
                   Donec nec justo eget felis facilisis fermentum. Aliquam porttitor
                   mauris sit amet orci. Aenean dignissim pellentesque felis. leo
                   quam aliquet diam, congue laoreet elit metus eget diam.
-                </dd>
+                </dd> */}
                 <dt>
                   <a href onClick={(e) => e.preventDefault(e)}>Our Mission</a>
                 </dt>
                 <dd>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                  Phasellus hendrerit. Pellentesque aliquet nibh nec urna. Proin ac
-                  metus diam.
+                  Our Mission as an organization is to provide tailored location option for
+                  students who desired to further their education abroad, and for persons, who want to
+                  get better Jobs and working conditions.
                 </dd>
-                <dt>
+                {/* <dt>
                   <a href onClick={(e) => e.preventDefault(e)}>Our Aims</a>
-                </dt>
-                <dd>
+                </dt> */}
+                {/* <dd>
                   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                   Phasellus hendrerit. Pellentesque aliquet nibh nec urna. Proin ac
                   metus diam.
-                </dd>
+                </dd> */}
                 <dt>
                   <a href onClick={(e) => e.preventDefault(e)}>Our Goals</a>
                 </dt>
                 <dd>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                  Phasellus hendrerit. Pellentesque aliquet nibh nec urna. Proin ac
-                  metus diam.
+                  Our Goal  as an organization , is to be the first point of contact in when it comes to improving your career abroad.
                 </dd>
               </dl>
             </div>

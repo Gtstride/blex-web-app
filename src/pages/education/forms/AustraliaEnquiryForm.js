@@ -1,11 +1,8 @@
 import React, { Fragment, useState, useEffect } from "react";
-
 import { Modal, Button, Form } from "react-bootstrap";
 import ReactPhoneInput from "react-phone-input-2";
 import 'react-phone-input-2/lib/style.css'
-
 import Swal from "sweetalert2";
-
 import { httpPostWithNoToken } from '../../../helpers/api'
 // import CountrySelect from 'react-bootstrap-country-select';
 
@@ -18,7 +15,8 @@ const AustraliaEnquiryForm = () => {
   const [show, setShow] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   let [phone, setPhone] = useState("");
-  const [fileState, setFileState] = useState("");
+  const [pdfFile, setPdfFile] = useState("");
+
   const [inputValues, setInputValues] = useState({
     email: "",
     givenName: "",
@@ -34,14 +32,17 @@ const AustraliaEnquiryForm = () => {
     //phone: "",
   })
 
-  const handleFileUpload = e => {
-    const reader = new FileReader();
-    const file = e.target.files[0];
-    reader.onloadend = () => {
-      setFileState(reader.result);
-    };
-    reader.readAsDataURL(file);
+  const handleOnChange = (value) => {
+    setPhone(value);
+    // setSubmitting(false);
+    // setPhone("");
   };
+
+
+  // const fileType = ['application/pdf'];
+  const handlePdfFileChange = async (e) => {
+    setPdfFile(e.target.files[0]);
+  }
 
   const clearForm = () => {
     setInputValues({
@@ -56,7 +57,7 @@ const AustraliaEnquiryForm = () => {
       houseAddress: "",
       programLevel: "",
       gender: "",
-      visaDenialLetter: "",
+      // visaDenialLetter: "",
       //   phone: "",
     })
   }
@@ -73,31 +74,45 @@ const AustraliaEnquiryForm = () => {
     try {
       e.preventDefault();
       setSubmitting(true);
-      const data = {
-        ...inputValues,
-        email: inputValues.email,
-        givenName: inputValues.givenName,
-        middleName: inputValues.middleName,
-        familyName: inputValues.familyName,
-        birthDate: inputValues.birthDate,
-        countryOfCitizenship: inputValues.countryOfCitizenship,
-        immigrationHistory: inputValues.immigrationHistory,
-        houseAddress: inputValues.houseAddress,
-        programLevel: inputValues.programLevel,
-        gender: inputValues.gender,
-        // visaDenialLetter: inputValues.visaDenialLetter,
-        visaDenialLetter: fileState,
-        phoneNumber: phone,
-        referred_by: inputValues.referral,
-      }
+      let fd = new FormData()
+      fd.append('email', inputValues.email);
+      fd.append('givenName', inputValues.givenName);
+      fd.append('middleName', inputValues.middleName);
+      fd.append('familyName', inputValues.familyName);
+      fd.append('birthDate', inputValues.birthDate);
+      fd.append('countryOfCitizenship', inputValues.countryOfCitizenship);
+      fd.append('immigrationHistory', inputValues.immigrationHistory);
+      fd.append('houseAddress', inputValues.houseAddress);
+      fd.append('programLevel', inputValues.programLevel);
+      fd.append('gender', inputValues.gender);
+      fd.append('phoneNumber', phone)
+      fd.append('australiaDenialLetter', pdfFile);
+      // const data = {
+      //   ...inputValues,
+      //   email: inputValues.email,
+      //   givenName: inputValues.givenName,
+      //   middleName: inputValues.middleName,
+      //   familyName: inputValues.familyName,
+      //   birthDate: inputValues.birthDate,
+      //   countryOfCitizenship: inputValues.countryOfCitizenship,
+      //   immigrationHistory: inputValues.immigrationHistory,
+      //   houseAddress: inputValues.houseAddress,
+      //   programLevel: inputValues.programLevel,
+      //   gender: inputValues.gender,
+      //   // visaDenialLetter: inputValues.visaDenialLetter,
+      //   // australiaDenialLetter: pdfFile,
+      //   australiaDenialLetter: 'https://www.banknaija.com/firs-introduces-taxpromax-din-to-ease-collection-of-taxes-through-banks/',
+      //   phoneNumber: phone,
+      //   referred_by: inputValues.referral,
+      // }
 
-      const response = await httpPostWithNoToken("australia_form", data);
-      console.log(data);
+      const response = await httpPostWithNoToken("australia_form", fd);
+      console.log(fd);
       Swal.fire({
         title: "Successful 😀",
         text: "Your details have been submitted Successfully, We would get in touch shortly",
       });
-      console.log(data);
+      console.log(fd);
       setSubmitting(false);
       setInputValues({
         ...inputValues,
@@ -127,17 +142,11 @@ const AustraliaEnquiryForm = () => {
     }
   }
 
-  const handleOnChange = (value) => {
-    setPhone(value);
-    // setSubmitting(false);
-    // setPhone("");
-  };
-
 
   return (
     <Fragment>
       <Button variant="outline-light" onClick={handleShow}>
-        CLICK TO TALK TO US
+        APPLY NOW
       </Button>
 
       <Modal show={show} onHide={handleClose}>
@@ -267,6 +276,40 @@ const AustraliaEnquiryForm = () => {
               </div>
             </div>
 
+            {/* Highest Level of Education */}
+            <div className="row mb-4">
+              <div className="col">
+                <div className="form-outline">
+                  <input
+                    type="text"
+                    name="highestLevelOfEducation"
+                    value={inputValues.highestLevelOfEducation}
+                    onChange={handleChange}
+                    className="form-control"
+                  // placeholder="Jan 14"
+                  />
+                  <label className="form-label" htmlFor="form3Example1">
+                    Highest Level Of Education
+                  </label>
+                </div>
+              </div>
+
+              {/* Desired Course of Study */}
+              <div className="col">
+                <div className="form-outline">
+                  <input
+                    type="text"
+                    name="desiredCourseofStudy"
+                    value={inputValues.desiredCourseofStudy}
+                    onChange={handleChange}
+                    className="form-control"
+                  />
+                  <label className="form-label">
+                    Desired Course of Study</label>
+                </div>
+              </div>
+            </div>
+
             {/* House Address */}
             <div className="form-outline mb-4">
               <input
@@ -297,9 +340,11 @@ const AustraliaEnquiryForm = () => {
                     <option value="" disabled>Please select your program</option>
                     <option value="bsc">BSc</option>
                     <option value="masters">Masters</option>
+                    <option value="post-grad-diploma">Post-graduate Diploma</option>
+                    <option value="pre-masters-degree">Pre-masters Degree</option>
                   </select>
                   <label className="form-label">
-                    Program Level</label>
+                    Proposed Program Level</label>
                 </div>
               </div>
 
@@ -323,35 +368,20 @@ const AustraliaEnquiryForm = () => {
 
             {/* Visa Denial */}
             <div className="row mb-4">
-
-              {/* <div className="col">
-                <div className="form-outline">
-                  <input
-                    type="file"
-                    accept="application/pdf"
-                    name="visaDenialLetter"
-                    value={inputValues.visaDenialLetter}
-                    // onChange={handleChange}
-                    onChange={handleFileUpload}
-                    className="form-control"
-                  />
-                  <label className="form-label" htmlFor="form3Example1">
-                    Visa Denial Letter, If any?
-                  </label>
-                </div>
-              </div> */}
               <div className="input-group mb-3">
                 <input
                   type="file"
-                  accept="application/pdf"
+                  // accept="application/pdf"
                   className="form-control"
-                  name="visaDenialLetter"
+                  // name="australiaDenialLetter"
                   id="inputGroupFile02"
-                  onChange={handleFileUpload}
-                // value={inputValues.visaDenialLetter} 
+                  onChange={handlePdfFileChange}
+                  defaultValue={pdfFile}
+                // value={inputValues.visaDenialLetter}
                 />
                 <label className="input-group-text" htmlFor="inputGroupFile02">Upload</label>
               </div>
+
 
               {/* Gender */}
               <div className="col">
@@ -366,7 +396,7 @@ const AustraliaEnquiryForm = () => {
                     <option value="" disabled>Please select your gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
-                    {/* <option value="prefer_not_say">Prefer not to say</option> */}
+                    <option value="prefer_not_to_say">Prefer not to say</option>
                   </select>
                   <label className="form-label">
                     Gender</label>

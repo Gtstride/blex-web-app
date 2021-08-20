@@ -1,7 +1,4 @@
 import React from 'react'
-import cat1 from "../../assets/img/blog/cat-widget1.jpg"
-import cat2 from "../../assets/img/blog/cat-widget2.jpg"
-import cat from "../../assets/img/blog/cat-widget3.jpg"
 import UKEnquiryForm from "./forms/UKEnquiryForm"
 
 
@@ -15,81 +12,10 @@ const StudyInUk = () => {
             <div className="about-content blog-header-content col-lg-12">
               <h1 className="text-white">Study In UK</h1>
               <p className="text-white">
-                Experienced job  For highly qualified  candidates, successful <br />individual will be verified and interviewed by the company.              </p>
-                <UKEnquiryForm height="3em" />
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="top-category-widget-area pt-90 pb-90 ">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-4">
-              <div className="single-cat-widget">
-                <div className="content relative">
-                  <div className="overlay overlay-bg" />
-                  <a href onClick={(e) => { e.preventDefault() }}>
-                    <div className="thumb">
-                      <img
-                        className="content-image img-fluid d-block mx-auto"
-                        src={cat1}
-                        alt=""
-                      />
-                    </div>
-                    <div className="content-details">
-                      <h4 className="content-title mx-auto text-uppercase">
-                        Social life
-                      </h4>
-                      <span />
-                      <p>Enjoy your social life in germany</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <div className="single-cat-widget">
-                <div className="content relative">
-                  <div className="overlay overlay-bg" />
-                  <a href onClick={(e) => { e.preventDefault() }}>
-                    <div className="thumb">
-                      <img
-                        className="content-image img-fluid d-block mx-auto"
-                        src={cat2}
-                        alt=""
-                      />
-                    </div>
-                    <div className="content-details">
-                      <h4 className="content-title mx-auto text-uppercase">
-                        Politics
-                      </h4>
-                      <span />
-                      <p>Be part of politics</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <div className="single-cat-widget">
-                <div className="content relative">
-                  <div className="overlay overlay-bg" />
-                  <a href onClick={(e) => { e.preventDefault() }}>
-                    <div className="thumb">
-                      <img
-                        className="content-image img-fluid d-block mx-auto"
-                        src={cat}
-                        alt=""
-                      />
-                    </div>
-                    <div className="content-details">
-                      <h4 className="content-title mx-auto text-uppercase">Food</h4>
-                      <span />
-                      <p>Let the food be finished</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
+                Great to have you here, you have made the right choice of choosing to <br />
+                study in Uk,  kindly provide the requested information and lets get started.
+              </p>
+              <UKEnquiryForm height="3em" />
             </div>
           </div>
         </div>

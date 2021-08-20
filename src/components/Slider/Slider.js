@@ -9,11 +9,11 @@ const Slider = () => {
           <div className="row fullscreen d-flex align-items-center justify-content-between">
             <div className="banner-content col-lg-9 col-md-12">
               <h1 className="text-uppercase">
-                Get a better education for a better world
+                Your dreams are valid
               </h1>
               <p className="pt-10 pb-10 text-white">
                 <b className="text-white">
-                  There have never being any time better than now, to take the decision to give your family that very dream life you have always dreamt of.  Let us help you achieve those dreams and make them a reality.
+                  There is something here for everyone.
                 </b>
               </p>
               <a href="/contact-us" className="primary-btn text-uppercase">
@@ -33,10 +33,11 @@ const Slider = () => {
                 </div>
                 <div className="desc-wrap">
                   <p>
-                    Usage of the Internet is becoming more common due to rapid
-                    advancement of technology.
+                    Studying abroad, can be simple, budget friendly &amp; easy, with  over 50 Universities in USA,
+                    Canada, Australia, &amp; UK that we are affiliated with, you can explore your options. <br />
+                    We are here to support your dream of schooling abroad. Our team of professionals are on standby to process your application.
                   </p>
-                  <a href onClick={(e) => { e.preventDefault() }}>Get More Information</a>
+                  <a href="/contact-us" style={{ textDecoration: "none" }}>Get More Information</a>
                 </div>
               </div>
             </div>
@@ -47,10 +48,10 @@ const Slider = () => {
                 </div>
                 <div className="desc-wrap">
                   <p>
-                    For many of us, our very first experience of learning about the
-                    celestial bodies begins when we saw our first.
+                    Explore the option of working abroad and gaining international experience, learn new language, meet new people and grow your finance.
+                    <br />  We are here to support you to achieve your dream of working abroad. Our team of professionals are on standby to help you get started.
                   </p>
-                  <a href onClick={(e) => { e.preventDefault() }}>Get More Information</a>
+                  <a href="/contact-us" style={{ textDecoration: "none" }}>Get More Information</a>
                 </div>
               </div>
             </div>

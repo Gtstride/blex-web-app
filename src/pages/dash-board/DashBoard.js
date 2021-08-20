@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import AdminLogOut from "../../components/auth/admin/AdminLogOut"
+import DashboardStyle from '../../styles/DashboardStyle'
+import SideBar from '../../components/SideNavBar/SideBar'
 
-export default class DashBoard extends Component {
-
-
+class DashBoard extends Component {
   handleLogOut = async function handleLogout() {
     // await Auth.signOut();
 
@@ -14,20 +14,41 @@ export default class DashBoard extends Component {
   }
   render() {
     return (
-      <div className="mt-30">
-        <p> <h1>Welcome To the admin DashBoard,
-          What can i do for you</h1>
-          <h1>Welcome To the admin DashBoard, consectetuer
-            What can i do for you</h1>
-          <h1>Welcome To the admin DashBoard, consectetuer
-            What can i do for you</h1>
-          <h1>Welcome To the admin DashBoard, consectetuer
-            What can i do for you</h1>
-          <h1>Welcome To the admin DashBoard, consectetuer
-            What can i do for you</h1></p>
+      <DashboardStyle>
+        <div className="">
+          <SideBar />
 
-        <button value="submit" ><AdminLogOut /></button>
-      </div>
+          <h1>Powerful Name</h1>
+          <h1>Powerful Name</h1>
+          <h1>Powerful Name</h1>
+
+          <h1>Powerful Name</h1>
+
+          <h1>Powerful Name</h1>
+          <h1>Powerful Name</h1>
+
+          <h1>Powerful Name</h1>
+
+          <h1>Powerful Name</h1>
+
+          <h1>Powerful Name</h1>
+          <h1>Powerful Name</h1>
+
+          <h1>Powerful Name</h1>
+
+          <h1>Powerful Name</h1>
+          <h1>Powerful Name</h1>
+
+          <h1>Powerful Name</h1>
+
+
+          <button value="submit" ><AdminLogOut /></button>
+        </div >
+
+      </DashboardStyle>
+
     )
   }
 }
+
+export default DashBoard
