@@ -17,15 +17,15 @@ import StudyInCanada from "./pages/education/StudyInCanada"
 import WorkInLithuania from "./pages/Work/WorkInLith"
 // import WorkInGermany from "./pages/Work/WorkInGermany"
 
-import AdminLoginPage from "./components/auth/admin/AdminLoginPage"
-import DashBoard from './pages/dash-board/DashBoard'
+// import AdminLoginPage from "./components/auth/admin/AdminLoginPage"
+// import DashBoard from './pages/dash-board/DashBoard'
 import Unauthorized from "./not-found/NotFound"
 
 const Routes = () => {
   return (
     <>
-      <Header />
       <Router>
+        <Header />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/about-us" component={AboutUs} />
@@ -36,15 +36,11 @@ const Routes = () => {
           <Route exact path="/work_in_lithuania" component={WorkInLithuania} />
           {/* <Route exact path="/work_in_germany" component={WorkInGermany} /> */}
           <Route exact path="/contact-us" component={ContactUs} />
-
-          {/* This is the login routes for the admin */}
-          <Route exact path="/admin" component={AdminLoginPage} />
-          <Route exact path="/admin-dash_board" component={DashBoard} />
-          {/* <Route exact path="/sample" component={sample} /> */}
+          {/* <Route exact path="http://localhost:3000/" component={AdminLoginPage} /> */}
+          {/* <Route exact path="/admin-dash_board" component={DashBoard} /> */}
           <Route exact path="*" component={Unauthorized} />
         </Switch>
       </Router>
-
     </>
   )
 }

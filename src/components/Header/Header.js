@@ -4,7 +4,7 @@ import * as Icon from 'react-bootstrap-icons'
 
 const Header = () => {
   return (
-    <div>
+    <>
       <header id="header">
         <div className="header-top">
           <div className="container">
@@ -18,18 +18,17 @@ const Header = () => {
               </div>
 
               <div className="col-lg-6 col-sm-6 col-4 header-top-right no-padding">
-                <a href="tel:+234 802 104 6058">
+                <a href="tel:+234 802 104 6058" style={{ textDecoration: "none" }}>
                   <span className="lnr lnr-phone-handset" />{" "}
                   <span className="text">+234 802 104 6058</span>
                 </a>
-                <a href="/admin" alt="" style={{ textDecoration: "none" }}>LOGIN</a>
               </div>
             </div>
           </div>
         </div>
         <NavBar />
       </header>
-    </div>
+    </>
   )
 }
 

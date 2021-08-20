@@ -4,9 +4,6 @@ import 'react-phone-input-2/lib/style.css'
 import { httpPostWithNoToken } from '../../../helpers/api'
 import { Modal, Button, Form } from "react-bootstrap";
 import Swal from "sweetalert2";
-// import CountrySelect from 'react-bootstrap-country-select';
-
-
 
 
 const CanadaEnquiryForm = () => {
@@ -17,6 +14,7 @@ const CanadaEnquiryForm = () => {
   const [show, setShow] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   let [phone, setPhone] = useState("");
+  const [pdfFile, setPdfFile] = useState("");
   const [inputValues, setInputValues] = useState({
     email: "",
     givenName: "",
@@ -31,6 +29,11 @@ const CanadaEnquiryForm = () => {
     visaDenialLetter: "",
     //phone: "",
   })
+
+  // const fileType = ['application/pdf'];
+  const handlePdfFileChange = async (e) => {
+    setPdfFile(e.target.files[0]);
+  }
 
   const clearForm = () => {
     setInputValues({
@@ -62,33 +65,27 @@ const CanadaEnquiryForm = () => {
     try {
       e.preventDefault();
       setSubmitting(true);
-      const data = {
-        ...inputValues,
-        email: inputValues.email,
-        givenName: inputValues.givenName,
-        middleName: inputValues.middleName,
-        familyName: inputValues.familyName,
-        birthDate: inputValues.birthDate,
-        countryOfCitizenship: inputValues.countryOfCitizenship,
-        immigrationHistory: inputValues.immigrationHistory,
-        houseAddress: inputValues.houseAddress,
-        programLevel: inputValues.programLevel,
-        gender: inputValues.gender,
-        visaDenialLetter: inputValues.visaDenialLetter,
-        // phone: inputValues.phone.charAt(4) === "0"
-        //   ? (phone = phone.replace(phone.charAt(4), ""))
-        //   : phone,
-        phoneNumber: phone,
-        referred_by: inputValues.referral,
-      }
+      let fd = new FormData()
+      fd.append('email', inputValues.email);
+      fd.append('givenName', inputValues.givenName);
+      fd.append('middleName', inputValues.middleName);
+      fd.append('familyName', inputValues.familyName);
+      fd.append('birthDate', inputValues.birthDate);
+      fd.append('countryOfCitizenship', inputValues.countryOfCitizenship);
+      fd.append('immigrationHistory', inputValues.immigrationHistory);
+      fd.append('houseAddress', inputValues.houseAddress);
+      fd.append('programLevel', inputValues.programLevel);
+      fd.append('gender', inputValues.gender);
+      fd.append('phoneNumber', phone)
+      fd.append('canadaDenialLetter', pdfFile);
 
-      const response = await httpPostWithNoToken("canada_form", data);
-      console.log(data);
+      const response = await httpPostWithNoToken("canada_form", fd);
+      console.log(fd);
       Swal.fire({
         title: "Successful 😀",
         text: "Your details have been submitted Successfully, We would get in touch shortly",
       });
-      console.log(data);
+      console.log(fd);
       setSubmitting(false);
       setInputValues({
         ...inputValues,
@@ -128,7 +125,7 @@ const CanadaEnquiryForm = () => {
   return (
     <>
       <Button variant="outline-light" onClick={handleShow}>
-        CLICK TO TALK TO US
+        APPLY NOW
       </Button>
 
       <Modal show={show} onHide={handleClose}>
@@ -314,20 +311,18 @@ const CanadaEnquiryForm = () => {
 
             {/* Visa Denial */}
             <div className="row mb-4">
-              <div className="col">
-                <div className="form-outline">
-                  <input
-                    // type="file"
-                    type="text"
-                    name="visaDenialLetter"
-                    value={inputValues.visaDenialLetter}
-                    onChange={handleChange}
-                    className="form-control"
-                  />
-                  <label className="form-label" htmlFor="form3Example1">
-                    Visa Denial Letter, If any?
-                  </label>
-                </div>
+              <div className="input-group mb-3">
+                <input
+                  type="file"
+                  // accept="application/pdf"
+                  className="form-control"
+                  // name="australiaDenialLetter"
+                  id="inputGroupFile02"
+                  onChange={handlePdfFileChange}
+                  defaultValue={pdfFile}
+                // value={inputValues.visaDenialLetter}
+                />
+                <label className="input-group-text" htmlFor="inputGroupFile02">Upload, if any</label>
               </div>
 
               {/* Gender */}
