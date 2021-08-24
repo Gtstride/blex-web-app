@@ -127,7 +127,6 @@ export default function PopularCourse() {
           </div>
         </div>
       </section>
-
     </div>
   )
 }

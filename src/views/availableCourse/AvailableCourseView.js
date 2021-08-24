@@ -1,6 +1,67 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Swal from "sweetalert2";
+import { httpPostWithNoToken } from '../../helpers/api'
 
-export default function AvailableCourseView() {
+const AvailableCourseView = () => {
+
+  const [submitting, setSubmitting] = useState(false);
+  const [inputValues, setInputValues] = useState({
+    email: "",
+    name: "",
+    phone_number: "",
+    choose_what_you_want_to_know_about: "",
+  });
+
+  const clearForm = () => {
+    setInputValues({
+      ...inputValues,
+      email: "",
+      name: "",
+      phone_number: "",
+      choose_what_you_want_to_know_about: "",
+    })
+  }
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setInputValues({ ...inputValues, [name]: value });
+  }
+
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      setSubmitting(true);
+
+      const data = {
+        email: inputValues.email,
+        name: inputValues.name,
+        phoneNumber: inputValues.phone_number,
+        chooseWhatYouWantToKnowAbout: inputValues.choose_what_you_want_to_know_about,
+      }
+
+      const response = await httpPostWithNoToken("relocation_form", data);
+      // console.log(data)
+      console.log(response);
+      Swal.fire({
+        title: "Successful 😀",
+        text: "Your details have been submitted Successfully, We would get in touch shortly",
+      });
+      setSubmitting(false);
+      setInputValues({
+        email: "",
+        name: "",
+        phone_number: "",
+        choose_what_you_want_to_know_about: ""
+      })
+      clearForm();
+    } catch (error) {
+      Swal.fire({
+        title: "Sorry 😞",
+        text: error.message,
+      });
+    }
+  }
+
   return (
     <div>
       <section className="search-course-area relative">
@@ -40,49 +101,57 @@ export default function AvailableCourseView() {
               </div>
             </div>
             <div className="col-lg-4 col-md-6 search-course-right section-gap">
-              <form className="form-wrap" action="#">
+              <form className="form-wrap" onSubmit={handleSubmit}>
                 <h4 className="text-white pb-20 text-center mb-30">
                   Get Information about study, work and relocation!
                 </h4>
-                <input
-                  type="text"
-                  className="form-control"
-                  name="name"
-                  placeholder="Your Name"
-                  onFocus="this.placeholder = ''"
-                  onBlur="this.placeholder = 'Your Name'"
-                />
-                <input
-                  type="phone"
-                  className="form-control"
-                  name="phone"
-                  placeholder="Your Phone Number"
-                  onFocus="this.placeholder = ''"
-                  onBlur="this.placeholder = 'Your Phone Number'"
-                />
+
                 <input
                   type="email"
                   className="form-control"
                   name="email"
+                  value={inputValues.email}
+                  onChange={handleChange}
                   placeholder="Your Email Address"
-                  onFocus="this.placeholder = ''"
-                  onBlur="this.placeholder = 'Your Email Address'"
                 />
-                <div className="form-select" id="service-select">
-                  <select>
-                    <option datd-display>Choose What you want to know about</option>
-                    <option value={1}>Get Information about study</option>
-                    <option value={2}>Get Information about work</option>
-                    <option value={3}>Get Information about relocating</option>
-                  </select>
-                </div>
-                <button className="primary-btn text-uppercase">Submit</button>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="name"
+                  value={inputValues.name}
+                  onChange={handleChange}
+                  placeholder="Your Name"
+                />
+                <input
+                  type="tel"
+                  className="form-control"
+                  name="phone_number"
+                  value={inputValues.phone_number}
+                  onChange={handleChange}
+                  placeholder="Your Phone Number"
+                />
+                <select
+                  className="form-control"
+                  name="choose_what_you_want_to_know_about"
+                  value={inputValues.choose_what_you_want_to_know_about}
+                  onChange={handleChange}
+                >
+                  <option value="" disabled>Please select what you to know</option>
+                  <option value="information_about_study">Get Information about study</option>
+                  <option value="information_about_work">Get Information about work</option>
+                  <option value="information_about_relocation">Get Information about relocating</option>
+                </select>
+                {/* <div className="form-select" id="service-select">
+                 
+                </div> */}
+                <button value={submitting} className="primary-btn text-uppercase">Submit</button>
               </form>
             </div>
           </div>
         </div>
       </section>
-
     </div>
   )
 }
+
+export default AvailableCourseView

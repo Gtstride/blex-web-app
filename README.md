@@ -9,13 +9,12 @@ Connecting you to your dream life
 
 - Node JS
 - Express
-- Mocha & Chai
 - Validator
 - ESLint
 - Cloudinary
-- Babel
-- Postgres
-- Travis CI
+- MongoDB
+- Vercel
+- React JS
 - Code Climate & Coveralls
 
 

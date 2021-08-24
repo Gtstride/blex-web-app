@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect } from "react";
+import { Modal, Button, Form } from "react-bootstrap";
 import ReactPhoneInput from "react-phone-input-2";
 import 'react-phone-input-2/lib/style.css'
-import { httpPostWithNoToken } from '../../../helpers/api'
-import { Modal, Button, Form } from "react-bootstrap";
 import Swal from "sweetalert2";
+import { httpPostWithNoToken } from '../../../helpers/api'
+// import CountrySelect from 'react-bootstrap-country-select';
 
 
 const UKEnquiryForm = () => {
@@ -15,6 +16,7 @@ const UKEnquiryForm = () => {
   const [submitting, setSubmitting] = useState(false);
   let [phone, setPhone] = useState("");
   const [pdfFile, setPdfFile] = useState("");
+
   const [inputValues, setInputValues] = useState({
     email: "",
     givenName: "",
@@ -27,8 +29,17 @@ const UKEnquiryForm = () => {
     programLevel: "",
     gender: "",
     visaDenialLetter: "",
+    highestLevelOfEducation: "",
+    desiredCourseOfStudy: "",
     //phone: "",
   })
+
+  const handleOnChange = (value) => {
+    setPhone(value);
+    // setSubmitting(false);
+    // setPhone("");
+  };
+
 
   // const fileType = ['application/pdf'];
   const handlePdfFileChange = async (e) => {
@@ -49,7 +60,9 @@ const UKEnquiryForm = () => {
       programLevel: "",
       gender: "",
       visaDenialLetter: "",
-      //   phone: "",
+      highestLevelOfEducation: "",
+      desiredCourseOfStudy: "",
+      //phone: "",
     })
   }
 
@@ -75,6 +88,8 @@ const UKEnquiryForm = () => {
       fd.append('immigrationHistory', inputValues.immigrationHistory);
       fd.append('houseAddress', inputValues.houseAddress);
       fd.append('programLevel', inputValues.programLevel);
+      fd.append('highestLevelOfEducation', inputValues.highestLevelOfEducation);
+      fd.append('desiredCourseOfStudy', inputValues.desiredCourseOfStudy);
       fd.append('gender', inputValues.gender);
       fd.append('phoneNumber', phone)
       fd.append('ukDenialLetter', pdfFile);
@@ -84,8 +99,9 @@ const UKEnquiryForm = () => {
       Swal.fire({
         title: "Successful 😀",
         text: "Your details have been submitted Successfully, We would get in touch shortly",
+        // text: `${"Thank you for successfully submitting  your details as"} ${response.email}. ${"We would get in touch shortly"}`,
       });
-      console.log(fd);
+      console.log(response);
       setSubmitting(false);
       setInputValues({
         ...inputValues,
@@ -100,6 +116,8 @@ const UKEnquiryForm = () => {
         programLevel: "",
         gender: "",
         visaDenialLetter: "",
+        highestLevelOfEducation: "",
+        desiredCourseOfStudy: "",
         phone: "",
       })
       clearForm();
@@ -115,15 +133,9 @@ const UKEnquiryForm = () => {
     }
   }
 
-  const handleOnChange = (value) => {
-    setPhone(value);
-    // setSubmitting(false);
-    // setPhone("");
-  };
-
 
   return (
-    <>
+    <Fragment>
       <Button variant="outline-light" onClick={handleShow}>
         APPLY NOW
       </Button>
@@ -163,14 +175,13 @@ const UKEnquiryForm = () => {
                     country="ng"
                     onChange={handleOnChange}
                   />
-
                   <label className="form-label">
                     Telephone</label>
                 </div>
               </div>
             </div>
 
-            {/* First Name */}
+            {/* First Name  or Given Name */}
             <div className="row mb-4">
               <div className="col">
                 <div className="form-outline">
@@ -255,6 +266,40 @@ const UKEnquiryForm = () => {
               </div>
             </div>
 
+            {/* Highest Level of Education */}
+            <div className="row mb-4">
+              <div className="col">
+                <div className="form-outline">
+                  <input
+                    type="text"
+                    name="highestLevelOfEducation"
+                    value={inputValues.highestLevelOfEducation}
+                    onChange={handleChange}
+                    className="form-control"
+                  // placeholder="Jan 14"
+                  />
+                  <label className="form-label" htmlFor="form3Example1">
+                    Highest Level Of Education
+                  </label>
+                </div>
+              </div>
+
+              {/* Desired Course of Study */}
+              <div className="col">
+                <div className="form-outline">
+                  <input
+                    type="text"
+                    name="desiredCourseOfStudy"
+                    value={inputValues.desiredCourseOfStudy}
+                    onChange={handleChange}
+                    className="form-control"
+                  />
+                  <label className="form-label">
+                    Desired Course of Study</label>
+                </div>
+              </div>
+            </div>
+
             {/* House Address */}
             <div className="form-outline mb-4">
               <input
@@ -285,9 +330,11 @@ const UKEnquiryForm = () => {
                     <option value="" disabled>Please select your program</option>
                     <option value="bsc">BSc</option>
                     <option value="masters">Masters</option>
+                    <option value="post-graduate diploma">Post-Graduate Diploma</option>
+                    <option value="pre-masters degree">Pre-Masters Degree</option>
                   </select>
                   <label className="form-label">
-                    Program Level</label>
+                    Proposed Program Level</label>
                 </div>
               </div>
 
@@ -316,14 +363,13 @@ const UKEnquiryForm = () => {
                   type="file"
                   // accept="application/pdf"
                   className="form-control"
-                  // name="australiaDenialLetter"
-                  id="inputGroupFile02"
                   onChange={handlePdfFileChange}
                   defaultValue={pdfFile}
                 // value={inputValues.visaDenialLetter}
                 />
-                <label className="input-group-text" htmlFor="inputGroupFile02">Upload, if any</label>
+                <label className="file-upload" htmlFor="inputGroupFile02">Upload Visa Denial Letter, if any?</label>
               </div>
+
 
               {/* Gender */}
               <div className="col">
@@ -338,7 +384,7 @@ const UKEnquiryForm = () => {
                     <option value="" disabled>Please select your gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
-                    {/* <option value="prefer_not_say">Prefer not to say</option> */}
+                    <option value="prefer_not_to_say">Prefer not to say</option>
                   </select>
                   <label className="form-label">
                     Gender</label>
@@ -352,7 +398,7 @@ const UKEnquiryForm = () => {
           </Form>
         </Modal.Body>
       </Modal>
-    </>
+    </Fragment>
   );
 };
 

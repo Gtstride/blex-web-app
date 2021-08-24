@@ -7,6 +7,7 @@ import Footer from "./components/Footer/Footer"
 import './App.css';
 
 
+
 const MainApp = () => {
   return (
     <div className="App">

@@ -19,12 +19,11 @@ export const httpPostWithNoToken = async (url, fd) => {
         // headers: { Authorization: `${localStorage.api_token}` },
       })
       .then(({ data }) => {
-        return resolve(data.response);
+        let res = data.response ? data.response : data
+        return resolve(res);
       })
       .catch((error) => {
         console.log("here>>", error.response, error.response.data);
-        // console.log(error.response)
-        // console.log(error.response.data.status)
         let error_msg = {
           // message: "Something went wrong. Please check and make sure everything is okay and try again",
           message: error.response.data

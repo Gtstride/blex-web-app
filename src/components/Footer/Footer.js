@@ -1,7 +1,24 @@
 import React from 'react'
 import * as Icon from 'react-bootstrap-icons';
+// import Chatbot from 'react-chatbot-kit'
+
+// import MessageParser from '../Chatbot/MessageParser';
+// import ActionProvider from '../Chatbot/ActionProvider'
+// import FlexBoxFees from "../flyBoxFees/FlyBoxFee"
+// import config from "../Chatbot/config"
 
 const Footer = () => {
+
+  // const [show, setShow] = useState(false);
+
+  // const handleClose = () => setShow(false);
+  // const handleShow = () => setShow(true);
+
+
+  // useEffect(() => {
+  //   alert('reload!')
+  // }, [])
+
   return (
     <div>
       <footer className="footer-area section-gap">
@@ -59,10 +76,11 @@ const Footer = () => {
               <ul>
                 <li>Privacy &amp; Cookie Policy</li>
                 <li>Terms and Conditions</li>
-                <li>Terms of Use</li>
-                <li>Fly Box Fees</li>
+                <li>Terms of Use</li> <br/>
               </ul>
             </div>
+
+            {/* <Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser} onClick={() => hideChat()} /> */}
           </div>
         </div>
       </footer>

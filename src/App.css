@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+
+.react-chatbot-kit-chat-container {
+  position: absolute;
+  width: 275px;
+  right: 0;
+}
+
+.fly_box_fee {
+  color: #fff;
+  /* background-color: #007bff; */
+  border-color: #007bff;
+  margin-top: -8px;
+}
+
+.file-upload {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 95%;
+  margin-left: 12px;
+}
