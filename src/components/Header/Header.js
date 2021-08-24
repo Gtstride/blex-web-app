@@ -1,6 +1,7 @@
 import React from 'react'
 import NavBar from '../NavBar/NavBar'
 import * as Icon from 'react-bootstrap-icons'
+// import FlexBoxFees from '../flyBoxFees/FlyBoxFee'
 
 const Header = () => {
   return (
@@ -24,6 +25,7 @@ const Header = () => {
                 </a>
               </div>
             </div>
+            {/* <FlexBoxFees /> */}
           </div>
         </div>
         <NavBar />

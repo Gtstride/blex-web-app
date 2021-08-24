@@ -29,6 +29,8 @@ const AustraliaEnquiryForm = () => {
     programLevel: "",
     gender: "",
     visaDenialLetter: "",
+    highestLevelOfEducation: "",
+    desiredCourseOfStudy: "",
     //phone: "",
   })
 
@@ -37,7 +39,6 @@ const AustraliaEnquiryForm = () => {
     // setSubmitting(false);
     // setPhone("");
   };
-
 
   // const fileType = ['application/pdf'];
   const handlePdfFileChange = async (e) => {
@@ -57,8 +58,10 @@ const AustraliaEnquiryForm = () => {
       houseAddress: "",
       programLevel: "",
       gender: "",
-      // visaDenialLetter: "",
-      //   phone: "",
+      visaDenialLetter: "",
+      highestLevelOfEducation: "",
+      desiredCourseOfStudy: "",
+      //phone: "",
     })
   }
 
@@ -84,6 +87,8 @@ const AustraliaEnquiryForm = () => {
       fd.append('immigrationHistory', inputValues.immigrationHistory);
       fd.append('houseAddress', inputValues.houseAddress);
       fd.append('programLevel', inputValues.programLevel);
+      fd.append('highestLevelOfEducation', inputValues.highestLevelOfEducation);
+      fd.append('desiredCourseOfStudy', inputValues.desiredCourseOfStudy);
       fd.append('gender', inputValues.gender);
       fd.append('phoneNumber', phone)
       fd.append('australiaDenialLetter', pdfFile);
@@ -127,6 +132,8 @@ const AustraliaEnquiryForm = () => {
         programLevel: "",
         gender: "",
         visaDenialLetter: "",
+        highestLevelOfEducation: "",
+        desiredCourseOfStudy: "",
         phone: "",
       })
       clearForm();
@@ -184,14 +191,13 @@ const AustraliaEnquiryForm = () => {
                     country="ng"
                     onChange={handleOnChange}
                   />
-
                   <label className="form-label">
                     Telephone</label>
                 </div>
               </div>
             </div>
 
-            {/* First Name */}
+            {/* First Name  or Given Name */}
             <div className="row mb-4">
               <div className="col">
                 <div className="form-outline">
@@ -299,8 +305,8 @@ const AustraliaEnquiryForm = () => {
                 <div className="form-outline">
                   <input
                     type="text"
-                    name="desiredCourseofStudy"
-                    value={inputValues.desiredCourseofStudy}
+                    name="desiredCourseOfStudy"
+                    value={inputValues.desiredCourseOfStudy}
                     onChange={handleChange}
                     className="form-control"
                   />
@@ -340,8 +346,8 @@ const AustraliaEnquiryForm = () => {
                     <option value="" disabled>Please select your program</option>
                     <option value="bsc">BSc</option>
                     <option value="masters">Masters</option>
-                    <option value="post-grad-diploma">Post-graduate Diploma</option>
-                    <option value="pre-masters-degree">Pre-masters Degree</option>
+                    <option value="post-graduate diploma">Post-Graduate Diploma</option>
+                    <option value="pre-masters degree">Pre-Masters Degree</option>
                   </select>
                   <label className="form-label">
                     Proposed Program Level</label>
@@ -371,15 +377,12 @@ const AustraliaEnquiryForm = () => {
               <div className="input-group mb-3">
                 <input
                   type="file"
-                  // accept="application/pdf"
                   className="form-control"
-                  // name="australiaDenialLetter"
-                  id="inputGroupFile02"
                   onChange={handlePdfFileChange}
                   defaultValue={pdfFile}
                 // value={inputValues.visaDenialLetter}
                 />
-                <label className="input-group-text" htmlFor="inputGroupFile02">Upload</label>
+                <label className="file-upload" htmlFor="inputGroupFile02">Upload Visa Denial Letter, if any?</label>
               </div>
 
 

@@ -15,14 +15,6 @@ code {
     monospace;
 }
 
-.admin-login-form-banner {
-  flex: 0 0 75%;
-  max-width: 75%;
-  background-color: cadetblue;
-  border-radius: 4px;
-  padding: 50px;
-}
-
 .germany-blog-home-banner {
   background:url("./assets/img/germany.jpg") bottom;
   background-size:cover;
@@ -73,4 +65,10 @@ code {
 
 .admin-overlay-bg {
   background-color: rgba(4,9,30,.8);
+}
+
+.react-chatbot-kit-chat-container {
+  position: absolute;
+  width: 275px;
+  right: 0;
 }

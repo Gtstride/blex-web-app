@@ -1,5 +1,7 @@
 import React from 'react'
-import logo from "../../assets/img/logo-b.png"
+// import logo from "../../assets/img/logo-b.png"
+import logo2 from "../../assets/img/fly-box.png"
+import FlexBoxFee from '../flyBoxFees/FlyBoxFee'
 
 
 const NavBar = () => {
@@ -8,7 +10,7 @@ const NavBar = () => {
       <div className="container main-menu">
         <div className="row align-items-center justify-content-between d-flex">
           <div id="logo">
-            <a href="/"><img src={logo} alt="" height="40px" /></a>
+            <a href="/"><img src={logo2} alt="" height="40px" /></a>
           </div>
           <nav id="nav-menu-container">
             <ul className="nav-menu">
@@ -33,6 +35,7 @@ const NavBar = () => {
                 </ul>
               </li>
               <li><a href="/contact-us">Contact</a></li>
+              <li><FlexBoxFee /></li>
             </ul>
           </nav>
         </div>

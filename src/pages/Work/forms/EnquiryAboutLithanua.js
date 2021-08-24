@@ -110,8 +110,6 @@ const LithaniuaEnquiryForm = () => {
         title: "Sorry 😞",
         text: error.message,
       });
-      // clearForm();
-      // closeModal()
     }
   }
 
@@ -316,13 +314,11 @@ const LithaniuaEnquiryForm = () => {
                   type="file"
                   // accept="application/pdf"
                   className="form-control"
-                  // name="australiaDenialLetter"
-                  id="inputGroupFile02"
                   onChange={handlePdfFileChange}
                   defaultValue={pdfFile}
                 // value={inputValues.visaDenialLetter}
                 />
-                <label className="input-group-text" htmlFor="inputGroupFile02">Upload, if any</label>
+                <label className="file-upload" htmlFor="inputGroupFile02">Upload Visa Denial Letter, if any?</label>
               </div>
 
               {/* Gender */}
@@ -338,6 +334,7 @@ const LithaniuaEnquiryForm = () => {
                     <option value="" disabled>Please select your gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
+                    <option value="prefer_not_to_say">Prefer Not to say</option>
                     {/* <option value="prefer_not_say">Prefer not to say</option> */}
                   </select>
                   <label className="form-label">

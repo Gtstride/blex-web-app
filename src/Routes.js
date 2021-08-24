@@ -16,16 +16,23 @@ import StudyInCanada from "./pages/education/StudyInCanada"
 // Work Route
 import WorkInLithuania from "./pages/Work/WorkInLith"
 // import WorkInGermany from "./pages/Work/WorkInGermany"
+import { Chat } from 'react-chat-popup';
 
 // import AdminLoginPage from "./components/auth/admin/AdminLoginPage"
 // import DashBoard from './pages/dash-board/DashBoard'
 import Unauthorized from "./not-found/NotFound"
 
 const Routes = () => {
+  const handleNewUserMessage = (newMessage) => {
+    console.log(`New message incoming! ${newMessage}`);
+    // Now send the message throught the backend API
+  }
   return (
     <>
       <Router>
         <Header />
+        <Chat handleNewUserMessage={handleNewUserMessage} />
+
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/about-us" component={AboutUs} />
@@ -36,7 +43,6 @@ const Routes = () => {
           <Route exact path="/work_in_lithuania" component={WorkInLithuania} />
           {/* <Route exact path="/work_in_germany" component={WorkInGermany} /> */}
           <Route exact path="/contact-us" component={ContactUs} />
-          {/* <Route exact path="http://localhost:3000/" component={AdminLoginPage} /> */}
           {/* <Route exact path="/admin-dash_board" component={DashBoard} /> */}
           <Route exact path="*" component={Unauthorized} />
         </Switch>
