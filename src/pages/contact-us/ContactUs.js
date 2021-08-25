@@ -37,6 +37,7 @@ const ContactUs = () => {
         subject: inputValues.subject,
         message: inputValues.message,
       };
+
       const res = await httpPostWithNoToken("contacts", data);
       console.log(data)
       Swal.fire({
