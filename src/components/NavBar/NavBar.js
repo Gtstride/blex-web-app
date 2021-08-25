@@ -1,7 +1,6 @@
 import React from 'react'
 // import logo from "../../assets/img/logo-b.png"
 import logo2 from "../../assets/img/fly-box.png"
-import FlexBoxFee from '../flyBoxFees/FlyBoxFee'
 
 
 const NavBar = () => {
@@ -35,7 +34,6 @@ const NavBar = () => {
                 </ul>
               </li>
               <li><a href="/contact-us">Contact</a></li>
-              <li><FlexBoxFee /></li>
             </ul>
           </nav>
         </div>

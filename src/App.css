@@ -59,3 +59,13 @@
   width: 95%;
   margin-left: 12px;
 }
+
+button.fly_box_fee.btn.btn-outline-primary {
+  margin-left: 28px;
+  padding: 8px;
+  width: 9rem;
+  margin-top: -2px;
+  border-radius: 0px;
+  text-transform: uppercase;
+  font-weight: 600;
+}

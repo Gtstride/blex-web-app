@@ -7,10 +7,11 @@ const FlexBoxFees = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
-    <div>
+    <>
       <Button variant="outline-primary" onClick={handleShow} className="fly_box_fee">
         Our Fees
       </Button>
+
 
       <Modal
         show={show}
@@ -33,7 +34,7 @@ const FlexBoxFees = () => {
           <Button variant="primary" onClick={handleClose}>Understood</Button>
         </Modal.Footer>
       </Modal>
-    </div>
+    </>
   )
 }
 

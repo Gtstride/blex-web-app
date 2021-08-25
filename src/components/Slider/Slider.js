@@ -1,4 +1,5 @@
 import React from 'react'
+import FlexBoxFees from '../flyBoxFees/FlyBoxFee'
 
 const Slider = () => {
   return (
@@ -19,6 +20,7 @@ const Slider = () => {
               <a href="/contact-us" className="primary-btn text-uppercase">
                 Get In Touch
               </a>
+              <FlexBoxFees className="our-fees primary-btn text-uppercase ml-5" />
             </div>
           </div>
         </div>

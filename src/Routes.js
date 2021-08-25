@@ -1,5 +1,6 @@
 import React from "react"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { Chat } from 'react-chat-popup';
 
 import Header from "./components/Header/Header"
 import Home from "./pages/Home/Home"
@@ -15,11 +16,6 @@ import StudyInCanada from "./pages/education/StudyInCanada"
 
 // Work Route
 import WorkInLithuania from "./pages/Work/WorkInLith"
-// import WorkInGermany from "./pages/Work/WorkInGermany"
-import { Chat } from 'react-chat-popup';
-
-// import AdminLoginPage from "./components/auth/admin/AdminLoginPage"
-// import DashBoard from './pages/dash-board/DashBoard'
 import Unauthorized from "./not-found/NotFound"
 
 const Routes = () => {
@@ -31,7 +27,10 @@ const Routes = () => {
     <>
       <Router>
         <Header />
-        <Chat handleNewUserMessage={handleNewUserMessage} />
+        <Chat
+          handleNewUserMessage={handleNewUserMessage}
+          title="Welcome to FlexBox!"
+        />
 
         <Switch>
           <Route exact path="/" component={Home} />
@@ -43,7 +42,6 @@ const Routes = () => {
           <Route exact path="/work_in_lithuania" component={WorkInLithuania} />
           {/* <Route exact path="/work_in_germany" component={WorkInGermany} /> */}
           <Route exact path="/contact-us" component={ContactUs} />
-          {/* <Route exact path="/admin-dash_board" component={DashBoard} /> */}
           <Route exact path="*" component={Unauthorized} />
         </Switch>
       </Router>

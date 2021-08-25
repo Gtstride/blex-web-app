@@ -1,6 +1,5 @@
 import React from 'react'
 import * as Icon from 'react-bootstrap-icons';
-// import Chatbot from 'react-chatbot-kit'
 
 // import MessageParser from '../Chatbot/MessageParser';
 // import ActionProvider from '../Chatbot/ActionProvider'
@@ -76,7 +75,7 @@ const Footer = () => {
               <ul>
                 <li>Privacy &amp; Cookie Policy</li>
                 <li>Terms and Conditions</li>
-                <li>Terms of Use</li> <br/>
+                <li>Terms of Use</li> <br />
               </ul>
             </div>
 
