@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Modal } from 'react-bootstrap'
 
-const FlexBoxFees = () => {
+const FlyBoxFees = () => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -38,4 +38,4 @@ const FlexBoxFees = () => {
   )
 }
 
-export default FlexBoxFees
+export default FlyBoxFees
