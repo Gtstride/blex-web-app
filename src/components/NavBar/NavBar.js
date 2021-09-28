@@ -26,13 +26,13 @@ const NavBar = () => {
                 </ul>
               </li>
 
-              <li className="menu-has-children text-white">
+              {/* <li className="menu-has-children text-white">
                 <a href="#/" className="disabled">Work</a>
                 <ul>
                   <li><a href="/work_in_lithuania">Work in Lithuania</a></li>
-                  {/* <li><a href="/work_in_germany"> Work in Germany</a></li> */}
+                  <li><a href="/work_in_germany"> Work in Germany</a></li>
                 </ul>
-              </li>
+              </li> */}
               <li><a href="/contact-us">Contact</a></li>
             </ul>
           </nav>

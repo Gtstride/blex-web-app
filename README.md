@@ -10,12 +10,10 @@ Connecting you to your dream life
 - Node JS
 - Express
 - Validator
-- ESLint
 - Cloudinary
 - MongoDB
 - Vercel
 - React JS
-- Code Climate & Coveralls
 
 
 ## API DEVELOPMENT

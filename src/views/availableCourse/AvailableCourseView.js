@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import Swal from "sweetalert2";
 import { httpPostWithNoToken } from '../../helpers/api'
+import Spinner from '../../components/Spinner/Spinner'
 
 const AvailableCourseView = () => {
 
+  const [isLoaded, setIsLoaded] = useState(true)
   const [submitting, setSubmitting] = useState(false);
   const [inputValues, setInputValues] = useState({
     email: "",
@@ -27,6 +29,10 @@ const AvailableCourseView = () => {
     setInputValues({ ...inputValues, [name]: value });
   }
 
+  const handleIsLoadedToggle = () => {
+    setIsLoaded(currentIsLoaded => !currentIsLoaded)
+  }
+
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
@@ -42,6 +48,7 @@ const AvailableCourseView = () => {
       const response = await httpPostWithNoToken("relocation_form", data);
       // console.log(data)
       console.log(response);
+      isLoaded(false);
       Swal.fire({
         title: "Successful 😀",
         text: "Your details have been submitted Successfully, We would get in touch shortly",
@@ -59,6 +66,9 @@ const AvailableCourseView = () => {
         title: "Sorry 😞",
         text: error.message,
       });
+      setIsLoaded(false);
+      setSubmitting(false);
+      clearForm();
     }
   }
 
@@ -142,9 +152,17 @@ const AvailableCourseView = () => {
                   <option value="information_about_relocation">Get Information about relocating</option>
                 </select>
                 {/* <div className="form-select" id="service-select">
-                 
                 </div> */}
-                <button value={submitting} className="primary-btn text-uppercase">Submit</button>
+                {/* <button value={submitting} className="primary-btn text-uppercase">
+                  Submit
+                </button> */}
+                {!submitting ? (
+                  <button onClick={handleIsLoadedToggle} className="primary-btn text-uppercase">
+                    Submit Form
+                  </button>
+                ) : (
+                  <Spinner />
+                )}
               </form>
             </div>
           </div>

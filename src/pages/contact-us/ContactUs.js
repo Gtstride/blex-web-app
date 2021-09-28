@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Swal from 'sweetalert2'
 import { httpPostWithNoToken } from '../../helpers/api'
+import Map from './Map'
 
 const ContactUs = () => {
   const [submitting, setSubmitting] = useState(false);
@@ -80,11 +81,12 @@ const ContactUs = () => {
       <section className="contact-page-area section-gap">
         <div className="container">
           <div className="row">
-            <div
+            <Map
               className="map-wrap"
               style={{ width: "100%", height: 445 }}
               id="map"
             />
+
             <div className="col-lg-4 d-flex flex-column address-wrap">
               <div className="single-contact-address d-flex flex-row">
                 <div className="icon">
