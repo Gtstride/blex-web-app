@@ -89,6 +89,7 @@ const ContactUs = () => {
           </div>
         </div>
       </section>
+
       <section className="contact-page-area section-gap">
         <div className="container">
           <div className="row">
@@ -182,27 +183,27 @@ const ContactUs = () => {
                   <div className="col-lg-12">
                     <div className="alert-msg" style={{ textAlign: "left" }} />
                     {/* <button value={submitting}
-                      className="genric-btn primary"
-                      style={{ float: "right" }}
-                    >
-                      Send Message
-                    </button> */}
+                    className="genric-btn primary"
+                    style={{ float: "right" }}
+                  >
+                    Send Message
+                  </button> */}
 
                     {/* <button
-                      value={submitting}
-                      onClick={handleIsLoadedToggle}
-                      className="genric-btn primary"
-                      style={{ float: "right", border: "none"}}
-                      >
-                      {!submitting ?
-                        (
-                          <button className="genric-btn primary" style={{ float: "right" }} >
-                            Send Message
-                          </button>
-                        ) : (
-                          <i className="fa fa-refresh fa-spin" style={{ fontSize: '24px' }}></i>
-                        )}
-                    </button> */}
+                    value={submitting}
+                    onClick={handleIsLoadedToggle}
+                    className="genric-btn primary"
+                    style={{ float: "right", border: "none"}}
+                    >
+                    {!submitting ?
+                      (
+                        <button className="genric-btn primary" style={{ float: "right" }} >
+                          Send Message
+                        </button>
+                      ) : (
+                        <i className="fa fa-refresh fa-spin" style={{ fontSize: '24px' }}></i>
+                      )}
+                  </button> */}
 
                     <button value={submitting} onClick={handleIsLoadedToggle} className="primary-btn text-uppercase">
                       {!submitting ?
