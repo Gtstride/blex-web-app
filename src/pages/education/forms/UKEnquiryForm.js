@@ -13,6 +13,7 @@ const UKEnquiryForm = () => {
   });
 
   const [show, setShow] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(true)
   const [submitting, setSubmitting] = useState(false);
   let [phone, setPhone] = useState("");
   const [pdfFile, setPdfFile] = useState("");
@@ -40,10 +41,13 @@ const UKEnquiryForm = () => {
     // setPhone("");
   };
 
-
   // const fileType = ['application/pdf'];
   const handlePdfFileChange = async (e) => {
     setPdfFile(e.target.files[0]);
+  }
+
+  const handleIsLoadedToggle = () => {
+    setIsLoaded(currentIsLoaded => !currentIsLoaded)
   }
 
   const clearForm = () => {
@@ -120,16 +124,19 @@ const UKEnquiryForm = () => {
         desiredCourseOfStudy: "",
         phone: "",
       })
-      clearForm();
+      // clearForm();
       setShow(false);
       console.log(response);
     } catch (error) {
+      setIsLoaded(false)
       Swal.fire({
         title: "Sorry 😞",
         text: error.message,
       });
-      // clearForm();
-      // closeModal()
+      setIsLoaded(false);
+      setSubmitting(false)
+      console.log(isLoaded)
+      clearForm();
     }
   }
 
@@ -142,8 +149,8 @@ const UKEnquiryForm = () => {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Please Provide Us with your details Here<br />
-            *Every Field is required
+          <Modal.Title>Please Provide Us with your details<br />
+            Field marked * is required
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -160,7 +167,7 @@ const UKEnquiryForm = () => {
                     className="form-control"
                   />
                   <label className="form-label" htmlFor="form3Example1">
-                    Email
+                    <span>*</span> Email
                   </label>
                 </div>
               </div>
@@ -176,7 +183,7 @@ const UKEnquiryForm = () => {
                     onChange={handleOnChange}
                   />
                   <label className="form-label">
-                    Telephone</label>
+                    <span>*</span> Telephone</label>
                 </div>
               </div>
             </div>
@@ -193,7 +200,7 @@ const UKEnquiryForm = () => {
                     className="form-control"
                   />
                   <label className="form-label" htmlFor="form3Example1">
-                    First Name
+                    <span>*</span> First Name
                   </label>
                 </div>
               </div>
@@ -209,7 +216,7 @@ const UKEnquiryForm = () => {
                     className="form-control"
                   />
                   <label className="form-label" htmlFor="form3Example1">
-                    Middle Name
+                  <span>*</span> Middle Name
                   </label>
                 </div>
               </div>
@@ -227,7 +234,7 @@ const UKEnquiryForm = () => {
                     className="form-control"
                   />
                   <label className="form-label">
-                    Family Name</label>
+                    <span>*</span> Last Name</label>
                 </div>
               </div>
             </div>
@@ -245,7 +252,7 @@ const UKEnquiryForm = () => {
                     placeholder="Jan 14"
                   />
                   <label className="form-label" htmlFor="form3Example1">
-                    Birth Date
+                    <span>*</span> Date Of Birth
                   </label>
                 </div>
               </div>
@@ -261,7 +268,7 @@ const UKEnquiryForm = () => {
                     className="form-control"
                   />
                   <label className="form-label">
-                    Country Of Citizenship</label>
+                    <span>*</span> Country Of Citizenship</label>
                 </div>
               </div>
             </div>
@@ -279,7 +286,7 @@ const UKEnquiryForm = () => {
                   // placeholder="Jan 14"
                   />
                   <label className="form-label" htmlFor="form3Example1">
-                    Highest Level Of Education
+                    <span>*</span> Highest Level Of Education
                   </label>
                 </div>
               </div>
@@ -295,7 +302,7 @@ const UKEnquiryForm = () => {
                     className="form-control"
                   />
                   <label className="form-label">
-                    Desired Course of Study</label>
+                    <span>*</span> Desired Course of Study</label>
                 </div>
               </div>
             </div>
@@ -334,7 +341,7 @@ const UKEnquiryForm = () => {
                     <option value="pre-masters degree">Pre-Masters Degree</option>
                   </select>
                   <label className="form-label">
-                    Proposed Program Level</label>
+                    <span>*</span> Proposed Program Level</label>
                 </div>
               </div>
 
@@ -392,8 +399,23 @@ const UKEnquiryForm = () => {
               </div>
             </div>
             <div className="col-md-12">
-              <Button onClick={handleClose} className="genric-btn warning" style={{ float: "left" }}>Cancel</Button>
-              <button value={submitting} className="genric-btn success" style={{ float: "right" }}>Send Message</button>
+              <Button onClick={handleClose} className="genric-btn success text-uppercase" style={{ float: "left", width: "45%", height: 42, borderRadius: "0", fontSize: ".75rem", }}>Cancel</Button>
+              {/* <button value={submitting} className="genric-btn success" style={{ float: "right" }}>Send Message</button> */}
+
+              <button value={submitting} onClick={handleIsLoadedToggle}
+                className="genric-btn warning text-uppercase"
+                style={{ float: "right", }}
+              >
+                {!submitting ?
+                  <button className="genric-btn warning text-uppercase"
+                    style={{ border: "none" }}>
+                    Send Message
+                  </button> :
+                  (
+                    <i className="fa fa-refresh fa-spin" style={{ fontSize: '24px', border: "none" }}></i>
+                  )
+                }
+              </button>
             </div>
           </Form>
         </Modal.Body>

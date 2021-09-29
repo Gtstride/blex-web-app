@@ -13,6 +13,7 @@ const AustraliaEnquiryForm = () => {
   });
 
   const [show, setShow] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(true)
   const [submitting, setSubmitting] = useState(false);
   let [phone, setPhone] = useState("");
   const [pdfFile, setPdfFile] = useState("");
@@ -36,9 +37,11 @@ const AustraliaEnquiryForm = () => {
 
   const handleOnChange = (value) => {
     setPhone(value);
-    // setSubmitting(false);
-    // setPhone("");
   };
+
+  const handleIsLoadedToggle = () => {
+    setIsLoaded(currentIsLoaded => !currentIsLoaded)
+  }
 
   // const fileType = ['application/pdf'];
   const handlePdfFileChange = async (e) => {
@@ -140,12 +143,15 @@ const AustraliaEnquiryForm = () => {
       setShow(false);
       console.log(response);
     } catch (error) {
+      setIsLoaded(false)
       Swal.fire({
         title: "Sorry 😞",
         text: error.message,
       });
-      // clearForm();
-      // closeModal()
+      setIsLoaded(false);
+      setSubmitting(false)
+      console.log(isLoaded)
+      clearForm();
     }
   }
 
@@ -158,8 +164,8 @@ const AustraliaEnquiryForm = () => {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Please Provide Us with your details Here<br />
-            *Every Field is required
+          <Modal.Title>Please Provide Us with your details<br />
+            Field marked * is required
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -176,7 +182,7 @@ const AustraliaEnquiryForm = () => {
                     className="form-control"
                   />
                   <label className="form-label" htmlFor="form3Example1">
-                    Email
+                    <span>*</span> Email
                   </label>
                 </div>
               </div>
@@ -192,7 +198,7 @@ const AustraliaEnquiryForm = () => {
                     onChange={handleOnChange}
                   />
                   <label className="form-label">
-                    Telephone</label>
+                    <span>*</span> Telephone</label>
                 </div>
               </div>
             </div>
@@ -209,7 +215,7 @@ const AustraliaEnquiryForm = () => {
                     className="form-control"
                   />
                   <label className="form-label" htmlFor="form3Example1">
-                    First Name
+                    <span>*</span> First Name
                   </label>
                 </div>
               </div>
@@ -225,7 +231,7 @@ const AustraliaEnquiryForm = () => {
                     className="form-control"
                   />
                   <label className="form-label" htmlFor="form3Example1">
-                    Middle Name
+                    <span>*</span> Middle Name
                   </label>
                 </div>
               </div>
@@ -243,7 +249,7 @@ const AustraliaEnquiryForm = () => {
                     className="form-control"
                   />
                   <label className="form-label">
-                    Family Name</label>
+                    <span>*</span>Last Name</label>
                 </div>
               </div>
             </div>
@@ -261,7 +267,7 @@ const AustraliaEnquiryForm = () => {
                     placeholder="Jan 14"
                   />
                   <label className="form-label" htmlFor="form3Example1">
-                    Birth Date
+                    <span>*</span> Date Of Birth
                   </label>
                 </div>
               </div>
@@ -277,7 +283,7 @@ const AustraliaEnquiryForm = () => {
                     className="form-control"
                   />
                   <label className="form-label">
-                    Country Of Citizenship</label>
+                    <span>*</span> Country Of Citizenship</label>
                 </div>
               </div>
             </div>
@@ -295,7 +301,7 @@ const AustraliaEnquiryForm = () => {
                   // placeholder="Jan 14"
                   />
                   <label className="form-label" htmlFor="form3Example1">
-                    Highest Level Of Education
+                    <span>*</span> Highest Level Of Education
                   </label>
                 </div>
               </div>
@@ -311,7 +317,7 @@ const AustraliaEnquiryForm = () => {
                     className="form-control"
                   />
                   <label className="form-label">
-                    Desired Course of Study</label>
+                    <span>*</span> Desired Course of Study</label>
                 </div>
               </div>
             </div>
@@ -350,7 +356,7 @@ const AustraliaEnquiryForm = () => {
                     <option value="pre-masters degree">Pre-Masters Degree</option>
                   </select>
                   <label className="form-label">
-                    Proposed Program Level</label>
+                    <span>*</span> Proposed Program Level</label>
                 </div>
               </div>
 
@@ -401,14 +407,25 @@ const AustraliaEnquiryForm = () => {
                     <option value="female">Female</option>
                     <option value="prefer_not_to_say">Prefer not to say</option>
                   </select>
-                  <label className="form-label">
-                    Gender</label>
+                  <label className="form-label">Gender</label>
                 </div>
               </div>
             </div>
             <div className="col-md-12">
-              <Button onClick={handleClose} className="genric-btn warning" style={{ float: "left" }}>Cancel</Button>
-              <button value={submitting} className="genric-btn success" style={{ float: "right" }}>Send Message</button>
+              <Button onClick={handleClose} className="genric-btn success text-uppercase" style={{ float: "left", width: "45%", height: 42, borderRadius: "0", fontSize: ".75rem", }}>Cancel</Button>
+              <button value={submitting} onClick={handleIsLoadedToggle}
+                className="genric-btn warning text-uppercase" style={{ float: "right", }}
+              >
+                {!submitting ?
+                  <button className="genric-btn warning text-uppercase"
+                    style={{ border: "none" }}>
+                    Send Message
+                  </button> :
+                  (
+                    <i className="fa fa-refresh fa-spin" style={{ fontSize: '24px', border: "none" }}></i>
+                  )
+                }
+              </button>
             </div>
           </Form>
         </Modal.Body>

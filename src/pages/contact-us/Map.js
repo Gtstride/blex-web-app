@@ -2,7 +2,7 @@ import React from 'react'
 
 const Map = () => {
   return (
-    <div className="mapouter" style={{ marginBottom: "65px", marginLeft: "50px" }}>
+    <div className="mapouter" id="mapouter" style={{ marginBottom: "65px", marginLeft: "50px" }}>
       <div className="gmap_canvas">
         <iframe
           title="map"

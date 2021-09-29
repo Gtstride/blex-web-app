@@ -24,9 +24,10 @@ export const httpPostWithNoToken = async (url, fd) => {
       })
       .catch((error) => {
         console.log("here>>", error.response, error.response.data);
+        // alert(error.response.data)
         let error_msg = {
           // message: "Something went wrong. Please check and make sure everything is okay and try again",
-          message: error.response.data
+          message: error.response.data 
         };
         if (
           error &&
