@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Swal from "sweetalert2";
 import { httpPostWithNoToken } from '../../helpers/api'
-import Spinner from '../../components/Spinner/Spinner'
+// import Spinner from '../../components/Spinner/Spinner'
 
 const AvailableCourseView = () => {
 
@@ -47,8 +47,7 @@ const AvailableCourseView = () => {
 
       const response = await httpPostWithNoToken("relocation_form", data);
       // console.log(data)
-      console.log(response);
-      isLoaded(false);
+      console.log(response)
       Swal.fire({
         title: "Successful 😀",
         text: "Your details have been submitted Successfully, We would get in touch shortly",
@@ -67,8 +66,9 @@ const AvailableCourseView = () => {
         text: error.message,
       });
       setIsLoaded(false);
+      console.log(isLoaded)
       setSubmitting(false);
-      clearForm();
+      // clearForm();
     }
   }
 
@@ -151,18 +151,23 @@ const AvailableCourseView = () => {
                   <option value="information_about_work">Get Information about work</option>
                   <option value="information_about_relocation">Get Information about relocating</option>
                 </select>
-                {/* <div className="form-select" id="service-select">
-                </div> */}
-                {/* <button value={submitting} className="primary-btn text-uppercase">
-                  Submit
-                </button> */}
-                {!submitting ? (
+                {/* {!submitting ? (
                   <button onClick={handleIsLoadedToggle} className="primary-btn text-uppercase">
                     Submit Form
                   </button>
                 ) : (
-                  <Spinner />
-                )}
+                  <Spinner  />
+                )} */}
+                <button value={submitting} onClick={handleIsLoadedToggle} className="primary-btn text-uppercase">
+                  {!submitting ?
+                    <button className="primary-btn text-uppercase">
+                      Submit
+                    </button> :
+                    (
+                      <i className="fa fa-refresh fa-spin" style={{ fontSize: '24px' }}></i>
+                    )
+                  }
+                </button>
               </form>
             </div>
           </div>

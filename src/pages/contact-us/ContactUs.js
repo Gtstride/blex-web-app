@@ -4,6 +4,8 @@ import { httpPostWithNoToken } from '../../helpers/api'
 import Map from './Map'
 
 const ContactUs = () => {
+
+  const [isLoaded, setIsLoaded] = useState(true)
   const [submitting, setSubmitting] = useState(false);
   const [inputValues, setInputValues] = useState({
     name: "",
@@ -27,10 +29,15 @@ const ContactUs = () => {
     setInputValues({ ...inputValues, [name]: value });
   };
 
+  const handleIsLoadedToggle = () => {
+    setIsLoaded(currentIsLoaded => !currentIsLoaded)
+  }
+
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
       setSubmitting(true);
+
       const data = {
         ...inputValues,
         name: inputValues.name,
@@ -40,7 +47,7 @@ const ContactUs = () => {
       };
 
       const res = await httpPostWithNoToken("contacts", data);
-      console.log(data)
+
       Swal.fire({
         title: "Successful 😀",
         text: "Your details have been submitted Successfully, We will get in touch shortly",
@@ -51,11 +58,15 @@ const ContactUs = () => {
       clearForm();
     } catch (error) {
       console.log(error)
+      setIsLoaded(false)
       Swal.fire({
         title: "Sorry 😞, we couldn't process your details",
         text: error.message,
         // type: "error",
       });
+      setIsLoaded(false);
+      setSubmitting(false)
+      console.log(isLoaded)
       clearForm();
     }
   };
@@ -170,11 +181,38 @@ const ContactUs = () => {
                   </div>
                   <div className="col-lg-12">
                     <div className="alert-msg" style={{ textAlign: "left" }} />
-                    <button value={submitting}
+                    {/* <button value={submitting}
                       className="genric-btn primary"
                       style={{ float: "right" }}
                     >
                       Send Message
+                    </button> */}
+
+                    {/* <button
+                      value={submitting}
+                      onClick={handleIsLoadedToggle}
+                      className="genric-btn primary"
+                      style={{ float: "right", border: "none"}}
+                      >
+                      {!submitting ?
+                        (
+                          <button className="genric-btn primary" style={{ float: "right" }} >
+                            Send Message
+                          </button>
+                        ) : (
+                          <i className="fa fa-refresh fa-spin" style={{ fontSize: '24px' }}></i>
+                        )}
+                    </button> */}
+
+                    <button value={submitting} onClick={handleIsLoadedToggle} className="primary-btn text-uppercase">
+                      {!submitting ?
+                        <button className="primary-btn text-uppercase">
+                          Send Message
+                        </button> :
+                        (
+                          <i className="fa fa-refresh fa-spin" style={{ fontSize: '24px' }}></i>
+                        )
+                      }
                     </button>
                   </div>
                 </div>

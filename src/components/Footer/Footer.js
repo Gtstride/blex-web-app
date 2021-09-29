@@ -1,19 +1,7 @@
 import React from 'react'
 import * as Icon from 'react-bootstrap-icons';
 
-// import MessageParser from '../Chatbot/MessageParser';
-// import ActionProvider from '../Chatbot/ActionProvider'
-// import FlexBoxFees from "../flyBoxFees/FlyBoxFee"
-// import config from "../Chatbot/config"
-
 const Footer = () => {
-
-  // const [show, setShow] = useState(false);
-
-  // const handleClose = () => setShow(false);
-  // const handleShow = () => setShow(true);
-
-
   // useEffect(() => {
   //   alert('reload!')
   // }, [])
@@ -43,10 +31,7 @@ const Footer = () => {
                 <h4>Newsletter</h4>
                 <p className="text-white">Stay up-to-date with our latest</p>
                 <div className id="mc_embed_signup">
-                  <form
-                    target="_blank"
-                    action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&id=92a4423d01"
-                  >
+                  <form target="_blank" action="#">
                     <div className="input-group">
                       <input
                         type="text"
@@ -58,7 +43,7 @@ const Footer = () => {
                         required
                       />
                       <div className="input-group-btn">
-                        <button className="btn btn-default" type="submit"><span className="lnr lnr-arrow-right" /></button>
+                        <button className="btn btn-default" type="submit" disabled><span className="lnr lnr-arrow-right" /></button>
                       </div>
                       <div className="info" />
                     </div>
