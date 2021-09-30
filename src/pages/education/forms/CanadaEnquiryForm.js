@@ -166,7 +166,7 @@ const CanadaEnquiryForm = () => {
                     className="form-control"
                   />
                   <label className="form-label" htmlFor="form3Example1">
-                   <span>*</span> Email
+                    <span>*</span> Email
                   </label>
                 </div>
               </div>
@@ -182,7 +182,7 @@ const CanadaEnquiryForm = () => {
                     onChange={handleOnChange}
                   />
                   <label className="form-label">
-                  <span>*</span> Telephone</label>
+                    <span>*</span> Telephone</label>
                 </div>
               </div>
             </div>
@@ -199,7 +199,7 @@ const CanadaEnquiryForm = () => {
                     className="form-control"
                   />
                   <label className="form-label" htmlFor="form3Example1">
-                  <span>*</span> First Name
+                    <span>*</span> First Name
                   </label>
                 </div>
               </div>
@@ -215,7 +215,7 @@ const CanadaEnquiryForm = () => {
                     className="form-control"
                   />
                   <label className="form-label" htmlFor="form3Example1">
-                  <span>*</span> Middle Name
+                    <span>*</span> Middle Name
                   </label>
                 </div>
               </div>
@@ -233,7 +233,7 @@ const CanadaEnquiryForm = () => {
                     className="form-control"
                   />
                   <label className="form-label">
-                  <span>*</span> Last Name</label>
+                    <span>*</span> Last Name</label>
                 </div>
               </div>
             </div>
@@ -251,7 +251,7 @@ const CanadaEnquiryForm = () => {
                     placeholder="Jan 14"
                   />
                   <label className="form-label" htmlFor="form3Example1">
-                  <span>*</span> Date Of Birth
+                    <span>*</span> Date Of Birth
                   </label>
                 </div>
               </div>
@@ -267,7 +267,7 @@ const CanadaEnquiryForm = () => {
                     className="form-control"
                   />
                   <label className="form-label">
-                  <span>*</span> Country Of Citizenship</label>
+                    <span>*</span> Country Of Citizenship</label>
                 </div>
               </div>
             </div>
@@ -285,7 +285,7 @@ const CanadaEnquiryForm = () => {
                   // placeholder="Jan 14"
                   />
                   <label className="form-label" htmlFor="form3Example1">
-                  <span>*</span> Highest Level Of Education
+                    <span>*</span> Highest Level Of Education
                   </label>
                 </div>
               </div>
@@ -301,7 +301,7 @@ const CanadaEnquiryForm = () => {
                     className="form-control"
                   />
                   <label className="form-label">
-                  <span>*</span> Desired Course of Study</label>
+                    <span>*</span> Desired Course of Study</label>
                 </div>
               </div>
             </div>
@@ -340,7 +340,7 @@ const CanadaEnquiryForm = () => {
                     <option value="pre-masters degree">Pre-Masters Degree</option>
                   </select>
                   <label className="form-label">
-                  <span>*</span> Proposed Program Level</label>
+                    <span>*</span> Proposed Program Level</label>
                 </div>
               </div>
 
@@ -398,7 +398,8 @@ const CanadaEnquiryForm = () => {
             </div>
 
             <div className="col-md-12">
-              <Button onClick={handleClose} className="genric-btn success text-uppercase" style={{ float: "left", width: "45%", height: 42, borderRadius: "0", fontSize: ".75rem", }}>Cancel</Button>
+              <Button onClick={handleClose} className="genric-btn success text-uppercase">Cancel</Button>
+              {/* <button value={submitting} className="genric-btn success" style={{ float: "right" }}>Send Message</button> */}
 
               <button value={submitting} onClick={handleIsLoadedToggle}
                 className="genric-btn warning text-uppercase"

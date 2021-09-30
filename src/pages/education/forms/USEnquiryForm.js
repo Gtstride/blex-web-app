@@ -398,10 +398,7 @@ const USEnquiryForm = () => {
               </div>
             </div>
             <div className="col-md-12">
-              <Button onClick={handleClose} className="genric-btn danger text-uppercase"
-                style={{ float: "left", width: "45%", height: 42, borderRadius: "0", fontSize: ".75rem", }}>
-                Cancel
-              </Button>
+              <Button onClick={handleClose} className="genric-btn danger text-uppercase"> Cancel</Button>
 
               <button value={submitting} onClick={handleIsLoadedToggle}
                 className="genric-btn success text-uppercase"
@@ -409,7 +406,7 @@ const USEnquiryForm = () => {
               >
                 {!submitting ?
                   <button className="genric-btn success text-uppercase"
-                    style={{ border: "none" }}>
+                    style={{ border: "none", }}>
                     Send Message
                   </button> :
                   (

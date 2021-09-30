@@ -70,6 +70,18 @@ button.fly_box_fee.btn.btn-outline-primary {
   font-weight: 600;
 }
 
+.react-tel-input .form-control {
+  width: 230px;
+  outline: none;
+}
+
+button.genric-btn.success.text-uppercase.btn.btn-primary {
+  float: "left";
+  width: "30%";
+  height: 42;
+  border-radius: "0";
+  font-size: ".75rem";
+}
 
 @media screen and (max-width: 600px) {
   #mapouter {

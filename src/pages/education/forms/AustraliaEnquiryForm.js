@@ -172,7 +172,7 @@ const AustraliaEnquiryForm = () => {
           <Form onSubmit={handleSubmit}>
             {/* <!-- 2 column grid layout with text inputs for the first and last names --> */}
             <div className="row mb-4">
-              <div className="col">
+              <div className="col" style={{ width: "510px" }} >
                 <div className="form-outline">
                   <input
                     type="email"
@@ -182,7 +182,7 @@ const AustraliaEnquiryForm = () => {
                     className="form-control"
                   />
                   <label className="form-label" htmlFor="form3Example1">
-                    <span>*</span> Email
+                    <span>*</span>Email
                   </label>
                 </div>
               </div>
@@ -412,10 +412,8 @@ const AustraliaEnquiryForm = () => {
               </div>
             </div>
             <div className="col-md-12">
-              <Button onClick={handleClose} className="genric-btn success text-uppercase" style={{ float: "left", width: "45%", height: 42, borderRadius: "0", fontSize: ".75rem", }}>Cancel</Button>
-              <button value={submitting} onClick={handleIsLoadedToggle}
-                className="genric-btn warning text-uppercase" style={{ float: "right", }}
-              >
+              <Button onClick={handleClose} className="genric-btn success text-uppercase">Cancel</Button>
+              <button value={submitting} onClick={handleIsLoadedToggle} className="genric-btn warning text-uppercase" style={{ float: "right", }}>
                 {!submitting ?
                   <button className="genric-btn warning text-uppercase"
                     style={{ border: "none" }}>
