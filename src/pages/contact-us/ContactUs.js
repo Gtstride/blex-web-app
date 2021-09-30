@@ -182,12 +182,6 @@ const ContactUs = () => {
                   </div>
                   <div className="col-lg-12">
                     <div className="alert-msg" style={{ textAlign: "left" }} />
-                    {/* <button value={submitting}
-                    className="genric-btn primary"
-                    style={{ float: "right" }}
-                  >
-                    Send Message
-                  </button> */}
 
                     {/* <button
                     value={submitting}
