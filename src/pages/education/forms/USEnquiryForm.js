@@ -125,19 +125,20 @@ const USEnquiryForm = () => {
         desiredCourseOfStudy: "",
         phone: "",
       })
-      // clearForm();
+      clearForm();
       setShow(false);
+      window.location.reload(function(){setTimeout()},8000);
       console.log(response);
     } catch (error) {
       setIsLoaded(false)
       Swal.fire({
         title: "Sorry 😞",
-        text: error.message,
+        text: error.message
       });
+      // clearForm()
       setIsLoaded(false);
       setSubmitting(false)
       console.log(isLoaded)
-      clearForm();
     }
   }
 
@@ -315,6 +316,7 @@ const USEnquiryForm = () => {
                 min="3"
                 max="100"
                 name="houseAddress"
+                placeholder="13 Bode Thomas"
                 value={inputValues.houseAddress}
                 onChange={handleChange}
                 className="form-control"
@@ -334,7 +336,7 @@ const USEnquiryForm = () => {
                     value={inputValues.programLevel}
                     onChange={handleChange}
                   >
-                    <option value=""></option>
+                    {/* <option value=""></option> */}
                     <option value="" disabled>Please select your program</option>
                     <option value="bsc">BSc</option>
                     <option value="masters">Masters</option>
@@ -355,17 +357,17 @@ const USEnquiryForm = () => {
                     value={inputValues.immigrationHistory}
                     onChange={handleChange}
                     className="form-control"
-                    placeholder="Immigration History"
+                    placeholder="Rome, Canada, UK"
                   />
                   <label className="form-label" htmlFor="form3Example1">
-                    Countries visited separated with a comma
+                  Immigration History
                   </label>
                 </div>
               </div>
             </div>
 
-            {/* Visa Denial */}
-            <div className="row mb-4">
+             {/* Visa Denial */}
+             <div className="row mb-4">
               <div className="input-group mb-3">
                 <input
                   type="file"
@@ -374,7 +376,8 @@ const USEnquiryForm = () => {
                   defaultValue={pdfFile}
                 // value={inputValues.visaDenialLetter}
                 />
-                <label className="file-upload" htmlFor="inputGroupFile02">Upload Visa Denial Letter, if any?</label>
+                <label className="file-upload" htmlFor="inputGroupFile02">Please Upload Visa Denial Letter, if any? 
+                <span className="ml-2"><strong>PDF Format Only!</strong> </span></label>
               </div>
 
               {/* Gender */}
@@ -386,7 +389,7 @@ const USEnquiryForm = () => {
                     value={inputValues.gender}
                     onChange={handleChange}
                   >
-                    <option value=""></option>
+                    {/* <option value=""></option> */}
                     <option value="" disabled>Please select your gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>

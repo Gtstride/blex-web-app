@@ -39,7 +39,7 @@ const Footer = () => {
                         name="EMAIL"
                         placeholder="Enter Email Address"
                         // onFocus="this.placeholder = ''"
-                        onBlur="this.placeholder = 'Enter Email Address '"
+                        // onBlur="this.placeholder= 'Enter Email Address '"
                         required
                       />
                       <div className="input-group-btn">

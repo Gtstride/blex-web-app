@@ -151,13 +151,6 @@ const AvailableCourseView = () => {
                   <option value="information_about_work">Get Information about work</option>
                   <option value="information_about_relocation">Get Information about relocating</option>
                 </select>
-                {/* {!submitting ? (
-                  <button onClick={handleIsLoadedToggle} className="primary-btn text-uppercase">
-                    Submit Form
-                  </button>
-                ) : (
-                  <Spinner  />
-                )} */}
                 <button value={submitting} onClick={handleIsLoadedToggle} className="primary-btn text-uppercase">
                   {!submitting ?
                     <button className="primary-btn text-uppercase">

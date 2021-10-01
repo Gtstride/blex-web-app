@@ -3,6 +3,7 @@ import AustraliaEnquiryForm from './forms/AustraliaEnquiryForm'
 
 
 const StudyInAustralia = () => {
+
   return (
     <>
       <section className="banner-area relative study-australia-home-banner blog-home-banner" id="home">
