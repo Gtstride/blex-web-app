@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect, } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import ReactPhoneInput from "react-phone-input-2";
 import 'react-phone-input-2/lib/style.css'
@@ -7,7 +7,7 @@ import { httpPostWithNoToken } from '../../../helpers/api'
 // import CountrySelect from 'react-bootstrap-country-select';
 
 
-const AustraliaEnquiryForm = () => {
+const AustraliaEnquiryForm = (props) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   });
@@ -76,6 +76,11 @@ const AustraliaEnquiryForm = () => {
     setInputValues({ ...inputValues, [name]: value });
   };
 
+  
+//   setTimeout(function(){
+//     window.location.reload(1);
+//  }, 5000);
+
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
@@ -141,6 +146,7 @@ const AustraliaEnquiryForm = () => {
       })
       clearForm();
       setShow(false);
+      window.location.reload(function(){setTimeout()},9000);
       console.log(response);
     } catch (error) {
       setIsLoaded(false)
@@ -148,12 +154,16 @@ const AustraliaEnquiryForm = () => {
         title: "Sorry 😞",
         text: error.message,
       });
+      clearForm();
       setIsLoaded(false);
       setSubmitting(false)
       console.log(isLoaded)
-      clearForm();
     }
   }
+
+  useEffect(() => {
+    // setShow(true)
+  }, [])
 
 
   return (
@@ -348,7 +358,7 @@ const AustraliaEnquiryForm = () => {
                     value={inputValues.programLevel}
                     onChange={handleChange}
                   >
-                    <option value=""></option>
+                    {/* <option value=""></option> */}
                     <option value="" disabled>Please select your program</option>
                     <option value="bsc">BSc</option>
                     <option value="masters">Masters</option>
@@ -369,10 +379,10 @@ const AustraliaEnquiryForm = () => {
                     value={inputValues.immigrationHistory}
                     onChange={handleChange}
                     className="form-control"
-                    placeholder="Immigration History"
+                    placeholder="Rome, Canada, UK, US"
                   />
                   <label className="form-label" htmlFor="form3Example1">
-                    Countries visited separated with a comma
+                  Immigration History
                   </label>
                 </div>
               </div>
@@ -388,7 +398,8 @@ const AustraliaEnquiryForm = () => {
                   defaultValue={pdfFile}
                 // value={inputValues.visaDenialLetter}
                 />
-                <label className="file-upload" htmlFor="inputGroupFile02">Upload Visa Denial Letter, if any?</label>
+                <label className="file-upload" htmlFor="inputGroupFile02">Please Upload Visa Denial Letter, if any? 
+                <span className="ml-2"><strong>PDF Format Only!</strong> </span></label>
               </div>
 
 
@@ -401,7 +412,7 @@ const AustraliaEnquiryForm = () => {
                     value={inputValues.gender}
                     onChange={handleChange}
                   >
-                    <option value=""></option>
+                    {/* <option value=""></option> */}
                     <option value="" disabled>Please select your gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
@@ -413,7 +424,7 @@ const AustraliaEnquiryForm = () => {
             </div>
             <div className="col-md-12">
               <Button onClick={handleClose} className="genric-btn success text-uppercase">Cancel</Button>
-              <button value={submitting} onClick={handleIsLoadedToggle} className="genric-btn warning text-uppercase" style={{ float: "right", }}>
+              <div value={submitting} onClick={handleIsLoadedToggle} className="genric-btn warning text-uppercase" style={{ float: "right", }}>
                 {!submitting ?
                   <button className="genric-btn warning text-uppercase"
                     style={{ border: "none" }}>
@@ -423,7 +434,7 @@ const AustraliaEnquiryForm = () => {
                     <i className="fa fa-refresh fa-spin" style={{ fontSize: '24px', border: "none" }}></i>
                   )
                 }
-              </button>
+              </div>
             </div>
           </Form>
         </Modal.Body>

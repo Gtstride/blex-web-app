@@ -1,12 +1,10 @@
 import React from "react"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-// import { Chat } from 'react-chat-popup';
 
 import Header from "./components/Header/Header"
 import Home from "./pages/Home/Home"
 import AboutUs from "./pages/aboutUs/AboutUs"
 import ContactUs from "./pages/contact-us/ContactUs"
-// import sample from "./pages/admin/sample"
 
 // Study Routes
 import StudyInUk from "./pages/education/StudyInUk"
@@ -19,18 +17,10 @@ import WorkInLithuania from "./pages/Work/WorkInLith"
 import Unauthorized from "./not-found/NotFound"
 
 const Routes = () => {
-  // const handleNewUserMessage = (newMessage) => {
-  //   console.log(`New message incoming! ${newMessage}`);
-  //   // Now send the message throught the backend API
-  // }
   return (
     <>
       <Router>
         <Header />
-        {/* <Chat
-          handleNewUserMessage={handleNewUserMessage}
-          title="Welcome to FlyBox!"
-        /> */}
 
         <Switch>
           <Route exact path="/" component={Home} />

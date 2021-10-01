@@ -101,7 +101,7 @@ const CanadaEnquiryForm = () => {
       const response = await httpPostWithNoToken("canada_form", fd);
       console.log(fd);
       Swal.fire({
-        title: "Successful 😀",
+        title: "Thank You For Submitting!😀",
         text: "Your details have been submitted Successfully, We would get in touch shortly",
       });
       console.log(fd);
@@ -123,19 +123,20 @@ const CanadaEnquiryForm = () => {
         desiredCourseOfStudy: "",
         phone: "",
       })
-      // clearForm();
+      clearForm();
       setShow(false);
+      window.location.reload(function(){setTimeout()},8000);
       console.log(response);
     } catch (error) {
       setIsLoaded(false)
       Swal.fire({
         title: "Sorry 😞",
-        text: error.message,
+        text: error.message
       });
+      // clearForm()
       setIsLoaded(false);
       setSubmitting(false)
       console.log(isLoaded)
-      clearForm();
     }
   }
 
@@ -332,7 +333,7 @@ const CanadaEnquiryForm = () => {
                     value={inputValues.programLevel}
                     onChange={handleChange}
                   >
-                    <option value=""></option>
+                    {/* <option value=""></option> */}
                     <option value="" disabled>Please select your program</option>
                     <option value="bsc">BSc</option>
                     <option value="masters">Masters</option>
@@ -353,10 +354,10 @@ const CanadaEnquiryForm = () => {
                     value={inputValues.immigrationHistory}
                     onChange={handleChange}
                     className="form-control"
-                    placeholder="Immigration History"
+                    placeholder="Rome, UK, US, Canada"
                   />
                   <label className="form-label" htmlFor="form3Example1">
-                    Countries visited separated with a comma
+                  Immigration History
                   </label>
                 </div>
               </div>
@@ -372,9 +373,9 @@ const CanadaEnquiryForm = () => {
                   defaultValue={pdfFile}
                 // value={inputValues.visaDenialLetter}
                 />
-                <label className="file-upload" htmlFor="inputGroupFile02">Upload Visa Denial Letter, if any?</label>
+                <label className="file-upload" htmlFor="inputGroupFile02">Please Upload Visa Denial Letter, if any? 
+                <span className="ml-2"><strong>PDF Format Only!</strong> </span></label>
               </div>
-
 
               {/* Gender */}
               <div className="col">
@@ -385,7 +386,7 @@ const CanadaEnquiryForm = () => {
                     value={inputValues.gender}
                     onChange={handleChange}
                   >
-                    <option value=""></option>
+                    {/* <option value=""></option> */}
                     <option value="" disabled>Please select your gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
