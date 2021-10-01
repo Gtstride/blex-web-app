@@ -382,7 +382,7 @@ const AustraliaEnquiryForm = (props) => {
                     placeholder="Rome, Canada, UK, US"
                   />
                   <label className="form-label" htmlFor="form3Example1">
-                  Immigration History
+                    Immigration History
                   </label>
                 </div>
               </div>
