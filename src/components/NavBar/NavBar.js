@@ -33,6 +33,7 @@ const NavBar = () => {
                   <li><a href="/work_in_germany"> Work in Germany</a></li>
                 </ul>
               </li> */}
+              {/* <li><a href="/ticketing">Buy Your Ticket</a></li> */}
               <li><a href="/contact-us">Contact</a></li>
             </ul>
           </nav>

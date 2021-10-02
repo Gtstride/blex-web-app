@@ -100,11 +100,11 @@ const USEnquiryForm = () => {
       fd.append('usDenialLetter', pdfFile);
 
       const response = await httpPostWithNoToken("us_form", fd);
-      console.log(fd);
+      console.log(response);
       Swal.fire({
         title: "Successful 😀",
-        text: "Your details have been submitted Successfully, We would get in touch shortly",
-        // text: `${"Thank you for successfully submitting  your details as"} ${response.email}. ${"We would get in touch shortly"}`,
+        // text: "Your details have been submitted Successfully, We would get in touch shortly",
+        text: `${"Thank you for successfully submitting  your details as"} ${fd.email}. ${"We would get in touch shortly"}`,
       });
       console.log(response);
       setSubmitting(false);
@@ -127,8 +127,8 @@ const USEnquiryForm = () => {
       })
       clearForm();
       setShow(false);
-      window.location.reload(function(){setTimeout()},8000);
-      console.log(response);
+      window.location.reload();
+      // console.log(response);
     } catch (error) {
       setIsLoaded(false)
       Swal.fire({

@@ -51,8 +51,8 @@ export default function PopularCourse() {
                   </div> */}
                 </div>
                 <div className="details">
-                  <a href onClick={(e) => { e.preventDefault() }}><h4>Learn More About Relocating</h4></a>
-                  <p>All you need to know, for a successful and seemless relocation, as a professional, student and how to relocate with your family</p>
+                  <a href onClick={(e) => { e.preventDefault() }}><h4>Learn All About Studying Abroad Opportunities</h4></a>
+                  <p>The opportunities that comes with studying abroad is enumerable, our professional team, is always on ground to guide you through</p>
                 </div>
               </div>
               <div className="single-popular-carusel">
@@ -78,15 +78,13 @@ export default function PopularCourse() {
                   {/* <div className="meta d-flex justify-content-between">
                     <p>
                       <span className="lnr lnr-users" /> 355{" "}
-                      <span className="lnr lnr-bubble" />
-                      35
-                    </p>
-                    <h4>$150</h4>
+                      <span className="lnr lnr-bubble" />35</p>
+                    <h4></h4>
                   </div> */}
                 </div>
                 <div className="details">
-                  <a href onClick={(e) => { e.preventDefault() }}> <h4>Learn About Our Work Package</h4></a>
-                  <p>Get Information on how to secure your dream Job in any country of your choice </p>
+                  <a href onClick={(e) => { e.preventDefault() }}> <h4>Learn About Our Different Study Packages</h4></a>
+                  <p>Get Information on how to secure your admission abroad seemlessly in UK, US, Canada and Australia</p>
                 </div>
               </div>
               <div className="single-popular-carusel">
@@ -98,11 +96,11 @@ export default function PopularCourse() {
                 </div>
                 <div className="details">
                   <a href onClick={(e) => { e.preventDefault() }}>
-                    <h4>Learn About Work / Study</h4>
+                    <h4>All You Need to Know About Studying Abroad</h4>
                   </a>
                   <p>
-                    When television was young, there was a hugely popular show based
-                    on the still popular fictional character
+                    Our team of professionals are on ground to guid you through on a step-by-step process of 
+                    securing that admission in your dream school abroad. 
                   </p>
                 </div>
               </div>
@@ -115,11 +113,10 @@ export default function PopularCourse() {
                 </div>
                 <div className="details">
                   <a href onClick={(e) => { e.preventDefault() }}>
-                    <h4>Learn About Relocating With your Family</h4>
+                    <h4>Learn How to Get that Course Abroad</h4>
                   </a>
                   <p>
-                    When television was young, there was a hugely popular show based
-                    on the still popular fictional character
+                    All you need to know about gaining admission into a school abroad with no prior background in a particular course
                   </p>
                 </div>
               </div>

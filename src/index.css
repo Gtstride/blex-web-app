@@ -1,74 +1,86 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
-.h4, h4 {
-  font-size: 1rem;
+.h4,
+h4 {
+	font-size: 1rem;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
 }
 
 .germany-blog-home-banner {
-  background:url("./assets/img/germany.jpg") bottom;
-  background-size:cover;
-  padding:130px 0;
+	background: url("./assets/img/germany.jpg") bottom;
+	background-size: cover;
+	padding: 130px 0;
 }
 
 .lithanuia-blog-home-banner {
-  background:url("./assets/img/lit.jpg") bottom;
-  /* background: rgba(7, 4, 6, 0.8); */
-  background-size:cover;
-  padding:50px 0;
+	background: url("./assets/img/lit.jpg") bottom;
+	/* background: rgba(7, 4, 6, 0.8); */
+	background-size: cover;
+	padding: 50px 0;
 }
 
-
 .study-australia-home-banner {
-  background:url("./assets/img/Austr.jfif") bottom;
-  background-size:cover;
-  padding:130px 0;
+	background: url("./assets/img/Austr.jfif") bottom;
+	background-size: cover;
+	padding: 130px 0;
 }
 
 .study-canada-home-banner {
-  background:url("./assets/img/Canada.jpg") bottom;
-  background-size:cover;
-  padding:130px 0;
+	background: url("./assets/img/Canada.jpg") bottom;
+	background-size: cover;
+	padding: 130px 0;
 }
 
 .study-uk-home-banner {
-  background:url("./assets/img/uk.jpg") bottom;
-  background-size:cover;
-  padding:130px 0;
+	background: url("./assets/img/uk.jpg") bottom;
+	background-size: cover;
+	padding: 130px 0;
 }
 
 .study-us-home-banner {
-  background:url("./assets/img/America.jpg") bottom;
-  background-size:cover;
-  padding:130px 0;
+	background: url("./assets/img/America.jpg") bottom;
+	background-size: cover;
+	padding: 130px 0;
 }
 
 .about-us-para {
-  text-align: justify;
+	text-align: justify;
 }
 
 .admin-login-banner {
-  background:url("./assets/img/admin1.png") bottom;
-  background-size:cover;
-  /* padding:20px 0; */
+	background: url("./assets/img/admin1.png") bottom;
+	background-size: cover;
+	/* padding:20px 0; */
 }
 
 .admin-overlay-bg {
-  background-color: rgba(4,9,30,.8);
+	background-color: rgba(4, 9, 30, 0.8);
 }
 
 .react-chatbot-kit-chat-container {
-  position: absolute;
-  width: 200px;
-  right: 0;
+	position: absolute;
+	width: 200px;
+	right: 0;
 }
+
+.cd-top--is-visible {
+	visibility: visible;
+	opacity: 1;
+}
+
+.cd-top--fade-out {
+	/*reduce button opacity if user keeps scrolling */
+	opacity: 0.5;
+}
+
+

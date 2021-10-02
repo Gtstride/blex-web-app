@@ -13,7 +13,7 @@ import StudyInAustralia from "./pages/education/StudyInAustralia"
 import StudyInCanada from "./pages/education/StudyInCanada"
 
 // Work Route
-import WorkInLithuania from "./pages/Work/WorkInLith"
+// import WorkInLithuania from "./pages/Work/WorkInLith"
 import Unauthorized from "./not-found/NotFound"
 
 const Routes = () => {
@@ -29,7 +29,7 @@ const Routes = () => {
           <Route exact path="/study_in_us" component={StudyInUs} />
           <Route exact path="/study_in_australia" component={StudyInAustralia} />
           <Route exact path="/study_in_canada" component={StudyInCanada} />
-          <Route exact path="/work_in_lithuania" component={WorkInLithuania} />
+          {/* <Route exact path="/work_in_lithuania" component={WorkInLithuania} /> */}
           {/* <Route exact path="/work_in_germany" component={WorkInGermany} /> */}
           <Route exact path="/contact-us" component={ContactUs} />
           <Route exact path="*" component={Unauthorized} />

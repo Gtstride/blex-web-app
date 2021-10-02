@@ -3,6 +3,7 @@ import aboutUs from "../../assets/img/about-us.jpg"
 import playButton from "../../assets/img/play.png"
 
 const AboutUs = () => {
+  let url="#";
   return (
     <div>
       <section className="banner-area relative about-banner" id="home">
@@ -23,7 +24,7 @@ const AboutUs = () => {
       <section className="feature-area pb-120">
         <div className="container">
           <div className="row">
-            <div className="col-lg-4">
+            <div className="col-lg-12">
               <div className="single-feature">
                 <div className="title">
                   <h4>Study Package</h4>
@@ -32,33 +33,7 @@ const AboutUs = () => {
                   <p>
                     Your dreams are valid and there is something here for everyone.
                   </p>
-                  <a href onClick={(e) => e.preventDefault(e)}>Call Us Now</a>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <div className="single-feature">
-                <div className="title">
-                  <h4>Work Package</h4>
-                </div>
-                <div className="desc-wrap">
-                  <p>
-                    All the information you need about working abroad, be it UK, USA, Canada, &amp; Austrialia, all in one place.
-                  </p>
-                  <a href onClick={(e) => e.preventDefault(e)}>Call Us Now</a>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <div className="single-feature">
-                <div className="title">
-                  <h4>Relocation Package</h4>
-                </div>
-                <div className="desc-wrap">
-                  <p>
-                    All the information you need about working abroad, be it UK, USA, Canada, &amp; Austrialia, all in one place.
-                  </p>
-                  <a href onClick={(e) => e.preventDefault(e)}>Call Us Now</a>
+                  <a href="/contact-us" style={{textDecoration: "none"}}>Call Us Now</a>
                 </div>
               </div>
             </div>
@@ -111,14 +86,6 @@ const AboutUs = () => {
                   The vision of Flybox is to enable Africans to tell her story by herself and around the
                   world by supporting individuals that want to travel through our products and services.
                 </dd>
-                {/* <dt>
-                  <a href onClick={(e) => e.preventDefault(e)}>Our Achievements</a>
-                </dt>
-                <dd>
-                  Donec nec justo eget felis facilisis fermentum. Aliquam porttitor
-                  mauris sit amet orci. Aenean dignissim pellentesque felis. leo
-                  quam aliquet diam, congue laoreet elit metus eget diam.
-                </dd> */}
                 <dt>
                   <a href onClick={(e) => e.preventDefault(e)}>Our Mission</a>
                 </dt>
@@ -127,14 +94,6 @@ const AboutUs = () => {
                   students who desired to further their education abroad, and for persons, who want to
                   get better Jobs and working conditions.
                 </dd>
-                {/* <dt>
-                  <a href onClick={(e) => e.preventDefault(e)}>Our Aims</a>
-                </dt> */}
-                {/* <dd>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                  Phasellus hendrerit. Pellentesque aliquet nibh nec urna. Proin ac
-                  metus diam.
-                </dd> */}
                 <dt>
                   <a href onClick={(e) => e.preventDefault(e)}>Our Goals</a>
                 </dt>
@@ -145,7 +104,7 @@ const AboutUs = () => {
             </div>
             <div className="col-md-6 video-right justify-content-center align-items-center d-flex relative">
               <div className="overlay overlay-bg" />
-              <a className="play-btn" href="https://www.youtube.com/watch?v=ARA0AxrnHdM">
+              <a className="play-btn" href={url} rel="noreferrer">
                 <img className="img-fluid mx-auto" src={playButton} alt="" style={{ height: "50%" }} />
               </a>
             </div>

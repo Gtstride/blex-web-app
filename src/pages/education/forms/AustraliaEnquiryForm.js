@@ -76,10 +76,6 @@ const AustraliaEnquiryForm = (props) => {
     setInputValues({ ...inputValues, [name]: value });
   };
 
-  
-//   setTimeout(function(){
-//     window.location.reload(1);
-//  }, 5000);
 
   const handleSubmit = async (e) => {
     try {
@@ -100,24 +96,7 @@ const AustraliaEnquiryForm = (props) => {
       fd.append('gender', inputValues.gender);
       fd.append('phoneNumber', phone)
       fd.append('australiaDenialLetter', pdfFile);
-      // const data = {
-      //   ...inputValues,
-      //   email: inputValues.email,
-      //   givenName: inputValues.givenName,
-      //   middleName: inputValues.middleName,
-      //   familyName: inputValues.familyName,
-      //   birthDate: inputValues.birthDate,
-      //   countryOfCitizenship: inputValues.countryOfCitizenship,
-      //   immigrationHistory: inputValues.immigrationHistory,
-      //   houseAddress: inputValues.houseAddress,
-      //   programLevel: inputValues.programLevel,
-      //   gender: inputValues.gender,
-      //   // visaDenialLetter: inputValues.visaDenialLetter,
-      //   // australiaDenialLetter: pdfFile,
-      //   australiaDenialLetter: 'https://www.banknaija.com/firs-introduces-taxpromax-din-to-ease-collection-of-taxes-through-banks/',
-      //   phoneNumber: phone,
-      //   referred_by: inputValues.referral,
-      // }
+
 
       const response = await httpPostWithNoToken("australia_form", fd);
       console.log(fd);
