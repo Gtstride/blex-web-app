@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import Swal from "sweetalert2";
 import { httpPostWithNoToken } from '../../helpers/api'
-// import Spinner from '../../components/Spinner/Spinner'
 
 const AvailableCourseView = () => {
 
@@ -94,18 +93,16 @@ const AvailableCourseView = () => {
                     <h4>Study Expert</h4>
                   </a>
                   <p className="text-white">
-                    Usage of the Internet is becoming more common due to rapid
-                    advancement of technology and power.
+                   Our team of Study Experts are ready to take you through to achieving success
                   </p>
                 </div>
                 <div className="col single-detials">
                   <span className="lnr lnr-license" />
                   <a href onClick={(e) => { e.preventDefault() }}>
-                    <h4>Work Expert</h4>
+                    <h4>Education Expert</h4>
                   </a>
                   <p className="text-white">
-                    Usage of the Internet is becoming more common due to rapid
-                    advancement of technology and power.
+                    With proven years of many experiences and abundant testimonies, our experts qualify to walk you through gaining admission!
                   </p>
                 </div>
               </div>
@@ -147,9 +144,9 @@ const AvailableCourseView = () => {
                   onChange={handleChange}
                 >
                   <option value="" disabled>Please select what you to know</option>
-                  <option value="information_about_study">Get Information about study</option>
-                  <option value="information_about_work">Get Information about work</option>
-                  <option value="information_about_relocation">Get Information about relocating</option>
+                  <option value="information_about_study">Get Information About Studying Abroad</option>
+                  {/* <option value="information_about_work">Get Information about work</option> */}
+                  {/* <option value="information_about_relocation">Get Information about relocating</option> */}
                 </select>
                 <button value={submitting} onClick={handleIsLoadedToggle} className="primary-btn text-uppercase">
                   {!submitting ?

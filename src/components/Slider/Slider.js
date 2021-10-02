@@ -28,7 +28,7 @@ const Slider = () => {
       <section className="feature-area">
         <div className="container">
           <div className="row">
-            <div className="col-lg-6">
+            <div className="col-lg-12">
               <div className="single-feature">
                 <div className="title">
                   <h4>Enquire About Studying</h4>
@@ -36,22 +36,8 @@ const Slider = () => {
                 <div className="desc-wrap">
                   <p>
                     Studying abroad, can be simple, budget friendly &amp; easy, with  over 50 Universities in USA,
-                    Canada, Australia, &amp; UK that we are affiliated with, you can explore your options. <br />
+                    Canada, Australia, &amp; UK that we are affiliated with, you can explore your options.
                     We are here to support your dream of schooling abroad. Our team of professionals are on standby to process your application.
-                  </p>
-                  <a href="/contact-us" style={{ textDecoration: "none" }}>Get More Information</a>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-6">
-              <div className="single-feature">
-                <div className="title">
-                  <h4>Enquire About Work</h4>
-                </div>
-                <div className="desc-wrap">
-                  <p>
-                    Explore the option of working abroad and gaining international experience, learn new language, meet new people and grow your finance.
-                    <br />  We are here to support you to achieve your dream of working abroad. Our team of professionals are on standby to help you get started.
                   </p>
                   <a href="/contact-us" style={{ textDecoration: "none" }}>Get More Information</a>
                 </div>

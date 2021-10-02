@@ -12,7 +12,6 @@ const FlyBoxFees = () => {
         Our Fees
       </Button>
 
-
       <Modal
         show={show}
         onHide={handleClose}
@@ -23,9 +22,10 @@ const FlyBoxFees = () => {
           <Modal.Title>Our Fees</Modal.Title>
         </Modal.Header>
         <Modal.Body justify>
-          Every Applicant is entitled to two (2) applications and the application fee is #150,000 for Canada, USA and Australia. <br />
+          Every Applicant is entitled to two (2) applications and the application fee is <b>₦150,000</b> for Canada, USA and Australia. <br />
           <br /> Fees are to be paid at the commencement of application &amp; no service charge is involved.
           Students applying to Uk are not required to pay any fees
+          
         </Modal.Body>
         <Modal.Footer>
           {/* <Button variant="secondary" onClick={handleClose}>
