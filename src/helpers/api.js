@@ -5,10 +5,10 @@ const baseUrl = "https://flybox-education.herokuapp.com/";
 /**
  * @method: POST
  * @protected: No
- * @public : Token base
+ * @public : No Token base
  * @access: Admin Only
  * @description: To be able to get necessary information regarding the services offered
- * @author: Olubusola 
+ * @author: Olubusola - Backend Dev
  * Contact Form for enquiries
  */
 export const httpPostWithNoToken = async (url, fd) => {
