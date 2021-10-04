@@ -46,7 +46,7 @@ const AvailableCourseView = () => {
 
       const response = await httpPostWithNoToken("relocation_form", data);
       // console.log(data)
-      console.log(response)
+      console.warn(response)
       Swal.fire({
         title: "Successful 😀",
         text: "Your details have been submitted Successfully, We would get in touch shortly",
@@ -60,9 +60,11 @@ const AvailableCourseView = () => {
       })
       clearForm();
     } catch (error) {
+      // console.log("Here>>", error)
       Swal.fire({
         title: "Sorry 😞",
-        text: error.message,
+        text: "Please check to make sure you supplied the right details and in the right format and all fields are required",
+        // message: error.response
       });
       setIsLoaded(false);
       console.log(isLoaded)
@@ -135,7 +137,7 @@ const AvailableCourseView = () => {
                   name="phone_number"
                   value={inputValues.phone_number}
                   onChange={handleChange}
-                  placeholder="Your Phone Number"
+                  placeholder="Phone Number: +234 803 XXX XXXX"
                 />
                 <select
                   className="form-control"
