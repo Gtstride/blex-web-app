@@ -22,7 +22,7 @@ const CanadaEnquiryForm = () => {
     email: "",
     givenName: "",
     middleName: "",
-    familyName: "",
+    lastName: "",
     birthDate: "",
     countryOfCitizenship: "",
     immigrationHistory: "",
@@ -56,7 +56,7 @@ const CanadaEnquiryForm = () => {
       email: "",
       givenName: "",
       middleName: "",
-      familyName: "",
+      lastName: "",
       birthDate: "",
       countryOfCitizenship: "",
       immigrationHistory: "",
@@ -86,7 +86,7 @@ const CanadaEnquiryForm = () => {
       fd.append('email', inputValues.email);
       fd.append('givenName', inputValues.givenName);
       fd.append('middleName', inputValues.middleName);
-      fd.append('familyName', inputValues.familyName);
+      fd.append('lastName', inputValues.lastName);
       fd.append('birthDate', inputValues.birthDate);
       fd.append('countryOfCitizenship', inputValues.countryOfCitizenship);
       fd.append('immigrationHistory', inputValues.immigrationHistory);
@@ -99,10 +99,10 @@ const CanadaEnquiryForm = () => {
       fd.append('canadaDenialLetter', pdfFile);
 
       const response = await httpPostWithNoToken("canada_form", fd);
-      console.log(fd);
+      // console.log(fd);
       Swal.fire({
         title: "Thank You For Submitting!😀",
-        text: "Your details have been submitted Successfully, We would get in touch shortly",
+        text: "Your details have been received, We would get in touch shortly",
       });
       console.log(fd);
       setSubmitting(false);
@@ -111,7 +111,7 @@ const CanadaEnquiryForm = () => {
         email: "",
         givenName: "",
         middleName: "",
-        familyName: "",
+        lastName: "",
         birthDate: "",
         countryOfCitizenship: "",
         immigrationHistory: "",
@@ -125,18 +125,20 @@ const CanadaEnquiryForm = () => {
       })
       clearForm();
       setShow(false);
-      window.location.reload(function(){setTimeout()},8000);
-      console.log(response);
+      // window.location.reload();
+      window.setTimeout(function(){window.location.reload()},2000)
+      console.warn(response);
     } catch (error) {
       setIsLoaded(false)
       Swal.fire({
         title: "Sorry 😞",
         text: error.message
+        // text: "Fields cann not be empty"
       });
       // clearForm()
       setIsLoaded(false);
       setSubmitting(false)
-      console.log(isLoaded)
+      console.warn(isLoaded)
     }
   }
 
@@ -228,8 +230,8 @@ const CanadaEnquiryForm = () => {
                     type="text"
                     min="3"
                     max="100"
-                    name="familyName"
-                    value={inputValues.familyName}
+                    name="lastName"
+                    value={inputValues.lastName}
                     onChange={handleChange}
                     className="form-control"
                   />

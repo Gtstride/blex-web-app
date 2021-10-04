@@ -4,7 +4,6 @@ import ReactPhoneInput from "react-phone-input-2";
 import 'react-phone-input-2/lib/style.css'
 import Swal from "sweetalert2";
 import { httpPostWithNoToken } from '../../../helpers/api'
-// import CountrySelect from 'react-bootstrap-country-select';
 
 
 const AustraliaEnquiryForm = (props) => {
@@ -22,7 +21,7 @@ const AustraliaEnquiryForm = (props) => {
     email: "",
     givenName: "",
     middleName: "",
-    familyName: "",
+    lastName: "",
     birthDate: "",
     countryOfCitizenship: "",
     immigrationHistory: "",
@@ -54,7 +53,7 @@ const AustraliaEnquiryForm = (props) => {
       email: "",
       givenName: "",
       middleName: "",
-      familyName: "",
+      lastName: "",
       birthDate: "",
       countryOfCitizenship: "",
       immigrationHistory: "",
@@ -85,7 +84,7 @@ const AustraliaEnquiryForm = (props) => {
       fd.append('email', inputValues.email);
       fd.append('givenName', inputValues.givenName);
       fd.append('middleName', inputValues.middleName);
-      fd.append('familyName', inputValues.familyName);
+      fd.append('lastName', inputValues.lastName);
       fd.append('birthDate', inputValues.birthDate);
       fd.append('countryOfCitizenship', inputValues.countryOfCitizenship);
       fd.append('immigrationHistory', inputValues.immigrationHistory);
@@ -99,7 +98,7 @@ const AustraliaEnquiryForm = (props) => {
 
 
       const response = await httpPostWithNoToken("australia_form", fd);
-      console.log(fd);
+      // console.log(fd);
       Swal.fire({
         title: "Successful 😀",
         text: "Your details have been submitted Successfully, We would get in touch shortly",
@@ -111,7 +110,7 @@ const AustraliaEnquiryForm = (props) => {
         email: "",
         givenName: "",
         middleName: "",
-        familyName: "",
+        lastName: "",
         birthDate: "",
         countryOfCitizenship: "",
         immigrationHistory: "",
@@ -125,8 +124,8 @@ const AustraliaEnquiryForm = (props) => {
       })
       clearForm();
       setShow(false);
-      window.location.reload(function(){setTimeout()},9000);
-      console.log(response);
+      window.setTimeout(function(){window.location.reload()},2000)
+      console.warn(response);
     } catch (error) {
       setIsLoaded(false)
       Swal.fire({
@@ -232,8 +231,8 @@ const AustraliaEnquiryForm = (props) => {
                     type="text"
                     min="3"
                     max="100"
-                    name="familyName"
-                    value={inputValues.familyName}
+                    name="lastName"
+                    value={inputValues.lastName}
                     onChange={handleChange}
                     className="form-control"
                   />

@@ -4,8 +4,6 @@ import ReactPhoneInput from "react-phone-input-2";
 import 'react-phone-input-2/lib/style.css'
 import Swal from "sweetalert2";
 import { httpPostWithNoToken } from '../../../helpers/api'
-// import CountrySelect from 'react-bootstrap-country-select';
-
 
 
 const USEnquiryForm = () => {
@@ -23,7 +21,7 @@ const USEnquiryForm = () => {
     email: "",
     givenName: "",
     middleName: "",
-    familyName: "",
+    lastName: "",
     birthDate: "",
     countryOfCitizenship: "",
     immigrationHistory: "",
@@ -57,7 +55,7 @@ const USEnquiryForm = () => {
       email: "",
       givenName: "",
       middleName: "",
-      familyName: "",
+      lastName: "",
       birthDate: "",
       countryOfCitizenship: "",
       immigrationHistory: "",
@@ -87,7 +85,7 @@ const USEnquiryForm = () => {
       fd.append('email', inputValues.email);
       fd.append('givenName', inputValues.givenName);
       fd.append('middleName', inputValues.middleName);
-      fd.append('familyName', inputValues.familyName);
+      fd.append('lastName', inputValues.lastName);
       fd.append('birthDate', inputValues.birthDate);
       fd.append('countryOfCitizenship', inputValues.countryOfCitizenship);
       fd.append('immigrationHistory', inputValues.immigrationHistory);
@@ -100,20 +98,19 @@ const USEnquiryForm = () => {
       fd.append('usDenialLetter', pdfFile);
 
       const response = await httpPostWithNoToken("us_form", fd);
-      console.log(response);
+      // console.log(response);
       Swal.fire({
-        title: "Successful 😀",
-        // text: "Your details have been submitted Successfully, We would get in touch shortly",
-        text: `${"Thank you for successfully submitting  your details as"} ${fd.email}. ${"We would get in touch shortly"}`,
+        title: "Thank You For Submitting!😀",
+        text: "Your details have been received, We would get in touch shortly",
       });
-      console.log(response);
+      // console.log(response);
       setSubmitting(false);
       setInputValues({
         ...inputValues,
         email: "",
         givenName: "",
         middleName: "",
-        familyName: "",
+        lastName: "",
         birthDate: "",
         countryOfCitizenship: "",
         immigrationHistory: "",
@@ -127,8 +124,8 @@ const USEnquiryForm = () => {
       })
       clearForm();
       setShow(false);
-      window.location.reload();
-      // console.log(response);
+      window.setTimeout(function(){window.location.reload()},2000)
+      console.warn(response);
     } catch (error) {
       setIsLoaded(false)
       Swal.fire({
@@ -138,7 +135,7 @@ const USEnquiryForm = () => {
       // clearForm()
       setIsLoaded(false);
       setSubmitting(false)
-      console.log(isLoaded)
+      console.warn(isLoaded)
     }
   }
 
@@ -230,8 +227,8 @@ const USEnquiryForm = () => {
                     type="text"
                     min="3"
                     max="100"
-                    name="familyName"
-                    value={inputValues.familyName}
+                    name="lastName"
+                    value={inputValues.lastName}
                     onChange={handleChange}
                     className="form-control"
                   />
