@@ -67,7 +67,7 @@ const AvailableCourseView = () => {
         // message: error.response
       });
       setIsLoaded(false);
-      console.log(isLoaded)
+      console.warn(isLoaded)
       setSubmitting(false);
       // clearForm();
     }
