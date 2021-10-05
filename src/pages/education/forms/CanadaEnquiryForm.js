@@ -4,7 +4,6 @@ import ReactPhoneInput from "react-phone-input-2";
 import 'react-phone-input-2/lib/style.css'
 import Swal from "sweetalert2";
 import { httpPostWithNoToken } from '../../../helpers/api'
-// import CountrySelect from 'react-bootstrap-country-select';
 
 
 const CanadaEnquiryForm = () => {
@@ -99,12 +98,10 @@ const CanadaEnquiryForm = () => {
       fd.append('canadaDenialLetter', pdfFile);
 
       const response = await httpPostWithNoToken("canada_form", fd);
-      // console.log(fd);
       Swal.fire({
-        title: "Thank You For Submitting!😀",
-        text: "Your details have been received, We would get in touch shortly",
+        title: "Thank You For Submitting 😀!",
+        text: `${'Your details have been received, We would get in touch shortly'} ${response}`
       });
-      console.log(fd);
       setSubmitting(false);
       setInputValues({
         ...inputValues,
@@ -125,15 +122,12 @@ const CanadaEnquiryForm = () => {
       })
       clearForm();
       setShow(false);
-      // window.location.reload();
       window.setTimeout(function(){window.location.reload()},2000)
-      console.warn(response);
     } catch (error) {
       setIsLoaded(false)
       Swal.fire({
-        title: "Sorry 😞",
+        title: "Sorry 😞!",
         text: error.message
-        // text: "Fields cann not be empty"
       });
       // clearForm()
       setIsLoaded(false);

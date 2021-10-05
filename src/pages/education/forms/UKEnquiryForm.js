@@ -101,7 +101,8 @@ const UKEnquiryForm = () => {
       // console.log(fd);
       Swal.fire({
         title: "Thank You For Submitting!😀",
-        text: "Your details have been received, We would get in touch shortly",
+        // text: "Your details have been received, We would get in touch shortly",
+        text: `${'Your details have been received, We would get in touch shortly'} ${response}`
       });
       // console.log(response);
       setSubmitting(false);
@@ -126,7 +127,7 @@ const UKEnquiryForm = () => {
       setShow(false);
       // window.location.reload(function(){setTimeout()},9000);
       window.setTimeout(function(){window.location.reload()},2000)
-      console.warn(response);
+      // console.warn(response);
     } catch (error) {
       setIsLoaded(false)
       Swal.fire({

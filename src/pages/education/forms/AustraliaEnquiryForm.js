@@ -98,12 +98,10 @@ const AustraliaEnquiryForm = (props) => {
 
 
       const response = await httpPostWithNoToken("australia_form", fd);
-      // console.log(fd);
       Swal.fire({
-        title: "Successful 😀",
-        text: "Your details have been submitted Successfully, We would get in touch shortly",
+        title: "Successful 😀!",
+        text: `${'Your details have been received, We would get in touch shortly'} ${response}`
       });
-      console.log(fd);
       setSubmitting(false);
       setInputValues({
         ...inputValues,
@@ -125,17 +123,16 @@ const AustraliaEnquiryForm = (props) => {
       clearForm();
       setShow(false);
       window.setTimeout(function(){window.location.reload()},2000)
-      console.warn(response);
     } catch (error) {
       setIsLoaded(false)
       Swal.fire({
-        title: "Sorry 😞",
+        title: "Sorry 😞!",
         text: error.message,
       });
       clearForm();
       setIsLoaded(false);
       setSubmitting(false)
-      console.log(isLoaded)
+      console.warn(isLoaded)
     }
   }
 
