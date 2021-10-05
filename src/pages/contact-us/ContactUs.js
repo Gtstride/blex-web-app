@@ -49,15 +49,15 @@ const ContactUs = () => {
       const res = await httpPostWithNoToken("contacts", data);
 
       Swal.fire({
-        title: "Successful 😀",
-        text: "Your details have been submitted Successfully, We will get in touch shortly",
-        // type: "success",
+        title: "Successfully Submitted 😀!",
+        // text: "Your details have been submitted Successfully, We will get in touch shortly",
+        text: `${'Your details have been submitted successfully, We would get in touch shortly'} ${res}`
+        
       });
-      console.log(res);
+      
       setSubmitting(false);
       clearForm();
     } catch (error) {
-      console.log(error)
       setIsLoaded(false)
       Swal.fire({
         title: "Sorry 😞, we couldn't process your details",
@@ -66,7 +66,7 @@ const ContactUs = () => {
       });
       setIsLoaded(false);
       setSubmitting(false)
-      console.log(isLoaded)
+      console.warn(isLoaded)
       clearForm();
     }
   };
