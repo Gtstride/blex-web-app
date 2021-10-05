@@ -60,11 +60,11 @@ const AvailableCourseView = () => {
       })
       clearForm();
     } catch (error) {
-      // console.log("Here>>", error)
+      // console.log("Here>>", error.response, error.response.data)
       Swal.fire({
-        title: "Sorry 😞",
-        text: "Please check to make sure you supplied the right details and in the right format and all fields are required",
-        // message: error.response
+        title: "Sorry 😞!",
+        text: "Please all fields are required, and make sure you are suppling the right details and in the right format ",
+        // text: error.response.data && error.response.message.data
       });
       setIsLoaded(false);
       console.warn(isLoaded)
