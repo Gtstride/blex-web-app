@@ -98,10 +98,9 @@ const USEnquiryForm = () => {
       fd.append('usDenialLetter', pdfFile);
 
       const response = await httpPostWithNoToken("us_form", fd);
-      // console.log(response);
       Swal.fire({
         title: "Thank You For Submitting!😀",
-        text: "Your details have been received, We would get in touch shortly",
+        text: `${'Your details have been received, We would get in touch shortly'} ${response}`
       });
       // console.log(response);
       setSubmitting(false);
@@ -125,7 +124,6 @@ const USEnquiryForm = () => {
       clearForm();
       setShow(false);
       window.setTimeout(function(){window.location.reload()},2000)
-      console.warn(response);
     } catch (error) {
       setIsLoaded(false)
       Swal.fire({

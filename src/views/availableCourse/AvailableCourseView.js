@@ -45,11 +45,10 @@ const AvailableCourseView = () => {
       }
 
       const response = await httpPostWithNoToken("relocation_form", data);
-      // console.log(data)
-      console.warn(response)
       Swal.fire({
-        title: "Successful 😀",
-        text: "Your details have been submitted Successfully, We would get in touch shortly",
+        title: "Successful 😀!",
+        // text: "Your details have been submitted Successfully, We would get in touch shortly",
+        text: `${'Your details have been submitted successfully, we would get in touch shortly'} ${response}`
       });
       setSubmitting(false);
       setInputValues({
@@ -60,11 +59,10 @@ const AvailableCourseView = () => {
       })
       clearForm();
     } catch (error) {
-      // console.log("Here>>", error.response, error.response.data)
       Swal.fire({
         title: "Sorry 😞!",
-        text: "Please all fields are required, and make sure you are suppling the right details and in the right format ",
-        // text: error.response.data && error.response.message.data
+        // text: "Please all fields are required, and make sure you are suppling the right details and in the right format ",
+        text: error.message
       });
       setIsLoaded(false);
       console.warn(isLoaded)
