@@ -7,6 +7,8 @@ import { httpPostWithNoToken } from '../../../helpers/api'
 
 
 const AustraliaEnquiryForm = (props) => {
+
+  console.log = function(){};
   useEffect(() => {
     window.scrollTo(0, 0);
   });
@@ -132,7 +134,7 @@ const AustraliaEnquiryForm = (props) => {
       clearForm();
       setIsLoaded(false);
       setSubmitting(false)
-      console.warn(isLoaded)
+      console.log(isLoaded)
     }
   }
 
