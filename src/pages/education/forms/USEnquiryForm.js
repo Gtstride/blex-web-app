@@ -11,6 +11,7 @@ const USEnquiryForm = () => {
     window.scrollTo(0, 0);
   });
 
+  console.log = function(){};
   const [show, setShow] = useState(false);
   const [isLoaded, setIsLoaded] = useState(true)
   const [submitting, setSubmitting] = useState(false);
@@ -133,7 +134,7 @@ const USEnquiryForm = () => {
       // clearForm()
       setIsLoaded(false);
       setSubmitting(false)
-      console.warn(isLoaded)
+      console.log(isLoaded)
     }
   }
 
@@ -403,10 +404,10 @@ const USEnquiryForm = () => {
                 style={{ float: "right", }}
               >
                 {!submitting ?
-                  <button className="genric-btn success text-uppercase"
+                  <div className="genric-btn success text-uppercase"
                     style={{ border: "none", }}>
                     Send Message
-                  </button> :
+                  </div> :
                   (
                     <i className="fa fa-refresh fa-spin" style={{ fontSize: '24px', border: "none" }}></i>
                   )

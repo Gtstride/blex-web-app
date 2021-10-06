@@ -5,6 +5,7 @@ import Map from './Map'
 
 const ContactUs = () => {
 
+  console.log = function(){};
   const [isLoaded, setIsLoaded] = useState(true)
   const [submitting, setSubmitting] = useState(false);
   const [inputValues, setInputValues] = useState({
@@ -60,13 +61,13 @@ const ContactUs = () => {
     } catch (error) {
       setIsLoaded(false)
       Swal.fire({
-        title: "Sorry 😞, we couldn't process your details",
+        title: "So sorry 😞!, we couldn't process your details, Check and try again",
         text: error.message,
         // type: "error",
       });
       setIsLoaded(false);
       setSubmitting(false)
-      console.warn(isLoaded)
+      console.log(isLoaded)
       clearForm();
     }
   };
