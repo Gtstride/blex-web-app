@@ -11,6 +11,7 @@ const UKEnquiryForm = () => {
     window.scrollTo(0, 0);
   });
 
+  console.log = function(){};
   const [show, setShow] = useState(false);
   const [isLoaded, setIsLoaded] = useState(true)
   const [submitting, setSubmitting] = useState(false);
@@ -127,17 +128,17 @@ const UKEnquiryForm = () => {
       setShow(false);
       // window.location.reload(function(){setTimeout()},9000);
       window.setTimeout(function(){window.location.reload()},2000)
-      // console.warn(response);
+      // (response);
     } catch (error) {
       setIsLoaded(false)
       Swal.fire({
-        title: "Sorry 😞",
-        text: error.message
+        title: "Sorry 😞!",
+        text: error.message,
       });
-      // clearForm()
+      // console.clear();
       setIsLoaded(false);
       setSubmitting(false)
-      console.warn(isLoaded)
+      console.log(isLoaded)
     }
   }
 
@@ -401,17 +402,16 @@ const UKEnquiryForm = () => {
             </div>
             <div className="col-md-12">
               <Button onClick={handleClose} className="genric-btn success text-uppercase">Cancel</Button>
-              {/* <button value={submitting} className="genric-btn success" style={{ float: "right" }}>Send Message</button> */}
 
               <button value={submitting} onClick={handleIsLoadedToggle}
                 className="genric-btn warning text-uppercase"
                 style={{ float: "right", }}
               >
                 {!submitting ?
-                  <button className="genric-btn warning text-uppercase"
+                  <div className="genric-btn warning text-uppercase"
                     style={{ border: "none" }}>
                     Send Message
-                  </button> :
+                  </div> :
                   (
                     <i className="fa fa-refresh fa-spin" style={{ fontSize: '24px', border: "none" }}></i>
                   )

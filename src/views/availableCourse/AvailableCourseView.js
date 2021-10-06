@@ -4,6 +4,7 @@ import { httpPostWithNoToken } from '../../helpers/api'
 
 const AvailableCourseView = () => {
 
+  console.log = function(){};
   const [isLoaded, setIsLoaded] = useState(true)
   const [submitting, setSubmitting] = useState(false);
   const [inputValues, setInputValues] = useState({
@@ -65,7 +66,7 @@ const AvailableCourseView = () => {
         text: error.message
       });
       setIsLoaded(false);
-      console.warn(isLoaded)
+      console.log(isLoaded)
       setSubmitting(false);
       // clearForm();
     }
