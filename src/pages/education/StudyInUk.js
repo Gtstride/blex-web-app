@@ -13,7 +13,7 @@ const StudyInUk = () => {
             <div className="about-content blog-header-content col-lg-12">
               <h1 className="text-white">Study In UK</h1>
               <p className="text-white link-nav">
-                <a href="/" style={{textDecoration: "none", color: "inherit"}}>Home </a>{" "}
+                <Link to="/" style={{textDecoration: "none", color: "inherit"}}>Home </Link>{" "}
                 <span className="lnr lnr-arrow-right" />{" "}
                 <Link to="/study_in_uk" style={{textDecoration: "none", color: "inherit"}}> Study In UK</Link>
               </p>
