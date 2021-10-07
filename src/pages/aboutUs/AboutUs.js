@@ -13,7 +13,7 @@ const AboutUs = () => {
             <div className="about-content col-lg-12">
               <h1 className="text-white">About Us</h1>
               <p className="text-white link-nav">
-                <a href="/">Home </a>{" "}
+                <a href="/">Home </a>
                 <span className="lnr lnr-arrow-right" />{" "}
                 <a href="/about-us"> About Us</a>
               </p>
