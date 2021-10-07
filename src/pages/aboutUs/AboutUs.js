@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import aboutUs from "../../assets/img/about-us.jpg"
 import playButton from "../../assets/img/play.png"
 
@@ -13,9 +14,9 @@ const AboutUs = () => {
             <div className="about-content col-lg-12">
               <h1 className="text-white">About Us</h1>
               <p className="text-white link-nav">
-                <a href="/">Home </a>{" "}
+                <a href="/">Home </a>
                 <span className="lnr lnr-arrow-right" />{" "}
-                <a href="/about-us"> About Us</a>
+                <Link to="/about-us"> About Us</Link>
               </p>
             </div>
           </div>
@@ -33,7 +34,7 @@ const AboutUs = () => {
                   <p>
                     Your dreams are valid and there is something here for everyone.
                   </p>
-                  <a href="/contact-us" style={{textDecoration: "none"}}>Call Us Now</a>
+                  <Link to="/contact-us" style={{textDecoration: "none"}}>Call Us Now</Link>
                 </div>
               </div>
             </div>

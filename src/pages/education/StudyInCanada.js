@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import CanadaEnquiryForm from './forms/CanadaEnquiryForm'
 
 
@@ -14,7 +15,7 @@ const StudyInCanada = () => {
               <p className="text-white link-nav">
                 <a href="/" style={{textDecoration: "none", color: "inherit"}}>Home </a>{" "}
                 <span className="lnr lnr-arrow-right" />
-                <a href="/study_in_canada" style={{textDecoration: "none", color: "inherit"}}> Study In Canada</a>
+                <Link to="/study_in_canada" style={{textDecoration: "none", color: "inherit"}}> Study In Canada</Link>
               </p>
               <p className="text-white">
                 With her door widely open for foreigners, and high employment  <br />rate, you have

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import USEnquiryForm from "./forms/USEnquiryForm"
 
 const StudyInUs = () => {
@@ -13,7 +14,7 @@ const StudyInUs = () => {
               <p className="text-white link-nav">
                 <a href="/" style={{textDecoration: "none", color: "inherit"}}>Home </a>{" "}
                 <span className="lnr lnr-arrow-right" />{" "}
-                <a href="/study_in_us" style={{textDecoration: "none", color: "inherit"}}> Study In US</a>
+                <Link to="/study_in_us" style={{textDecoration: "none", color: "inherit"}}> Study In US</Link>
               </p>
               <p className="text-white">
                 You have made the right choice by choosing to study in US, surely<br /> America is one the best locations
