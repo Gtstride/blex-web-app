@@ -5943,7 +5943,7 @@ body.mobile-nav-active #mobile-nav-toggle{
   transform:scale(1.1)
 }
 .search-course-area {
-   background:url("../img//study.jpg") center;
+   background:url("../img/study.jpg") center;
    background-size:cover;
 }
 .search-course-area .overlay-bg {
