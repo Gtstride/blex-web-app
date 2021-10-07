@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import { httpPostWithNoToken } from '../../helpers/api'
 import Map from './Map'
@@ -84,7 +85,7 @@ const ContactUs = () => {
               <p className="text-white link-nav">
                 <a href="/">Home </a>{" "}
                 <span className="lnr lnr-arrow-right" />{" "}
-                <a href="/contact-us"> Contact Us</a>
+                <Link to="/contact-us"> Contact Us</Link>
               </p>
             </div>
           </div>

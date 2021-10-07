@@ -1,6 +1,7 @@
 
 import React from 'react';
 import NotFoundPageStyle from './NotFoundPageStyle'
+import { Link } from'react-router-dom'
 
 const Unauthorized = () => {
   return (
@@ -22,7 +23,7 @@ const Unauthorized = () => {
 
                     <p>The page you are looking for is not avaliable, check your link and try again!</p>
 
-                    <a href="/" className="link_404">Go Back Home</a>
+                    <Link to="/" className="link_404">Go Back Home</Link>
                   </div>
                 </div>
               </div>

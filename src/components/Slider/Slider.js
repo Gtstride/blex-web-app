@@ -1,5 +1,6 @@
 import React from 'react'
 import FlyBoxFees from '../flyBoxFees/FlyBoxFee'
+import { Link } from 'react-router-dom'
 
 const Slider = () => {
   return (
@@ -17,9 +18,9 @@ const Slider = () => {
                   There is something here for everyone.
                 </b>
               </p>
-              <a href="/contact-us" className="primary-btn text-uppercase">
+              <Link to="/contact-us" className="primary-btn text-uppercase">
                 Get In Touch
-              </a>
+              </Link>
               <FlyBoxFees className="our-fees primary-btn text-uppercase ml-5" />
             </div>
           </div>
@@ -39,7 +40,7 @@ const Slider = () => {
                     Canada, Australia, &amp; UK that we are affiliated with, you can explore your options.
                     We are here to support your dream of schooling abroad. Our team of professionals are on standby to process your application.
                   </p>
-                  <a href="/contact-us" style={{ textDecoration: "none" }}>Get More Information</a>
+                  <Link to="/contact-us" style={{ textDecoration: "none" }}>Get More Information</Link>
                 </div>
               </div>
             </div>
