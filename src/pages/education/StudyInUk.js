@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import UKEnquiryForm from "./forms/UKEnquiryForm"
 
 
@@ -14,7 +15,7 @@ const StudyInUk = () => {
               <p className="text-white link-nav">
                 <a href="/" style={{textDecoration: "none", color: "inherit"}}>Home </a>{" "}
                 <span className="lnr lnr-arrow-right" />{" "}
-                <a href="/study_in_uk" style={{textDecoration: "none", color: "inherit"}}> Study In UK</a>
+                <Link to="/study_in_uk" style={{textDecoration: "none", color: "inherit"}}> Study In UK</Link>
               </p>
               <p className="text-white">
                 Great to have you here, you have made the right choice of choosing to <br />

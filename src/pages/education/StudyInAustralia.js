@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import AustraliaEnquiryForm from './forms/AustraliaEnquiryForm'
 
 
@@ -15,7 +16,7 @@ const StudyInAustralia = () => {
               <p className="text-white link-nav">
                 <a href="/" style={{textDecoration: "none", color: "inherit"}}>Home </a>{" "}
                 <span className="lnr lnr-arrow-right" />{" "}
-                <a href="/study_in_australia" style={{textDecoration: "none", color: "inherit"}}> Study In Australia</a>
+                <Link to="/study_in_australia" style={{textDecoration: "none", color: "inherit"}}> Study In Australia</Link>
               </p>
 
               <p className="text-white">
