@@ -83,7 +83,7 @@ const ContactUs = () => {
             <div className="about-content col-lg-12">
               <h1 className="text-white">Contact Us</h1>
               <p className="text-white link-nav">
-                <Link to="/">Home </Link>
+                <a href="/">Home </a>
                 <span className="lnr lnr-arrow-right" />{" "}
                 <Link to="/contact-us"> Contact Us</Link>
               </p>
