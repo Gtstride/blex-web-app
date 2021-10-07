@@ -14,7 +14,7 @@ const StudyInAustralia = () => {
             <div className="about-content blog-header-content col-lg-12">
               <h1 className="text-white">Study In Australia</h1>
               <p className="text-white link-nav">
-                <Link to="/" style={{textDecoration: "none", color: "inherit"}}>Home </Link>{" "}
+                <a href="/" style={{textDecoration: "none", color: "inherit"}}>Home </a>{" "}
                 <span className="lnr lnr-arrow-right" />{" "}
                 <Link to="/study_in_australia" style={{textDecoration: "none", color: "inherit"}}> Study In Australia</Link>
               </p>
