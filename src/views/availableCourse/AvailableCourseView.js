@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-bootstrap-icons';
 import Swal from "sweetalert2";
 import { httpPostWithNoToken } from '../../helpers/api'
 
@@ -90,18 +91,18 @@ const AvailableCourseView = () => {
               <div className="row details-content">
                 <div className="col single-detials">
                   <span className="lnr lnr-graduation-hat" />
-                  <a href onClick={(e) => { e.preventDefault() }}>
+                  <Link to="#" onClick={(e) => { e.preventDefault() }}>
                     <h4>Study Expert</h4>
-                  </a>
+                  </Link>
                   <p className="text-white">
                    Our team of Study Experts are ready to take you through to achieving success
                   </p>
                 </div>
                 <div className="col single-detials">
                   <span className="lnr lnr-license" />
-                  <a href onClick={(e) => { e.preventDefault() }}>
+                  <Link to="#" onClick={(e) => { e.preventDefault() }}>
                     <h4>Education Expert</h4>
-                  </a>
+                  </Link>
                   <p className="text-white">
                     With proven years of many experiences and abundant testimonies, our experts qualify to walk you through gaining admission!
                   </p>

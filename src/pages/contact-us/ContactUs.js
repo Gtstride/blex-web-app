@@ -83,7 +83,7 @@ const ContactUs = () => {
             <div className="about-content col-lg-12">
               <h1 className="text-white">Contact Us</h1>
               <p className="text-white link-nav">
-                <a href="/">Home </a>{" "}
+                <Link to="/">Home </Link>
                 <span className="lnr lnr-arrow-right" />{" "}
                 <Link to="/contact-us"> Contact Us</Link>
               </p>
@@ -126,9 +126,9 @@ const ContactUs = () => {
                 </div>
                 <div className="contact-details">
                   <h5>
-                    <a href="https://mail.google.com/mail/Info@flyboxconsult.com" target="_blank" rel="noreferrer">
+                    <Link to="https://mail.google.com/mail/Info@flyboxconsult.com" target="_blank" rel="noreferrer">
                       Info@flyboxconsult.com
-                    </a>
+                    </Link>
                   </h5>
                   <p>Send us your query anytime!</p>
                 </div>

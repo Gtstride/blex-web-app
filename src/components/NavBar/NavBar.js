@@ -10,11 +10,11 @@ const NavBar = () => {
       <div className="container main-menu">
         <div className="row align-items-center justify-content-between d-flex">
           <div id="logo">
-            <a href="/"><img src={logo2} alt="" height="40px" /></a>
+            <Link to="/"><img src={logo2} alt="" height="40px" /></Link>
           </div>
           <nav id="nav-menu-container">
             <ul className="nav-menu">
-              <li><a href="/">Home</a></li>
+              <li><Link to="/">Home</Link></li>
               <li><Link to="/about-us">About</Link></li>
 
               <li className="menu-has-children text-white">
