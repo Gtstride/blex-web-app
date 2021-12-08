@@ -1,10 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 import aboutUs from "../../assets/img/about-us.jpg"
 import playButton from "../../assets/img/play.png"
+// import VideoPlayer from '../../components/video/VideoPlayer';
 
 const AboutUs = () => {
-  let url="#";
+  let url="#0";
   return (
     <div>
       <section className="banner-area relative about-banner" id="home">
@@ -15,8 +15,8 @@ const AboutUs = () => {
               <h1 className="text-white">About Us</h1>
               <p className="text-white link-nav">
                 <a href="/">Home </a>
-                <span className="lnr lnr-arrow-right" />{" "}
-                <Link to="/about-us"> About Us</Link>
+                <span className="lnr lnr-arrow-right" />
+                <a href="/about-us"> About Us</a>
               </p>
             </div>
           </div>
@@ -34,7 +34,7 @@ const AboutUs = () => {
                   <p>
                     Your dreams are valid and there is something here for everyone.
                   </p>
-                  <Link to="/contact-us" style={{textDecoration: "none"}}>Call Us Now</Link>
+                  <a href="/contact-us" style={{textDecoration: "none"}}>Call Us Now</a>
                 </div>
               </div>
             </div>
