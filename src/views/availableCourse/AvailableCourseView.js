@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+// import { a } from 'react-bootstrap-icons';
 import Swal from "sweetalert2";
 import { httpPostWithNoToken } from '../../helpers/api'
+import OurPartners from '../../pages/partners/OurPartners';
 
 const AvailableCourseView = () => {
 
@@ -90,7 +92,7 @@ const AvailableCourseView = () => {
               <div className="row details-content">
                 <div className="col single-detials">
                   <span className="lnr lnr-graduation-hat" />
-                  <a href onClick={(e) => { e.preventDefault() }}>
+                  <a href="#partner" onClick={(e) => { e.preventDefault() }}>
                     <h4>Study Expert</h4>
                   </a>
                   <p className="text-white">
@@ -99,7 +101,7 @@ const AvailableCourseView = () => {
                 </div>
                 <div className="col single-detials">
                   <span className="lnr lnr-license" />
-                  <a href onClick={(e) => { e.preventDefault() }}>
+                  <a href="#education" onClick={(e) => { e.preventDefault() }}>
                     <h4>Education Expert</h4>
                   </a>
                   <p className="text-white">
@@ -164,6 +166,8 @@ const AvailableCourseView = () => {
           </div>
         </div>
       </section>
+
+      <OurPartners />
     </div>
   )
 }

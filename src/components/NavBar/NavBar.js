@@ -1,30 +1,28 @@
 import React from 'react'
-// import logo from "../../assets/img/logo-b.png"
-import { Link } from 'react-router-dom';
-import logo2 from "../../assets/img/fly-box.png"
+import logo_text from "../../assets/img/image.png";
+import logo2 from "../../assets/img/logo-only.png"
 
 
 const NavBar = () => {
   return (
-    <div>
-      <div className="container main-menu">
+     <div className="container main-menu">
         <div className="row align-items-center justify-content-between d-flex">
           <div id="logo">
-            <a href="/"><img src={logo2} alt="" height="40px" /></a>
+            <a href="/"><img src={logo2} alt="FlyBoxConsult" height="40px" /></a><br/>
+            <a href="/"><img src={logo_text} alt="FlyBoxConsult" height="30px"/></a>
           </div>
-          <nav id="nav-menu-container">
+           <nav id="nav-menu-container">
             <ul className="nav-menu">
               <li><a href="/">Home</a></li>
-              <li><Link to="/about-us">About</Link></li>
+              <li><a href="/about-us">About</a></li>
 
               <li className="menu-has-children text-white">
-                <Link to="#/" className="disabled">Education</Link>
+                <a href="#/" className="disabled">Education</a>
                 <ul>
-                  <li><Link to="/study_in_uk">Study in UK</Link></li>
-                  {/* <li><Link to={location => ({ ...location, pathname: "/about-us" })}>Link</Link></li> */}
-                  <li><Link to="/study_in_us">Study in US</Link></li>
-                  <li><Link to="/study_in_canada">Study in Canada</Link></li>
-                  <li><Link to="/study_in_australia">Study in Australia</Link></li>
+                  <li><a href="/study_in_uk">Study in UK</a></li>
+                  <li><a href="/study_in_us">Study in US</a></li>
+                  <li><a href="/study_in_canada">Study in Canada</a></li>
+                  <li><a href="/study_in_australia">Study in Australia</a></li>
                 </ul>
               </li>
 
@@ -34,14 +32,13 @@ const NavBar = () => {
                   <li><Link to="/work_in_lithuania">Work in Lithuania</Link></li>
                   <li><Link to="/work_in_germany"> Work in Germany</Link></li>
                 </ul>
-              </li> */}
-              {/* <li><Link to="/ticketing">Buy Your Ticket</Link></li> */}
-              <li><Link to="/contact-us">Contact</Link></li>
+              </li>*/}
+              {/* <li><a href="/ticketing">Buy Your Ticket</a></li>  */}
+              <li><a href="/contact-us">Contact</a></li>
             </ul>
           </nav>
         </div>
       </div>
-    </div>
   )
 }
 export default NavBar
