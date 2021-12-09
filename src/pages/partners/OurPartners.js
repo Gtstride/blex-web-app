@@ -1,5 +1,5 @@
 import React from "react";
-import applyBoard from "../../assets/img/applyboard.jpeg"
+import applyBoard from "../../assets/img/applyboard.jpeg";
 import british_council from "../../assets/img/british_council.jpeg";
 
 const OurPartners = () => {
@@ -35,7 +35,11 @@ const OurPartners = () => {
 							</div>
 							<div className="single-carusel row align-items-center">
 								<div className="col-12 col-md-6 thumb">
-									<img className="img-fluid" src={british_council} alt="British Council"/>
+									<img
+										className="img-fluid"
+										src={british_council}
+										alt="British Council"
+									/>
 								</div>
 								<div className="detials col-12 col-md-6">
 									{/* <p>25th February, 2018</p> */}
@@ -48,13 +52,11 @@ const OurPartners = () => {
 										supporting qualify professionalism and integrity.
 									</p>
 								</div>
-
-								
 							</div>
 
-							<div className="single-carusel row align-items-center">
+							{/* <div className="single-carusel row align-items-center">
 								<div className="col-12 col-md-6 thumb">
-									<img className="img-fluid" src={applyBoard} alt="ApplyBoard" />
+									<img className="img-fluid" src={applyBoard} alt="" />
 								</div>
 								<div className="detials col-12 col-md-6">
 									<a href="/#">
@@ -66,8 +68,7 @@ const OurPartners = () => {
 										platform for the institution in countries that we represent
 									</p>
 								</div>
-							</div>
-							
+							</div> */}
 						</div>
 					</div>
 				</div>
