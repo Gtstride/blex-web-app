@@ -1,6 +1,6 @@
 import React from "react";
-import applyBoard from "../../assets/img/applyboard.jpeg";
-import british_council from "../../assets/img/british_council.jpeg";
+import applyBoard from "../../assets/img/applyboard.jpg";
+import british_council from "../../assets/img/british_council.jpg";
 
 const OurPartners = () => {
 	return (
