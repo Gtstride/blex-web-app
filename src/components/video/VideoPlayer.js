@@ -1,6 +1,6 @@
 import React from "react";
 import "./videoStyle.css";
-import welcome_vid from "../../assets/img/Welcome.mp4";
+// import welcome_vid from "../../assets/img/Welcome.mp4";
 import FlyBoxFees from "../flyBoxFees/FlyBoxFee";
 import * as Icon from "react-bootstrap-icons";
 import video from "./Welcome.webm";
@@ -9,9 +9,10 @@ const VideoPlayer = () => {
 	return (
 		<>
 			<section className="showcase">
-				<video autoPlay loop muted>
-					<source src={welcome_vid} type="video/mp4" />
-					<source src={video} type="video/webm" />
+				<video src={video} autoPlay loop muted>
+					{/* <video src={welcome_vid} autoPlay loop muted></video> */}
+					{/* <source src={} type="video/mp4" />
+					<source src={video} type="video/webm" /> */}
 				</video>
 				{/* <div className="overlay"></div> */}
 				<div className="text">

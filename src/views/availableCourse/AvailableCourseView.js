@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 import { httpPostWithNoToken } from "../../helpers/api";
-// import OurPartners from "../../pages/partners/OurPartners";
 
 const AvailableCourseView = () => {
 	console.log = function () {};
@@ -184,9 +183,6 @@ const AvailableCourseView = () => {
 					</div>
 				</div>
       </section>
-      
-      {/* <OurPartners /> */}
-
 		</div>
 	);
 };

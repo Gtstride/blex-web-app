@@ -1,6 +1,4 @@
 import React from "react";
-import FlyBoxFees from "../flyBoxFees/FlyBoxFee";
-
 
 const Slider = () => {
 	return (
@@ -10,14 +8,13 @@ const Slider = () => {
 				<div className="container">
 					<div className="row fullscreen d-flex align-items-center justify-content-between">
 						<div className="banner-content col-lg-9 col-md-12">
-							<h1 className="text-uppercase">Your dreams are valid</h1>
+							{/* <h1 className="text-uppercase">Your dreams are valid</h1>
 							<p className="pt-10 pb-10 text-white">
 								<b className="text-white">There is something here for everyone.</b>
 							</p>
 							<a href="/contact-us" className="primary-btn text-uppercase">
 								Get In Touch
-							</a>
-							<FlyBoxFees className="our-fees primary-btn text-uppercase ml-5" />
+							</a> */}
 						</div>
 					</div>
 				</div>
