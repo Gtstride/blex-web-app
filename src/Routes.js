@@ -15,6 +15,7 @@ import StudyInCanada from "./pages/education/StudyInCanada";
 // Work Route
 // import WorkInLithuania from "./pages/Work/WorkInLith"
 import Unauthorized from "./not-found/NotFound";
+// import RouteChangeTracker from "./components/route-change-tracker/RouteChangeTracker";
 
 const Routes = () => {
 	return (
@@ -31,6 +32,7 @@ const Routes = () => {
 					{/* <Route exact path="/work_in_lithuania" component={WorkInLithuania} /> */}
 					{/* <Route exact path="/work_in_germany" component={WorkInGermany} /> */}
 					<Route exact path="/contact-us" component={ContactUs} />
+					{/* <RouteChangeTracker /> */}
 					<Route exact path="*" component={Unauthorized} />
 				</Switch>
 			</Router>

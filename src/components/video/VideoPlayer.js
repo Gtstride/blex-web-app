@@ -1,18 +1,18 @@
 import React from "react";
 import "./videoStyle.css";
-import welcome_vid from "../../assets/img/Welcome.mp4";
+// import welcome_vid from "../../assets/img/Welcome.mp4";
+// import video from "./Welcome.webm";
 import FlyBoxFees from "../flyBoxFees/FlyBoxFee";
 import * as Icon from "react-bootstrap-icons";
-import video from "./Welcome.webm";
 
 const VideoPlayer = () => {
 	return (
 		<>
 			<section className="showcase">
 				<video autoPlay loop muted className="mtz-vlc-odecb">
-					{/* <video src={welcome_vid} autoPlay loop muted></video> */}
-					<source src={welcome_vid} type="video/mp4" />
-					<source src={video} type="video/webm" />
+					{/* <source src={welcome_vid} type="video/mp4" poster="nice-default.jpg" />
+					<source src={video} type="video/webm" /> */}
+					<source src="https://s3.eu-west-3.amazonaws.com/www.flyboxconsult.org/Welcome.webm" />
 				</video>
 				{/* <div className="overlay"></div> */}
 				<div className="text">
@@ -52,5 +52,5 @@ const VideoPlayer = () => {
 		</>
 	);
 };
-
+// Tracking Id =>
 export default VideoPlayer;

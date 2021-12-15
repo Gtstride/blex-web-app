@@ -81,14 +81,14 @@ const AboutUs = () => {
             <div className="col-md-6 accordion-left">
               <dl className="accordion">
                 <dt>
-                  <a href onClick={(e) => e.preventDefault(e)}>Our Vision</a>
+                  <a href="#/" onClick={(e) => e.preventDefault(e)}>Our Vision</a>
                 </dt>
                 <dd>
                   The vision of Flybox is to enable Africans to tell her story by herself and around the
                   world by supporting individuals that want to travel through our products and services.
                 </dd>
                 <dt>
-                  <a href onClick={(e) => e.preventDefault(e)}>Our Mission</a>
+                  <a href="#/" onClick={(e) => e.preventDefault(e)}>Our Mission</a>
                 </dt>
                 <dd>
                   Our Mission as an organization is to provide tailored location option for
@@ -96,7 +96,7 @@ const AboutUs = () => {
                   get better Jobs and working conditions.
                 </dd>
                 <dt>
-                  <a href onClick={(e) => e.preventDefault(e)}>Our Goals</a>
+                  <a href="#/" onClick={(e) => e.preventDefault(e)}>Our Goals</a>
                 </dt>
                 <dd>
                   Our Goal  as an organization , is to be the first point of contact in when it comes to improving your career abroad.
