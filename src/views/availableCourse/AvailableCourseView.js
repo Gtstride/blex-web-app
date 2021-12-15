@@ -165,7 +165,7 @@ const AvailableCourseView = () => {
 										Get Information About Studying Abroad
 									</option>
 									{/* <option value="information_about_work">Get Information about work</option> */}
-									{/* <option value="information_about_relocation">Get Information about relocating</option> */}
+									<option value="information_about_relocation">Get Information about relocating</option>
 								</select>
 								<button
 									value={submitting}
@@ -173,7 +173,7 @@ const AvailableCourseView = () => {
 									className="primary-btn text-uppercase"
 								>
 									{!submitting ? (
-										<button className="primary-btn text-uppercase">Submit</button>
+										<h4 className="primary-btn text-uppercase">Get Info</h4>
 									) : (
 										<i className="fa fa-refresh fa-spin" style={{ fontSize: "24px" }}></i>
 									)}
