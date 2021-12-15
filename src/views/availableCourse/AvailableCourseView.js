@@ -161,11 +161,9 @@ const AvailableCourseView = () => {
 									<option value="" disabled>
 										Please select what you to know
 									</option>
-									<option value="information_about_study">
-										Get Information About Studying Abroad
-									</option>
+									<option value="information_about_study">Get Information About Studying Abroad</option>
 									{/* <option value="information_about_work">Get Information about work</option> */}
-									<option value="information_about_relocation">Get Information about relocating</option>
+									{/* <option value="information_about_relocation">Get Information about relocating</option> */}
 								</select>
 								<button
 									value={submitting}
